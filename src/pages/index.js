@@ -62,7 +62,11 @@ class RootIndex extends React.Component  {
 
     const animatedComponents = makeAnimated();
 
+      const moretonjobs = get(this, 'props.data.moreton.totalCount')
 
+      const locationHeader = `${moretonjobs} ${
+        moretonjobs === 1 ? "" : "s"
+    } position available at Moreton`
 
     return (
       <Layout location={this.props.location}>
@@ -93,6 +97,9 @@ class RootIndex extends React.Component  {
             <ul className="article-list">
               {filteredOptions}
             </ul>
+              <section>
+                {locationHeader}
+              </section>
           </div>
         </div>
       </Layout>
@@ -125,6 +132,12 @@ export const pageQuery = graphql`
           slug
         }
       }
+    }
+    moreton: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Moreton"}}}) {
+      totalCount
+    }
+    marsdenpark: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Marsden Park"}}}) {
+      totalCount
     }
   }
 `
