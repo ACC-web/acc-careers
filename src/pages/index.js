@@ -23,7 +23,6 @@ class RootIndex extends React.Component  {
     this.setState(
         { selectedOption },
         () => console.log(`Option selected:`, this.state.selectedOption)
-
     );
   };
 
@@ -40,6 +39,26 @@ class RootIndex extends React.Component  {
     ];
     const { selectedOption } = this.state;
 
+    const filteredOptions = job.map(({ node }) => {
+          if (selectedOption) {
+            for (let i = 0; i < selectedOption.length; i++) {
+              if (selectedOption[i].label === node.jobLocation.jobLocation) {
+                return (
+                    <li key={node.slug}>
+                      <ArticlePreview article={node}/>
+                    </li>
+                )
+              }
+            }
+          } else {
+            return (
+                <li key={node.slug}>
+                  <ArticlePreview article={node}/>
+                </li>
+            )
+          }
+        }
+    );
 
     const animatedComponents = makeAnimated();
 
@@ -72,13 +91,7 @@ class RootIndex extends React.Component  {
             />
 
             <ul className="article-list">
-              {job.map(({ node }) => {
-                return (
-                  <li key={node.slug}>
-                    <ArticlePreview article={node} />
-                  </li>
-                )
-              })}
+              {filteredOptions}
             </ul>
           </div>
         </div>
