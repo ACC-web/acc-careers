@@ -6,7 +6,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
 
   const jobTemplate = path.resolve('src/templates/job-template.js');
-  // const locationsTemplate = path.resolve('src/templates/locations-template.js');
+  const locationsTemplate = path.resolve('src/templates/locations-template.js');
 
   const queryResults = await graphql(`
     {
@@ -56,18 +56,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     });
   });
 
-  // // const jobLocations = queryResults.data.allContentfulJobLocation.nodes
-  // queryResults.data.allContentfulJobLocation.nodes.forEach(node => {
-  //
-  // // jobLocations.forEach(node => {
-  //   const place = `${_.kebabCase(node.jobLocation)}`
-  //   createPage({
-  //     path: `${_.kebabCase(node.jobLocation)}/`,
-  //     component: locationsTemplate,
-  //     context: {
-  //       jobsLocation: place
-  //     },
-  //   });
-  // });
+  // const jobLocations = queryResults.data.allContentfulJobLocation.nodes
+  queryResults.data.allContentfulJobLocation.nodes.forEach(node => {
+
+  // jobLocations.forEach(node => {
+    const place = `${node.jobLocation}`
+    createPage({
+      path: `${_.kebabCase(node.jobLocation)}/`,
+      component: locationsTemplate,
+      context: {
+        jobsLocation: place
+      },
+    });
+  });
 
 };

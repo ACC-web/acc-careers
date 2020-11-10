@@ -13,25 +13,28 @@ import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 
 const locationsTemplate = ({ pageContext, data, location }) => {
-    render() {
         const siteTitle = data.site.siteMetadata.title
 
-        const {jobsLocation} = pageContext
+        const { jobsLocation } = pageContext
         const totalCount = get(this, 'props.data.allContentfulJobLocation.edges')
-        const jobs = get(this, 'props.data.allContentfulJobLocation.edges')
+        // const jobs = get(this, 'props.data.allContentfulJob.edges')
 
+    const jobs = data.allContentfulJob.edges;
+    console.log(  jobs)
         const locationHeader = `${totalCount} ${
             totalCount === 1 ? "" : "s"
         } position available at ${jobsLocation}`
+
         return (
             <>
+                <p>this</p>
                 <Layout location={location} title={siteTitle}>
                     <h1>{locationHeader}</h1>
                     <ul>
                         {jobs.map(({ node }) => {
-                            const {slug} = node.job.slug
-                            const {title} = node.job.jobTitle
-                            const {id} = node.job.id
+                            const slug = node.slug
+                            const title = node.jobTitle
+                            const id = node.id
                             return (
                                 <li key={id}>
                                     <Link to={slug}>{title}</Link>
@@ -47,25 +50,22 @@ const locationsTemplate = ({ pageContext, data, location }) => {
                 </Layout>
             </>
         )
-    }
+
 }
 
 export default locationsTemplate
 
 export const pageQuery = graphql`
     query LocationTemplateQuery {
-        allContentfulJobLocation {
-            totalCount
+        allContentfulJob {
             edges {
                 node {
-                    jobLocation
-                    job {
-                        slug
-                        jobTitle
-                        id
-                    }
+                    id
+                    jobTitle
+                    slug
                 }
             }
+            totalCount
         }
         site {
             siteMetadata {
