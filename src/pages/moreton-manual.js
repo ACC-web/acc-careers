@@ -12,7 +12,6 @@ import Hero from "../components/hero"
 import get from 'lodash/get'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
-import styles from "./blog.module.css";
 
 const Top = styled.div`
   position:relative;
@@ -59,14 +58,13 @@ class MoretonPage extends React.Component {
         const title = `Blogger`
         return (
             <Layout location={this.props.location}>
-                <div style={{ background: '#fff' }}>
+                <div>
                     <Helmet title={siteTitle} />
                     <Top>
                         {/*<h1>Blog</h1>*/}
                         <Hero title={title} className="hero" />
                     </Top>
                     <div className="wrapper">
-
                         <h1 className="section-headline">{locationHeader}</h1>
                         <ul className="article-list">
                             {posts.map(({ node }) => {

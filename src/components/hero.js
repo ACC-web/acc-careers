@@ -35,7 +35,6 @@ export default function Hero({ title }) {
             contentfulAsset(id: {in: "19dbb445-8033-5a6d-b042-9448a050575f"}) {
                 id
                 fluid {
-                    src
                     ...GatsbyContentfulFluid
                 }
                 title

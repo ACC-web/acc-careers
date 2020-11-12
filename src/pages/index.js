@@ -13,9 +13,7 @@ import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 
 const Top = styled.div`
-  
-  
-  
+
   &>.hero{
     justify-self: center;
     z-index: 100;
@@ -106,6 +104,7 @@ class RootIndex extends React.Component  {
   state = {
     selectedOption: null,
   };
+
   handleChange = selectedOption => {
     this.setState(
         { selectedOption },
@@ -113,7 +112,7 @@ class RootIndex extends React.Component  {
     );
   };
 
-  render( data) {
+  render( data ) {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
 
     const job = get(this, 'props.data.allContentfulJob.edges')
