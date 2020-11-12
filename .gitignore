@@ -65,5 +65,7 @@ public
 
 # contentful config file
 .contentful.json
+.env.development
+.env.production
 # Local Netlify folder
 .netlify
