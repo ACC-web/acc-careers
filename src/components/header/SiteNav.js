@@ -1,37 +1,40 @@
 // tslint:disable:no-http-string
 import { Link } from 'gatsby';
 import * as React from 'react';
-import styled from '@emotion/styled';
-import { css } from '@emotion/core';
-import '../../../src/styles/style.css';
-import LatestBlogPosts from "../footer/latestBlogPosts";
+import styled from "styled-components"
 
-const HomeNavRaise = css`
-  @media (min-width: 900px) {
+import '../base.css';
+
+const MainNav = styled.ul`
+  .ParentItem{
+    border-bottom:0;
     position: relative;
-    // top: -70px;
-  }
-`;
-
-const SiteNavStyles = css`
-  position: relative;
-  z-index: 300;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  overflow-y: visible;
-  font-size: 1.2rem;
-  
-  @media (min-width: 768px){
-  height: 73px;
-  }
-`;
+    } 
+  .HomeNavRaise{
+      @media (min-width: 900px) {
+        position: relative;
+        // top: -70px;
+      }
+    }
+    .SiteNavStyles{
+      position: relative;
+      z-index: 999;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      overflow-y: visible;
+      font-size: 1.2rem;
+      
+      @media (min-width: 768px){
+        height: 73px;
+      }
+    } 
+`
 
 const SiteNavLeft = styled.div`
     
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: row;
     justify-content: space-between;
     height: 73px;
@@ -43,136 +46,17 @@ const SiteNavLeft = styled.div`
   }
 `;
 
-// const NavStyles = css`
-//     display: -webkit-box;
-//     display: -webkit-flex;
-//     display: -ms-flexbox;
-//     display: flex;
-//     padding: 2rem 0;
-//     list-style: none;
-//     width: 100vw;
-//     background-color: #2a333c;
-//     position: fixed;
-//     top: 90px;
-//     left: 0;
-//     height: 100vh;
-//
-//     li {
-//       display: block;
-//       margin: 0;
-//       padding: 3rem 0;
-//       text-transform: none;
-//       border-bottom: 1px solid #414B56;
-//     }
-//
-//      li:first-of-type {border-top: 1px solid #414B56;}
-//      // li:nth-child(2) {border-bottom: none;}
-//
-//
-//     li a {
-//           color: #fff;
-//       padding: .75em 15px;
-//       font-weight: 400;
-//       font-size: 2rem;
-//       fill: none;
-//       stroke: #FFFFFF;
-//       opacity: 1;
-//       font-family: montserrat, sans-serif;
-//     }
-//
-//     li a:hover {
-//       text-decoration: none;
-//       opacity: 1;
-//     }
-//
-//   @media (min-width: 768px) {
-//     display: -webkit-box;
-//     display: -webkit-flex;
-//     display: -ms-flexbox;
-//     display: flex;
-//     margin: 0 0 0 -12px;
-//     padding: 0;
-//     list-style: none;
-//     height: auto;
-//     position: relative;
-//     width: auto;
-//     top: unset;
-//
-//     li {
-//       display: block;
-//       margin: 0;
-//       padding: 0;
-//       text-transform: none;
-//       border: none;
-//     }
-//     li:first-of-type {
-//       border-top: none;
-//     }
-//
-//     li a {
-//           color: #fff;
-//       padding: .75em 15px;
-//       font-weight: 400;
-//       font-size: 2.2rem;
-//       fill: none;
-//       stroke: #FFFFFF;
-//       opacity: 1;
-//       font-family: montserrat, sans-serif;
-//     }
-//
-//     li a:hover {
-//       text-decoration: none;
-//       opacity: 1;
-//     }
-//   }
-// `;
 
-const ParentItem = css`
-  border-bottom:0;
-  position: relative;
-  :hover { 
-    
-  }
-
-  `;
-const ChildList = css`
-  background-color:#2a333c;
-  padding: 0;
-
-   li {
-      border-bottom: none;
-      }
-
-      li:first-of-type {border-top: none; border-bottom: none;}
-
-      li a {
-          color: #fff;
-      padding: .75em 15px;
-      font-weight: 400;
-      font-size: 1.5rem;
-    }
-
-    @media (min-width: 768px) {
-    display:none;
-    background-color: #2a333c;
-
-    li {
-      border-bottom: none;
-      padding: 1rem 2.5rem;
-      }
-
-      li:hover{
-      background-color: #f4f8fb;
-      color: #2a333c;
-      }
-      li:hover a{color: #2a333c;}
-    }
-`;
 const SiteNavRight = styled.div`
   flex-shrink: 0;
   display: flex;
   align-items: center;
   height: 40px;
+  
+  svg.hamburger{
+    height: 23px;
+    width: 23px;
+  }
 
   @media (max-width: 700px) {
   }
@@ -182,7 +66,7 @@ const SocialLinks = styled.div`
   flex-shrink: 0;
   display: flex;
   align-items: center;
-  a:last-of-type {
+  > a:last-of-type {
     padding-right: 20px;
   }
 `;
@@ -197,125 +81,23 @@ const SubscribeButton = styled.a`
   border-radius: 10px;
   opacity: 0.8;
 
-  :hover {
+  &:hover {
     text-decoration: none;
     opacity: 1;
     cursor: pointer;
   }
 `;
 
-const navTrigger = css`
-  position: absolute;
-  display: block;
-  z-index: 80;
-  right: 2rem;
-  top: 5px;
-  /* update the following 2 lines on all structure stylesheets (use px no %) - to fix the ios issue */
-  height: 54px;
-  width: 54px;
-  border-radius: 50%;
-  /* image replacement */
-  overflow: hidden;
-  text-indent: 100%;
-  white-space: nowrap;
-  -webkit-transition: -webkit-transform 0.5s;
-  -moz-transition: -moz-transform 0.5s;
-  transition: transform 0.5s;
-  
-    @media (min-width: 768px) {
-    display:none;
-}
-`;
 
-const NavIcon = css`
-    position: absolute;
-    width: 30px;
-    height: 2px;
-    left: 27px;
-    top: 27px;
-    bottom: auto;
-    right: auto;
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -o-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-    -webkit-transition: 1s ease-in-out;
-    
-    z-index: 999;
-    left: 24%;
-    -webkit-transition: 1s ease-in-out;
-    -moz-transition: 1s ease-in-out;
-    -o-transition: 1s ease-in-out;
-    background-color: #fff;
-    
-    :before{
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background-color:inherit;
-  -webkit-transform: translateZ(0);
-  -moz-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  -o-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transition: -webkit-transform 0.5s, width 0.5s, rotate 1s;
-  -moz-transition: -moz-transform 0.5s, width 0.5s, rotate 1s;
-  transition: transform 0.5s, width 0.5s, rotate 1s;
-  -webkit-transform-origin: right top;
-  -moz-transform-origin: right top;
-  -ms-transform-origin: right top;
-  -o-transform-origin: right top;
-  transform-origin: right top;
-  -webkit-transform: translateY(-9px);
-  -moz-transform: translateY(-9px);
-  -ms-transform: translateY(-9px);
-  -o-transform: translateY(-9px);
-  transform: translateY(-9px);
-}
-:after{
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background-color:inherit;
-  -webkit-transform: translateZ(0);
-  -moz-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  -o-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transition: -webkit-transform 0.5s, width 0.5s, rotate 1s;
-  -moz-transition: -moz-transform 0.5s, width 0.5s, rotate 1s;
-  transition: transform 0.5s, width 0.5s, rotate 1s;
-  -webkit-transform-origin: right bottom;
-  -moz-transform-origin: right bottom;
-  -ms-transform-origin: right bottom;
-  -o-transform-origin: right bottom;
-  transform-origin: right bottom;
-  -webkit-transform: translateY(9px);
-  -moz-transform: translateY(9px);
-  -ms-transform: translateY(9px);
-  -o-transform: translateY(9px);
-  transform: translateY(9px);
-}
-`;
 
-interface SiteNavProps {
-  isHome?: boolean;
-}
-
-interface SiteNaveState {
-  isOpen: boolean;
-}
+//
+// interface SiteNavProps {
+//   isHome?: boolean;
+// }
+//
+// interface SiteNaveState {
+//   isOpen: boolean;
+// }
 
 class SiteNav extends React.Component {
   render() {
@@ -323,7 +105,7 @@ class SiteNav extends React.Component {
 
     const { isHome = false } = this.props;
     return (
-      <nav css={[isHome && HomeNavRaise, SiteNavStyles]}>
+      <MainNav className="isHome HomeNavRaise SiteNavStyles">
         <SiteNavRight>
           <div className="hamburger-menu">
             <a href="#main-menu"
@@ -342,6 +124,7 @@ class SiteNav extends React.Component {
                      viewBox="0 0 27.4 24"
                     enableBackground="new 0 0 27.4 24"
                     xmlSpace="preserve"
+                     className="hamburger"
                 >
                   <g>
                     <rect x="0" y="20" className="white-fill" width="27.4" height="4"/>
@@ -375,18 +158,19 @@ class SiteNav extends React.Component {
                       viewBox="0 0 14.8 14.8"
                       enableBackground="new 0 0 14.8 14.8"
                       xmlSpace="preserve"
+                      className="hamburger"
                   >
                     <polygon className="white-fill"
                       points="14.8,2.8 12,0 7.4,4.6 2.8,0 0,2.8 4.6,7.4 0,12 2.8,14.8 7.4,10.3 12,14.8 14.8,12 10.3,7.4 "/>
                   </svg>
                 </span>
               </a>
-              <ul className="NavStyles" id="MainNav" role="menu">
+              <MainNav  id="MainNav" role="menu">
                 {/* TODO: mark current nav item - add class nav-current */}
                 <li role="menuitem">
                   <a href="https://www.acc.edu.au/about.html">About</a>
                 </li>
-                <li css={ParentItem} role="menuitem">
+                <li className="ParentItem" role="menuitem">
                   <Link to="/"
                         onClick={(PreventDefault) => document.body.classList.toggle('school-list-open')}>Schools&nbsp;&nbsp;
                     <span className="reveal"></span></Link>
@@ -421,7 +205,7 @@ class SiteNav extends React.Component {
                            href="https://www.acc.edu.au/careers.html#tas">Tasmania</a></li>
                   </ul>
                 </li>
-                <li css={ParentItem} role="menuitem">
+                <li className="ParentItem" role="menuitem">
                   <Link to="/"
                         onClick={(PreventDefault) => document.body.classList.toggle('resources-list-open')}>Resources
                     <span className="reveal"></span></Link>
@@ -440,7 +224,7 @@ class SiteNav extends React.Component {
                 <li role="menuitem">
                   <a href="https://www.acc.edu.au/newsroom/">Newsroom</a>
                 </li>
-              </ul>
+              </MainNav>
             </div>
             <a href="#main-menu-toggle"
               className="backdrop"
@@ -449,7 +233,7 @@ class SiteNav extends React.Component {
             />
           </div>
         </SiteNavRight>
-      </nav>
+      </MainNav>
     );
   }
 }

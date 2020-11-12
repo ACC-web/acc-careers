@@ -1,29 +1,51 @@
 import React from 'react';
-import AccLogo from "./header/acclogo";
-import SiteNav from "./header/SiteNav";
+import AccLogo from "./acclogo";
+import SiteNav from "./SiteNav";
 
-import {
-    SiteHeader,
-    headerOuter,
-    SiteHeaderContent,
-    inner,
-    outer,
-    AuthorProfileImage,
-} from '../styles/shared';
-import styled from "@emotion/styled";
+import styled from "styled-components"
+
+const SiteHeader = styled.div`
+  position: relative;
+    padding: 12px 4vw;
+  color: #fff;
+  /* background: color(var(--darkblue) l(-5%)) no-repeat center center; */
+  background: #2a333c;
+  background-size: cover;
+  
+  &>a{z-index:9999}
+  
+
+`;
+
+const HeaderOuter = styled.div`
+  position: relative;
+  padding: 0;
+`;
+
+const inner = styled.div`
+  margin: 0 auto;
+  max-width: 1040px;
+  width: 100%;
+`;
+
 
 const SiteHeaderContent = styled.div`
-  .logo{
+
+div{
     display:block;
     width: 250px;
     height: auto;
+}
+    
+  .logo{
+   
   }
   
   svg{
   flex-shrink: 0;
   display: block;
   margin-right: 24px;
-  padding: 11px 0;
+  padding: 0;
   color: #fff;
   font-size: 1.7rem;
   line-height: 1em;
@@ -42,14 +64,14 @@ const SiteHeaderContent = styled.div`
 class HeaderArea extends React.Component {
     render() {
         return (
-            <header className="about-header" css={[outer, SiteHeader]}>
-                <div css={headerOuter}>
+            <SiteHeader>
+                <HeaderOuter>
                     <SiteHeaderContent>
-                        <AccLogo css={Logo} />
+                        <AccLogo className="logo" />
                         <SiteNav/>
                     </SiteHeaderContent>
-                </div>
-            </header>
+                </HeaderOuter>
+            </SiteHeader>
         )
     }
 }
