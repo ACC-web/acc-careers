@@ -8,17 +8,60 @@ import Hero from '../components/hero'
 import heroStyles from '../components/hero.module.css'
 import styled from "styled-components";
 
+//Typeform
+import Typeform from '../components/typeform-button'
+
+const Top = styled.div`
+  position:relative;
+  width: 100%;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: unset;
+  overflow: hidden;
+  z-index: 200;
+    height: auto;
+
+  
+  
+  &>.hero{
+    justify-self: center;
+    z-index: 100;
+    top: -500px
+  }
+  
+  @media(min-width: 768px){
+    height: 11rem;
+        
+        img{
+          filter: brightness(50%); //this darkens the image for desktop vide (on job pages only)
+
+        }
+
+
+  }
+  @media(min-width: 1100px){
+    height: 11rem
+  }
+`
+
 const Wrapper = styled.section`
   max-width: 1100px;
   margin: auto;
-  padding: 4rem;
+  padding: 1rem;
+  
+  @media(min-width: 768px){
+    padding: 4rem;
+  }
 `
 
 const JobTemplate = ({ data, location }) => {
 
-
     const job = data.contentfulJob
     const siteTitle = data.site.siteMetadata.title
+    const title = data.contentfulJob.jobTitle
 
     return (
         <>
@@ -29,24 +72,25 @@ const JobTemplate = ({ data, location }) => {
                   <title>{`${job.jobTitle} | ${siteTitle}`} </title>
                   <link rel="canonical" href="https://acc.edu.au/careers" />
                 </Helmet>
+                <Top>
+                    <Hero title={title} className="hero" />
+                </Top>
               <Wrapper>
-                <Hero jobcontent={ `${job}` }/>
-                <p
-                  style={{
-                    display: 'block',
-                  }}
-                >
-                  {job.createdAt}
+                <p style={{display: 'block',}} className="smaller">
+                    Job posted at: {job.createdAt}
                 </p>
                 <div
                   dangerouslySetInnerHTML={{
                     __html: job.jobDescription.childMarkdownRemark.html,
                   }}
                 />
-                <a className="typeform-share button MORETON_FORM"
-                   href={`${job.jobForm.formUrl}`}
-                   dataMode="popup"
-                   target="_blank">APPLY </a>
+                {/*<a className="typeform-share button MORETON_FORM"*/}
+                {/*   href={`${job.jobForm.formUrl}`}*/}
+                {/*   dataMode="popup"*/}
+                {/*   target="_blank"*/}
+                {/*   id="bt-popup"*/}
+                {/*>APPLY </a>*/}
+                <Typeform link={job.jobForm.formUrl} />
               </Wrapper>
 
             </div>
@@ -63,7 +107,7 @@ export const pageQuery = graphql`
     contentfulJob {
       slug
       id
-      createdAt
+      createdAt(formatString: "dddd DD, MMMM, YYYY")
       jobTitle
       jobLocation {
         jobLocation
@@ -80,17 +124,6 @@ export const pageQuery = graphql`
       site {
           siteMetadata {
               title
-          }
-      }
-      allContentfulAsset(filter: {id: {in: "19dbb445-8033-5a6d-b042-9448a050575f"}}) {
-          edges {
-              node {
-                  fluid {
-                      src
-                  }
-                  title
-                  id
-              }
           }
       }
   }

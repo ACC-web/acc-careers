@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import HeaderArea from "../components/header/HeaderArea"
+import Footer from "../components/footer/footer"
 import "fontsource-montserrat/300.css" // All styles included.
 import "fontsource-montserrat/400.css" // All styles included.
 import "fontsource-montserrat/700.css" // All styles included.
@@ -32,11 +33,7 @@ const Layout = ({ location, title, children }) => {
       <div className="global-wrapper" data-is-root-path={isRootPath}>
         <HeaderArea />
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
+          <Footer />
       </div>
   )
 }

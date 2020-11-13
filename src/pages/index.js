@@ -13,38 +13,76 @@ import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 
 const Top = styled.div`
+  position:relative;
+  width: 100%;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: unset;
+  overflow: hidden;
+  z-index: 200;
+    height: 11rem;
 
+  
+  
   &>.hero{
     justify-self: center;
     z-index: 100;
     top: -500px
   }
   
-  @media(min-width: 768px){}
-  @media(max-width: 1100px){
-    height: 11rem
+    @media(min-width: 768px){
+    height: 20rem;
+}
+  
+  @media(min-width: 1100px){
+    min-height: 200px;
+    height: 75vh;
+    max-height: 600px;
   }
 `
 
 const Wrapper = styled.section`
   position:relative;
   max-width: 1100px;
-  padding: 0 4rem;
+  padding: 0 1rem;
   z-index: 200;
   
   background-color: #fff;
   
-    @media(min-width: 768px) and (max-width: 1100px){
-      //margin: -13rem auto auto auto;
-  }
-      @media(min-width: 1100px){
-        margin: -13rem auto auto auto;
-}
+    @media(min-width: 768px){
+    //at this width the header image still sits above the content
+      padding: 1rem;
+    }
+    @media(min-width: 1100px){
+    //this is when the layout changes to the centre white thing
+      margin: -13rem auto auto auto;
+            padding: 4rem;
+
+    }
+    
+    h1{
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin: 0;
+      color: #646E78;
+      
+      @media(min-width: 768px){
+        font-weight: 700;
+          //font-size: 1rem;
+
+      }
+      h2{
+        
+      }
+    }
 `
 
 const LocationsCount = styled.ul`
   padding: 0;
-  margin-top: 1rem;
+  margin: 1rem 0;
   li{
     list-style-type: none;
     
@@ -69,7 +107,7 @@ const FilterColumn = styled.div`
   flex-direction: column;
   padding-right: 0;
     @media(min-width: 768px){
-      width: 33%;
+      width: 25%;
       padding-right: 2rem;
       border-right: 1px solid #97A4B2;
   }
@@ -81,7 +119,7 @@ const JobsList = styled.div`
   padding-left: 0;
   
     @media(min-width: 768px){
-      width: 66%;
+      width: 75%;
       padding-left: 2rem;
     }
   
@@ -104,7 +142,6 @@ class RootIndex extends React.Component  {
   state = {
     selectedOption: null,
   };
-
   handleChange = selectedOption => {
     this.setState(
         { selectedOption },
@@ -155,14 +192,16 @@ class RootIndex extends React.Component  {
         <div style={{ background: '#fff' }}>
           <Helmet title={siteTitle} />
           <Top>
-              <Hero title={title} className="hero" />
+              <Hero  className="hero" />
           </Top>
           <Wrapper>
             <section className="intro">
-              <p><strong>Discover your calling</strong></p>
+                <h1>CAREERS</h1>
+              <p style={{fontSize: "1.3rem"}}>Discover your calling</p>
               <p>Is God calling you to work in a vibrant and thriving organisation? Australian Christian Colleges are places with great culture, where genuine Christian faith is lived out in a high-performance environment.
                 The ACC Group offers career advancement across our schools network, a trainee principals programme and staff discounts on school fees and long day care (where available).
                 Please prayerfully consider the vacancies below.</p>
+                <br />
             </section>
               <h2 className="section-headline">Positions Vacant</h2>
 

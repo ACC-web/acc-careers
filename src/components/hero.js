@@ -4,38 +4,53 @@ import Img from "gatsby-image";
 import styled from "styled-components"
 
 const Wrapper = styled.div`
-  position:relative;
   width: 100%;
-  
-  display: flex;
+  position:relative;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  justify-content: unset;
-  overflow: hidden;
-  z-index: 200;
-  
-  height: 75vh;
-  max-height: 600px;
+  height: auto;
   
   h1{
-    padding: 5rem 0;
+  position:relative;
+    padding: 2rem 0;
     margin: 0 auto;
     z-index: 900;
     color: #fff;
+    font-size: 1.3rem;
     font-weight: 700;
     justify-self: start;
-  }
+    
+        @media(min-width: 768px){
+          padding: 5rem 0;
+          color: #fff;
+          font-size: 1.38em;
+        }
 
+  }
 `
+const Background = styled(Img)`
+    position:absolute;
+    display: block;
+    top: -5rem;
+    width: 100%;
+    height: auto;
+    
+    @media(min-width: 768px){
+        top: -9rem;
+    }
+    @media(min-width:1100px){
+        position: absolute; //This isnt activating 
+        top: -14rem;
+    }
+`
+
 
 export default function Hero({ title }) {
     const data = useStaticQuery(graphql`
         query {
             contentfulAsset(id: {in: "19dbb445-8033-5a6d-b042-9448a050575f"}) {
                 id
-                fluid(maxWidth: 2500, quality: 90) {
-                    ...GatsbyContentfulFluid
+                fluid(maxWidth: 2000, quality: 90, cropFocus: CENTER) {
+                    ...GatsbyContentfulFluid_withWebp
                 }
                 title
             }
@@ -43,8 +58,16 @@ export default function Hero({ title }) {
     `)
     return(
         <Wrapper>
+            <Background
+                className="background-image"
+                fluid={data.contentfulAsset.fluid}
+                alt={data.contentfulAsset.title}
+                objectFit="cover"
+                objectPosition="50% 50%"
+                style={{position: ""}}
+
+            />
             <h1>{title}</h1>
-            <Img fluid={data.contentfulAsset.fluid} alt={data.contentfulAsset.title}/>
         </Wrapper>
         )
 }

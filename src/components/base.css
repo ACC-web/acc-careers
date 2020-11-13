@@ -214,8 +214,29 @@ label {
   margin-bottom: 0.5rem;
 }
 
-button {
-  border-radius: 0;
+button, .button, .btn {
+  outline: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 0;
+  border-radius: .25rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  padding: 1.3rem 3rem;
+  color: #fff;
+  font-family: montserrat, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #0069b4;
+  color: #fff;
+  text-align: center;
+  white-space: normal;
+  vertical-align: middle;
 }
 
 button:focus {
@@ -348,16 +369,6 @@ body {
   overflow-y: auto;
 }
 
-section {
-  padding-top: 4rem;
-}
-
-@media (min-width: 768px) {
-  section{
-    padding-top: 4rem;
-    padding-bottom: 3rem;
-  }
-}
 
 
 h1, .h1 {
@@ -384,7 +395,7 @@ h1, .h1 {
 }
 
 h2 {
-  font-size: .9rem;
+  font-size: 1.5rem;
   letter-spacing: .03rem;
   font-weight: 500;
   margin: 0 0 0.6rem 0;
@@ -815,7 +826,7 @@ html {
 */
 #main-menu {
   position: absolute;
-  right: -110vw;
+  right: -200vw;
   top: 0;
   height: 100%;
   overflow: scroll;
@@ -1628,7 +1639,68 @@ body.school-list-open #MainNav .reveal{
     align-items: flex-end;
     text-align: right;
   }
+}
 
 
+/*======================================FOOTER ==================================*/
 
+
+footer {
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 60px;
+  color: #fff;
+  background: #2a333c no-repeat center center;
+}
+
+.SiteFooterContent{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1em;
+}
+.SiteFooterContent a {
+  color: rgba(255, 255, 255, 0.7);
+}
+.SiteFooterContent a:hover {
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+}
+@media (max-width: 650px) {
+  .SiteFooterContent {
+    flex-direction: column;
+  }
+}
+
+
+.SiteFooterNav{
+  display: flex;
+}
+
+.SiteFooterNav a {
+  position: relative;
+  margin-left: 20px;
+}
+
+.SiteFooterNav a:before {
+  content: '';
+  position: absolute;
+  top: 11px;
+  left: -11px;
+  display: block;
+  width: 2px;
+  height: 2px;
+  background: #fff;
+  border-radius: 100%;
+}
+
+.SiteFooterNav a:first-of-type:before {
+  display: none;
+}
+@media (max-width: 650px) {
+  .SiteFooterNav a:first-child {
+    margin-left: 0;
+  }
 }

@@ -47,9 +47,9 @@ const Title = styled.h2`
   font-size: 1.1rem;
   text-decoration: none;
   margin-bottom: 0.1rem;
-   font-weight: 700;
-   color: #646E78;
-  
+  font-weight: 700;
+  color: #646E78;
+  width: 80%;
 `
 
 const Location = styled.p`
