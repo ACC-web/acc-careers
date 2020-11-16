@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import * as typeformEmbed from '@typeform/embed'
 
-class Typeform extends Component{
+class Typeform extends Component({ link }){
 
-    componentDidMount( link ){
+    componentDidMount(){
         // url = link
+        // console.log( {link} )
         const popup1 = typeformEmbed.makePopup(
             '{link}',
             {

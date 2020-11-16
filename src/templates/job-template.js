@@ -10,6 +10,7 @@ import styled from "styled-components";
 
 //Typeform
 import Typeform from '../components/typeform-button'
+import { Link } from "gatsby"
 
 const Top = styled.div`
   position:relative;
@@ -60,6 +61,7 @@ const Wrapper = styled.section`
 const JobTemplate = ({ data, location }) => {
 
     const job = data.contentfulJob
+    const typeform = data.contentfulJob.jobForm.formUrl
     const siteTitle = data.site.siteMetadata.title
     const title = data.contentfulJob.jobTitle
 
@@ -90,7 +92,7 @@ const JobTemplate = ({ data, location }) => {
                 {/*   target="_blank"*/}
                 {/*   id="bt-popup"*/}
                 {/*>APPLY </a>*/}
-                <Typeform link={job.jobForm.formUrl} />
+                <Typeform link={typeform} />
               </Wrapper>
 
             </div>

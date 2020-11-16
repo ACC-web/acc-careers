@@ -1,6 +1,23 @@
 import React, { Component } from 'react'
 import {graphql, Link, useStaticQuery} from "gatsby";
 import get from 'lodash/get'
+import styled from "styled-components";
+
+const List = styled.ul`
+    list-style-type: none;
+    padding: 0;
+    font-size: 0.8rem;
+    li{
+      margin: 5px 0;
+    }
+    a{
+      color: #646E78;
+      :hover{
+          color: #0069AF;
+
+      }
+    }
+`
 
 export default function LocationList() {
     const data = useStaticQuery(graphql`
@@ -17,7 +34,7 @@ export default function LocationList() {
             brightwaters: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Brightwaters (NSW)"}}}) {
                 totalCount
             }
-            hume: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "hume (VIC)"}}}) {
+            hume: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Hume (VIC)"}}}) {
                 totalCount
             }
             darlingdowns: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Darling Downs (WA)"}}}) {
@@ -29,7 +46,7 @@ export default function LocationList() {
             burnie: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Burnie (TAS)"}}}) {
                 totalCount
             }
-            hobart: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Hobart TAS()"}}}) {
+            hobart: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Hobart (TAS)"}}}) {
                 totalCount
             }
             launceston: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Launceston (TAS)"}}}) {
@@ -38,7 +55,7 @@ export default function LocationList() {
         }
     `)
     return(
-        <>
+        <List>
             <li><Link to="/moreton-qld">Moreton ({data.moreton.totalCount})</Link></li>
             <li><Link to="/singleton-nsw">Singleton ({data.singleton.totalCount})</Link></li>
             <li><Link to="/brightwaters-nsw">Brightwaters ({data.brightwaters.totalCount})</Link></li>
@@ -49,6 +66,6 @@ export default function LocationList() {
             <li><Link to="/burnie-tas">Burnie ({data.burnie.totalCount})</Link></li>
             <li><Link to="/hobart-tas">Hobart ({data.hobart.totalCount})</Link></li>
             <li><Link to="/launceston-tas">Launceston ({data.launceston.totalCount})</Link></li>
-        </>
+        </List>
     )
 }
