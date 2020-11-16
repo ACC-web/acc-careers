@@ -103,24 +103,24 @@ const JobTemplate = ({ data, location }) => {
 export default JobTemplate
 
 export const pageQuery = graphql`
-  query BlogPostBySlug {
-    contentfulJob {
-      slug
-      id
-      createdAt(formatString: "dddd DD, MMMM, YYYY")
-      jobTitle
-      jobLocation {
-        jobLocation
+  query BlogPostBySlug($id: String!) {
+      contentfulJob(id: { eq: $id }) {
+          slug
+          id
+          createdAt(formatString: "dddd DD, MMMM, YYYY")
+          jobTitle
+          jobLocation {
+              jobLocation
+          }
+          jobForm {
+              formUrl
+          }
+          jobDescription {
+              childMarkdownRemark {
+                  html
+              }
+          }
       }
-      jobForm {
-        formUrl
-      }
-      jobDescription {
-        childMarkdownRemark {
-          html
-        }
-      }
-    }
       site {
           siteMetadata {
               title

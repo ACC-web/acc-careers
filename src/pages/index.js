@@ -6,6 +6,7 @@ import Hero from '../components/hero'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 import styled from "styled-components"
+import LocationList from "../components/locations-list"
 
 //Select Imports
 //https://react-select.com/home
@@ -156,9 +157,16 @@ class RootIndex extends React.Component  {
     // Select options
     // const locationOptions = get(this, 'props.data.allContentfulJob.edges.node')
     const locationOptions = [
-        { value: 'moreton', label: 'Moreton' },
-        { value: 'marsden park', label: 'Marsden Park' },
-        { value: 'southlands', label: 'Southlands' }
+        { value: 'moreton (QLD)', label: 'Moreton (QLD)' },
+        { value: 'marsden park', label: 'Brightwaters (NSW)' },
+        { value: 'marsden park', label: 'Singleton (NSW)' },
+        { value: 'marsden park', label: 'Marsden Park (NSW)' },
+        { value: 'marsden park', label: 'Hume (VIC)' },
+        { value: 'marsden park', label: 'Darling Downs (WA)' },
+        { value: 'marsden park', label: 'Southlands (SOU)' },
+        { value: 'marsden park', label: 'Burnie (TAS)' },
+        { value: 'marsden park', label: 'Hobart (TAS)' },
+        { value: 'marsden park', label: 'Launceston (TAS)' },
     ];
     const { selectedOption } = this.state;
 
@@ -210,17 +218,14 @@ class RootIndex extends React.Component  {
                     <Select
                         closeMenuOnSelect={true}
                         components={animatedComponents}
-                        defaultValue={[locationOptions[4], locationOptions[5]]}
                         isMulti
                         options={locationOptions}
 
                         value={selectedOption}
                         onChange={this.handleChange}
                     />
-                    <LocationsCount>
-                        <li><Link to="/moreton">Moreton ({get(this, 'props.data.moreton.totalCount')})</Link></li>
-                        <li><Link to="/marsden-park">Marsden Park ({get(this, 'props.data.marsdenpark.totalCount')})</Link></li>
-                    </LocationsCount>
+                    <br />
+                    <LocationList />
                 </FilterColumn>
                 <JobsList>
                     <ul className="article-list">
@@ -238,34 +243,34 @@ class RootIndex extends React.Component  {
 export default RootIndex
 
 export const pageQuery = graphql`
-  query HomeQuery {
-    allContentfulJob {
-      edges {
-        node {
-          jobTitle
-          jobForm {
-            formUrl
-          }
-          jobDescription {
-            childMarkdownRemark {
-              html
-              excerpt(pruneLength: 150)
+    query HomeQuery {
+        allContentfulJob(sort: {order: ASC, fields: createdAt}) {
+            edges {
+                node {
+                    jobTitle
+                    jobForm {
+                        formUrl
+                    }
+                    jobDescription {
+                        childMarkdownRemark {
+                            html
+                            excerpt(pruneLength: 150)
+                        }
+                    }
+                    id
+                    createdAt(formatString: "dddd DD, MMMM, YYYY")
+                    jobLocation {
+                        jobLocation
+                    }
+                    slug
+                }
             }
-          }
-          id
-          createdAt
-          jobLocation {
-            jobLocation
-          }
-          slug
         }
-      }
+        site {
+            siteMetadata {
+                title
+            }
+        }
+
     }
-    moreton: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Moreton"}}}) {
-      totalCount
-    }
-    marsdenpark: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Marsden Park"}}}) {
-      totalCount
-    }
-  }
 `

@@ -2,11 +2,9 @@
 import {graphql, Link, useStaticQuery} from 'gatsby'
 import * as React from 'react'
 import styled from 'styled-components'
-import {List, Heading2} from '../../styles/shared.ts'
 
 import get from 'lodash/get'
 
-import NewsFooter from "../news/news-footer";
 
 const Wrapper = styled.div`
   p.small{
@@ -14,6 +12,32 @@ const Wrapper = styled.div`
   }
 `
 
+ const Heading2 = styled.h2`
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0;
+    margin-top: 0;
+`
+
+const List = styled.ul`
+    list-style-type: none;
+    padding: 0;
+
+    
+    li{    
+      padding: 0;
+      a{
+          font-size: inherit;
+          margin: 0;
+          color: inherit;
+          
+          :hover{
+          }
+      }
+    }
+   
+`
 
 const LatestBlogPosts = () => {
     const data = useStaticQuery(graphql`

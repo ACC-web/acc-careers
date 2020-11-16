@@ -4,6 +4,7 @@ import HeaderArea from "../components/header/HeaderArea"
 import Footer from "../components/footer/footer"
 import "fontsource-montserrat/300.css" // All styles included.
 import "fontsource-montserrat/400.css" // All styles included.
+import "fontsource-montserrat/500.css" // All styles included.
 import "fontsource-montserrat/700.css" // All styles included.
 
 import './base.css'

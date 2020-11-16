@@ -62,6 +62,7 @@ export default ({ article }) => (
       <Linky to={`/${_.kebabCase(article.jobLocation.jobLocation)}/${article.slug}`}>
         <Title>{article.jobTitle}</Title>
         <Location>ACC {article.jobLocation.jobLocation}</Location>
+          <p className="smaller">Job posted on {article.createdAt}</p>
         <svg className="chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11.347 18.4"><path fill="#97a4b2" fill-rule="evenodd" d="M0 16.253L2.147 18.4l9.2-9.2-9.2-9.2L0 2.147 7.054 9.2z" data-name="path"/></svg>
     {/*<p*/}
     {/*  dangerouslySetInnerHTML={{*/}

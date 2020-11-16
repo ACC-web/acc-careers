@@ -412,7 +412,7 @@ h3 {
   font-size: 1.25rem;
   font-weight: 500;
   margin: 0 0 1rem 0;
-  padding: 0.6em 0;
+  padding: 0.6rem 0;
   color: #2A333C;
 }
 
@@ -1574,7 +1574,7 @@ body.school-list-open #MainNav .reveal{
     visibility: hidden;
 
     position: fixed;
-    top: 9rem;
+    top: 96px;
     right: 0;
     bottom: 0;
 
@@ -1599,8 +1599,8 @@ body.school-list-open #MainNav .reveal{
   }
   #main-menu li .megaMenu h3{
     color: #fff;
-    font-size: 1.9rem;
-    margin-bottom: 2.5rem;
+    font-size: 1.2rem;
+    margin-bottom: .5rem;
   }
   #main-menu li .megaMenu{
     flex-direction: column;
@@ -1616,7 +1616,7 @@ body.school-list-open #MainNav .reveal{
   #main-menu li .megaMenu a,
   #main-menu li .megaMenu li a,
   #main-menu li .megaMenu h4 a{
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     font-weight: 400;
     line-height: 1rem;
     height: 1.3rem;
@@ -1650,7 +1650,6 @@ footer {
   padding-top: 20px;
   padding-bottom: 60px;
   color: #fff;
-  background: #2a333c no-repeat center center;
 }
 
 .SiteFooterContent{

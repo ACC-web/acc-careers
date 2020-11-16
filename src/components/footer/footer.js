@@ -1,15 +1,12 @@
 import {graphql, useStaticQuery} from 'gatsby';
 import * as React from 'react';
 import styled from "styled-components"
-import { colors } from '../../styles/colors.ts';
 import { css } from 'styled-components';
 
-import { inner } from '../../styles/shared.ts';
 
 import SchoolList from "./school-list.js";
 import BottomBar from "./bottom-bar.js";
-import SiteNavLogo from "../header/SiteNavLogo";
-import LatestMediaReleaseList from "./latestMediaReleaseList.js"
+import AccLogo from "../header/acclogo";
 import LatestBlogPosts from "./latestBlogPost"
 import TwitterWidget from "../twitter-widget";
 
@@ -24,9 +21,9 @@ const SiteFooter = styled.footer`
   padding-top: 3.5em;
   padding-bottom: 60px;
   margin: 0 auto;
-  color: ${colors.lightgrey};
-  background: ${colors.midgrey};
   font-size: 0.9em;
+  flex-direction: row;
+  background-color: #414b56;
     h2{ 
       margin-top: 0;
     }
@@ -37,7 +34,6 @@ const SiteFooter = styled.footer`
     ul{
       list-style-type: none;
       padding: 0;
-      color: ${colors.lightgrey};
                   font-size: inherit;
 
       li{    
@@ -55,7 +51,6 @@ const SiteFooter = styled.footer`
 
             
             :hover{
-                color: ${colors.lightblue};
             }
         }
       }
@@ -66,17 +61,6 @@ const SiteFooter = styled.footer`
     height: auto;
     max-width: 230px
 }
-`
-
-const flex = css`
-  //add next line because weird style bug, first line will be ignored
-  color: inherit;
-  display: flex;
-  flex-direction: column;
-  
-    @media (min-width: 768px){
-      flex-direction: row;
-    }
 `
 
 
@@ -157,13 +141,6 @@ const SiteFooterNav = styled.nav`
   }
 `
 
-const rightAlign = css`
-  text-align: left;
-  
-  @media (min-width: 768px){
-    text-align: right;
-  }
-`
 
 
 const LogoWrapper = styled.div`
@@ -177,18 +154,33 @@ const LogoWrapper = styled.div`
     text-align: center;
 `
 
+// Centered content container blocks
+export const inner = css`
+  //add next line because weird style bug, first line will be ignored
+  color: #fff;
+  margin: 0 auto;
+  max-width: 1040px;
+  width: 100%;
+`;
+
+export const outer = css`
+  position: relative;
+  padding: 0 4vw;
+`;
+
+const flex = css`
+  //add next line because weird style bug, first line will be ignored
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  
+    @media (min-width: 768px){
+      flex-direction: row;
+    }
+`;
+
+
 const Footer = () => {
-    const data = useStaticQuery(graphql`
-        query BrendanImageQuery {
-            file(relativePath: {regex: "/BrendanCorrEtched.png/"}) {
-                childImageSharp {
-                    fluid(maxWidth: 1000, jpegProgressive: true, fit: CONTAIN) {
-                        src
-                    }
-                }
-            }
-        }
-    `)
 
     // const { author, social } = data.site.siteMetadata
     return (
@@ -197,9 +189,9 @@ const Footer = () => {
                 <div css={[inner, flex]}>
                     <Column>
                         <LogoWrapper>
-                            <SiteNavLogo />
+                            <AccLogo />
                         </LogoWrapper>
-                        <p css={[rightAlign]}><i style={{color: '#fff'}}>Transforming young lives spiritually, academically, socially and physically.</i></p>
+                        <p className="rightAlign"><i style={{color: '#fff'}}>Transforming young lives spiritually, academically, socially and physically.</i></p>
                     </Column>
                     <Column>
                         <SiteFooterNav>

@@ -52,6 +52,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       component: jobTemplate,
       context: {
         job: node,
+        id: node.id,
       }
     });
   });
@@ -65,7 +66,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       path: `${_.kebabCase(node.jobLocation)}/`,
       component: locationsTemplate,
       context: {
-        jobsLocation: place
+        jobsLocation: place,
+        id: node.id,
       },
     });
   });

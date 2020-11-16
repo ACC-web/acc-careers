@@ -1,7 +1,22 @@
 import React from "react";
 // import styled from "@emotion/styled";
-import { List } from '../../styles/shared.ts';
 
+const List = styled.ul`
+    list-style-type: none;
+    padding: 0;
+    li{    
+      padding: 0;
+      a{
+          font-size: inherit;
+          margin: 0;
+          color: inherit;
+          
+          :hover{
+          }
+      }
+    }
+   
+`
 
 class EGuides extends React.Component {
 

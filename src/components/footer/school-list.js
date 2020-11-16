@@ -1,5 +1,4 @@
 import React from 'react';
-import {List, Heading2} from '../../styles/shared.ts';
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
@@ -11,6 +10,24 @@ const Wrapper = styled.div`
 `
 
 
+const List = styled.ul`
+    list-style-type: none;
+    padding: 0;
+
+    
+    li{    
+      padding: 0;
+      a{
+          font-size: inherit;
+          margin: 0;
+          color: inherit;
+          
+          :hover{
+          }
+      }
+    }
+   
+`
 
 
 const Item = styled.li`
@@ -18,8 +35,14 @@ const Item = styled.li`
     margin: 0.2em 0;
     color: #fff;
     line-height: 1.4;
-   
-     
+`
+
+const Heading2 = styled.h2`
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0;
+    margin-top: 0;
 `
 
 class SchoolList extends React.Component {
@@ -31,6 +54,7 @@ class SchoolList extends React.Component {
         <List>
           <Item><a target="_blank" rel="noopener noreferrer"  href="https://www.acc.edu.au/moreton/index.html">Moreton, QLD</a></Item>
           <Item><a target="_blank" rel="noopener noreferrer"  href="https://www.acc.edu.au/singleton/index.html">Singleton, NSW</a></Item>
+          <Item><a target="_blank" rel="noopener noreferrer"  href="https://brightwaterschristiancollege.com.au/">Brightwaters, NSW</a></Item>
           <Item><a target="_blank" rel="noopener noreferrer"  href="https://www.acc.edu.au/marsdenpark/index.html">Marsden Park, NSW</a></Item>
           <Item><a target="_blank" rel="noopener noreferrer"  href="https://www.acc.edu.au/hume/index.html">Hume, VIC</a></Item>
           <Item><a target="_blank" rel="noopener noreferrer"  href="https://www.acc.edu.au/darlingdowns/index.html">Darling Downs, WA</a></Item>

@@ -13,25 +13,15 @@ const SiteHeader = styled.div`
   background-size: cover;
   
   &>a{z-index:9999}
-  
-
 `;
 
 const HeaderOuter = styled.div`
   position: relative;
   padding: 0;
-`;
-
-const inner = styled.div`
-  margin: 0 auto;
-  max-width: 1040px;
-  width: 100%;
-`;
-
-
-const SiteHeaderContent = styled.div`
-
-div{
+  display: flex;
+  justify-content: space-between;
+  
+  div{
     display:block;
     width: 250px;
     height: auto;
@@ -59,17 +49,35 @@ div{
       text-decoration: none;
     }
   }
-`
+`;
+
+const inner = styled.div`
+  margin: 0 auto;
+  max-width: 1040px;
+  width: 100%;
+`;
+
+const LogoWrapper = styled.div`
+    height: 73px;
+    width: 70%;
+    max-width: 255px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+`;
+
 
 class HeaderArea extends React.Component {
     render() {
         return (
             <SiteHeader>
                 <HeaderOuter>
-                    <SiteHeaderContent>
+                    <LogoWrapper>
                         <AccLogo className="logo" />
-                        <SiteNav/>
-                    </SiteHeaderContent>
+                    </LogoWrapper>
+                    <SiteNav/>
                 </HeaderOuter>
             </SiteHeader>
         )

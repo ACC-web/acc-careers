@@ -2,7 +2,6 @@ import React from 'react'
 import { graphql, StaticQuery, Link } from 'gatsby'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
-import { Heading2 } from '../styles/shared'
 
 const TwitterContainer = styled.div`
     .header{
@@ -33,6 +32,14 @@ const TwitterContainer = styled.div`
           color: #fff;
         }
     }
+`
+
+const Heading2 = styled.h2`
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0;
+    margin-top: 0;
 `
 
 const TweetItem = styled.div`
