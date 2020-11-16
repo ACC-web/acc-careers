@@ -4,7 +4,24 @@ import styled from "styled-components"
 
 
 const Logo = styled.svg`
-   
+
+  flex-shrink: 0;
+  display: block;
+  margin-right: 24px;
+  padding: 0;
+  color: #fff;
+  font-size: 1.7rem;
+  line-height: 1em;
+  font-weight: bold;
+  letter-spacing: -0.5px;
+  
+  height: auto;
+  width: 100%;
+
+    :hover {
+      text-decoration: none;
+    }
+ 
   
 `;
 

@@ -1,13 +1,14 @@
+import { graphql, Link } from 'gatsby'
 import React, { Component } from 'react'
 import * as typeformEmbed from '@typeform/embed'
 
-class Typeform extends Component({ link }){
+class Typeform extends Component {
 
     componentDidMount(){
         // url = link
-        // console.log( {link} )
+        console.log( `heya this ${this.props.link}` )
         const popup1 = typeformEmbed.makePopup(
-            '{link}',
+            `${this.props.link}`,
             {
                 mode: 'popup',
                 autoClose: 3000,

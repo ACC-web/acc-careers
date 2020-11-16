@@ -1,19 +1,13 @@
 import React from "react"
-import PropTypes from "prop-types"
 // Utilities
-import kebabCase from "lodash/kebabCase"
 // Components
 import { Helmet } from "react-helmet"
 import { Link, graphql } from "gatsby"
 
 //other stuff
-import get from 'lodash/get'
 import Hero from '../components/hero'
 import Layout from '../components/layout'
-import ArticlePreview from '../components/article-preview'
-import Typeform from "../components/typeform-button";
 
-import heroStyles from '../components/hero.module.css'
 import styled from "styled-components";
 
 const Top = styled.div`

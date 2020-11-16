@@ -45,9 +45,9 @@ const Background = styled(Img)`
 
 
 export default function Hero({ title }) {
-    const data = useStaticQuery(graphql`
+    const imagedata = useStaticQuery(graphql`
         query {
-            contentfulAsset(id: {in: "19dbb445-8033-5a6d-b042-9448a050575f"}) {
+            contentfulAsset(file: {fileName: {in: "Teacher_Primary_Classroom-11.jpg"}}) {
                 id
                 fluid(maxWidth: 2000, quality: 90, cropFocus: CENTER) {
                     ...GatsbyContentfulFluid_withWebp
@@ -60,8 +60,8 @@ export default function Hero({ title }) {
         <Wrapper>
             <Background
                 className="background-image"
-                fluid={data.contentfulAsset.fluid}
-                alt={data.contentfulAsset.title}
+                fluid={imagedata.contentfulAsset.fluid}
+                alt={imagedata.contentfulAsset.title}
                 objectFit="cover"
                 objectPosition="50% 50%"
                 style={{position: ""}}

@@ -87,6 +87,22 @@ const SiteNavRight = styled.div`
   display: flex;
   align-items: center;
   height: 40px;
+  
+  .menuToggle{
+    right: 0;
+    top: 0;
+    margin: 1rem;
+    position: absolute;
+    display: inline-block;
+    padding: .75em 15px;
+    line-height: 1em;
+    font-size: 1em;
+    color: #fff;
+    
+    @media(min-width: 950px){
+      display: none;
+    }
+  }
 `;
 
 const SocialLinks = styled.div`
@@ -232,9 +248,9 @@ class SiteNav extends React.Component {
           <SiteNavRight>
             <div className="hamburger-menu">
               <a href="#main-menu"
-                 className="menu-toggle"
+                 className="menuToggle"
                  role="button"
-                 id="main-menu-toggle"
+                 id="main-menuToggle"
                  aria-expanded="false"
                  aria-controls="main-menu"
                  aria-label="Open main menu"
@@ -263,7 +279,7 @@ class SiteNav extends React.Component {
                    aria-expanded="false"
                    aria-label="Main menu"
               >
-                <a href="#main-menu-toggle"
+                <a href="#main-menuToggle"
                    className="menu-close"
                    role="button"
                    id="main-menu-close"
@@ -350,7 +366,7 @@ class SiteNav extends React.Component {
                   </li>
                 </ul>
               </div>
-              <a href="#main-menu-toggle"
+              <a href="#main-menuToggle"
                  className="backdrop"
                  tabIndex="-1"
                  aria-hidden="true"

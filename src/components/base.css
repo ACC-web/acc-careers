@@ -839,14 +839,22 @@ html {
 #main-menu ul {
   list-style: none;
   text-align:center;
-  margin: 6rem 0 1rem 0;
-  padding: 2.5em 0 0;
+  margin: 3rem 0 1rem 0;
+  padding: 2.5rem 0 0;
 
+}
+
+#main-menu ul ul{
+  margin: 1rem 0 1rem 0;
+}
+
+#main-menu h3{
+  color:#fff;
 }
 
 #main-menu li{
   border-bottom: 1px solid #414B56;
-  padding: 1.5rem 0 1.5rem 0;
+  padding: 1rem 0 1rem 0;
 }
 
 #main-menu li:first-of-type {
@@ -992,10 +1000,10 @@ body.school-list-open #MainNav .reveal{
 /*
  Larger screen styling  Horizontal menu
 */
-@media (min-width: 768px) {
+@media (min-width: 950px) {
 
 
-  .menu-toggle,
+  .menuToggle,
   #main-menu .menu-close {
     display: none;
   }
@@ -1169,7 +1177,7 @@ body.school-list-open #MainNav .reveal{
   -moz-transition-timing-function: cubic-bezier(0.86, 0.01, 0.77, 0.78);
   transition-timing-function: cubic-bezier(0.86, 0.01, 0.77, 0.78);*/
 }
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 950px){
   /* logo color change on menu open */
   .navigation-is-open .grey5-fill{
     fill: #fff;
@@ -1390,7 +1398,7 @@ body.school-list-open #MainNav .reveal{
 
 
 /*containers for the on campus and online page lists*/
-@media only screen and (min-width:768px) {
+@media only screen and (min-width:950px) {
   #cd-nav{  width: auto;}
 
   .cd-nav-trigger {
@@ -1566,7 +1574,7 @@ body.school-list-open #MainNav .reveal{
   transform: rotate(90deg);
 }
 
-@media(min-width: 768px) {
+@media(min-width: 950px) {
 
 
   #main-menu li .megaMenu{

@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { graphql, Link } from 'gatsby'
+import React from 'react'
+import { graphql } from 'gatsby'
 import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
 import Hero from '../components/hero'
@@ -81,17 +81,17 @@ const Wrapper = styled.section`
     }
 `
 
-const LocationsCount = styled.ul`
-  padding: 0;
-  margin: 1rem 0;
-  li{
-    list-style-type: none;
-    
-    a{
-      color: #646E78;
-    }
-  }
-`
+// const LocationsCount = styled.ul`
+//   padding: 0;
+//   margin: 1rem 0;
+//   li{
+//     list-style-type: none;
+//
+//     a{
+//       color: #646E78;
+//     }
+//   }
+// `
 
 const JobsContainer = styled.div`
   width: 100%;
@@ -188,11 +188,13 @@ class RootIndex extends React.Component  {
                 </li>
             )
           }
+          // not sure if this is supose to be here, but I thinkit hides an error. see here: https://stackoverflow.com/questions/45014094/how-do-i-fix-expected-to-return-a-value-at-the-end-of-arrow-function-warning
+          // return null
         }
     );
 
     const animatedComponents = makeAnimated();
-    const title = `CAREERS`
+    // const title = `CAREERS`
 
 
     return (
