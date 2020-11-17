@@ -30,7 +30,7 @@ class AccLogo extends React.Component {
 
   render() {
     return (
-      <div>
+      <>
         <a name="Link to homepage" href="https://www.acc.edu.au/index.html">
             <Logo id="acc-logo" className="Logo" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 447.8 111.1">
                 <path style={{ fill: '#ffffff'}} d="M100.1 11.1C90.2 5.8 76.2.7 50.7.7 26.1.7 13.2 5.2 1.3 11c-1.1.6-1.5 42.5 9.9 64.8 12.1 23.5 28.5 29.8 39.5 34.5 11-4.7 27.4-10.9 39.5-34.5 11.4-22.2 11-64.1 9.9-64.7z"/>
@@ -60,7 +60,7 @@ class AccLogo extends React.Component {
                 </g>
             </Logo>
         </a>
-      </div>
+      </>
     );
   }
 

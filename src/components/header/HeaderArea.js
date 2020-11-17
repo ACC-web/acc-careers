@@ -20,12 +20,7 @@ const HeaderOuter = styled.div`
   padding: 0;
   display: flex;
   justify-content: space-between;
-  
-  div{
-    display:block;
-    width: 250px;
-    height: auto;
-}
+ 
     
   .logo{
    
