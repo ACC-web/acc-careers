@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import {graphql, Link} from 'gatsby'
 import get from 'lodash/get'
 import { Helmet } from 'react-helmet'
 import Hero from '../components/hero'
@@ -152,21 +152,31 @@ class RootIndex extends React.Component  {
 
   render( data ) {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
+    const Mor = get(this, 'props.data.moreton.totalCount')
+    const Sing = get(this, 'props.data.singleton.totalCount')
+    const Mp = get(this, 'props.data.marsdenpark.totalCount')
+    const Hume = get(this, 'props.data.hume.totalCount')
+    const Dar = get(this, 'props.data.darlingdowns.totalCount')
+    const Sou = get(this, 'props.data.southlands.totalCount')
+    const Hob = get(this, 'props.data.hobart.totalCount')
+    const Bur = get(this, 'props.data.burnie.totalCount')
+    const Lau = get(this, 'props.data.launceston.totalCount')
+    const Bright = get(this, 'props.data.brightwaters.totalCount')
 
     const job = get(this, 'props.data.allContentfulJob.edges')
     // Select options
     // const locationOptions = get(this, 'props.data.allContentfulJob.edges.node')
     const locationOptions = [
-        { value: 'moreton (QLD)', label: 'Moreton (QLD)' },
-        { value: 'marsden park', label: 'Brightwaters (NSW)' },
-        { value: 'marsden park', label: 'Singleton (NSW)' },
-        { value: 'marsden park', label: 'Marsden Park (NSW)' },
-        { value: 'marsden park', label: 'Hume (VIC)' },
-        { value: 'marsden park', label: 'Darling Downs (WA)' },
-        { value: 'marsden park', label: 'Southlands (SOU)' },
-        { value: 'marsden park', label: 'Burnie (TAS)' },
-        { value: 'marsden park', label: 'Hobart (TAS)' },
-        { value: 'marsden park', label: 'Launceston (TAS)' },
+        { value: 'Moreton (QLD)', label: 'Moreton (QLD)',},
+        { value: 'Brightwaters (NSW)', label: 'Brightwaters (NSW)',},
+        { value: 'Singleton (NSW)', label: 'Singleton (NSW)',},
+        { value: 'Marsden Park (NSW)', label: 'Marsden Park (NSW)',},
+        { value: 'Hume (VIC)', label: 'Hume (VIC)',},
+        { value: 'Darling Downs (WA)', label: 'Darling Downs (WA)',},
+        { value: 'Southlands (SOU)', label: 'Southlands (SOU)',},
+        { value: 'Burnie (TAS)', label: 'Burnie (TAS)',},
+        { value: 'Hobart (TAS)', label: 'Hobart (TAS)',},
+        { value: 'Launceston (TAS)', label: 'Launceston (TAS)'},
     ];
     const { selectedOption } = this.state;
 
@@ -227,7 +237,19 @@ class RootIndex extends React.Component  {
                         onChange={this.handleChange}
                     />
                     <br />
-                    <LocationList />
+                    {/*<LocationList />*/}
+                    <ul>
+                        <li><Link to="/moreton-qld">Moreton ({Mor})</Link></li>
+                        <li><Link to="/singleton-nsw">Singleton ({Sing})</Link></li>
+                        <li><Link to="/brightwaters-nsw">Brightwaters ({Bright})</Link></li>
+                        <li><Link to="/marsden-park-nsw">Marsden Park ({Mp})</Link></li>
+                        <li><Link to="/hume-vic">Hume ({Hume})</Link></li>
+                        <li><Link to="/darling-downs-wa">Darling Downs ({Dar})</Link></li>
+                        <li><Link to="/southland-wa">Southlands ({Sou})</Link></li>
+                        <li><Link to="/burnie">Burnie ({Bur})</Link></li>
+                        <li><Link to="/hobart-tas">Hobart ({Hob})</Link></li>
+                        <li><Link to="/launceston-tas">Launceston ({Lau})</Link></li>
+                    </ul>
                 </FilterColumn>
                 <JobsList>
                     <ul className="article-list">
@@ -267,6 +289,36 @@ export const pageQuery = graphql`
                     slug
                 }
             }
+        }
+        moreton: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Moreton (QLD)"}}}) {
+            totalCount
+        }
+        singleton: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Singleton (NSW)"}}}) {
+            totalCount
+        }
+        marsdenpark: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Marsden Park (NSW)"}}}) {
+            totalCount
+        }
+        brightwaters: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Brightwaters (NSW)"}}}) {
+            totalCount
+        }
+        hume: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Hume (VIC)"}}}) {
+            totalCount
+        }
+        darlingdowns: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Darling Downs (WA)"}}}) {
+            totalCount
+        }
+        southlands: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Southlands (WA)"}}}) {
+            totalCount
+        }
+        burnie: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Burnie (TAS)"}}}) {
+            totalCount
+        }
+        hobart: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Hobart (TAS)"}}}) {
+            totalCount
+        }
+        launceston: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Launceston (TAS)"}}}) {
+            totalCount
         }
         site {
             siteMetadata {
