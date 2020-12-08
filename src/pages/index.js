@@ -203,8 +203,35 @@ class RootIndex extends React.Component  {
         }
     );
 
+
+    //////////////////////////////////////////
+
+      let setFilterItem = (event) => {
+          event.preventDefault();
+          if(event.target.id && typeof event.target.id === typeof "") {
+              let optionFilterText = event.target.id;
+              let selectedFilter = locationOptions.find(obj => {
+                  return obj.value === optionFilterText;
+              })
+              let existingFilters = [];
+              if(selectedOption){
+                  existingFilters = existingFilters.concat(selectedOption);
+              }
+              //If its not in the existing filters add it. Prevent duplication.
+              existingFilters.push(selectedFilter);
+              console.log("Selected Filter is: " + selectedFilter);
+              console.log(existingFilters);
+              this.setState(
+                  {selectedOption: existingFilters}
+              );
+          }
+      }
+    ///////////////////////////////////////////
+
+
     const animatedComponents = makeAnimated();
     // const title = `CAREERS`
+
 
 
     return (
@@ -239,16 +266,16 @@ class RootIndex extends React.Component  {
                     <br />
                     {/*<LocationList />*/}
                     <ul>
-                        <li><Link to="/moreton-qld">Moreton ({Mor})</Link></li>
-                        <li><Link to="/singleton-nsw">Singleton ({Sing})</Link></li>
-                        <li><Link to="/brightwaters-nsw">Brightwaters ({Bright})</Link></li>
-                        <li><Link to="/marsden-park-nsw">Marsden Park ({Mp})</Link></li>
-                        <li><Link to="/hume-vic">Hume ({Hume})</Link></li>
-                        <li><Link to="/darling-downs-wa">Darling Downs ({Dar})</Link></li>
-                        <li><Link to="/southland-wa">Southlands ({Sou})</Link></li>
-                        <li><Link to="/burnie">Burnie ({Bur})</Link></li>
-                        <li><Link to="/hobart-tas">Hobart ({Hob})</Link></li>
-                        <li><Link to="/launceston-tas">Launceston ({Lau})</Link></li>
+                        <li><Link to={"#"} id={"Moreton (QLD)"} onClick={setFilterItem}>Moreton ({Mor})</Link></li>
+                        <li><Link to={"#"} id={"Singleton (NSW)"} onClick={setFilterItem}>Singleton ({Sing})</Link></li>
+                        <li><Link to={"#"} id={"Brightwaters (NSW)"} onClick={setFilterItem}>Brightwaters ({Bright})</Link></li>
+                        <li><Link to={"#"} id={"Marsden Park (NSW)"} onClick={setFilterItem}>Marsden Park ({Mp})</Link></li>
+                        <li><Link to={"#"} id={"Hume (VIC)"} onClick={setFilterItem}>Hume ({Hume})</Link></li>
+                        <li><Link to={"#"} id={"Darling Downs (WA)"} onClick={setFilterItem}>Darling Downs ({Dar})</Link></li>
+                        <li><Link to={"#"} id={"Southlands (SOU)"} onClick={setFilterItem}>Southlands ({Sou})</Link></li>
+                        <li><Link to={"#"} id={"Burnie (TAS)"} onClick={setFilterItem}>Burnie ({Bur})</Link></li>
+                        <li><Link to={"#"} id={"Hobart (TAS)"} onClick={setFilterItem}>Hobart ({Hob})</Link></li>
+                        <li><Link to={"#"} id={"Launceston (TAS)"} onClick={setFilterItem}>Launceston ({Lau})</Link></li>
                     </ul>
                 </FilterColumn>
                 <JobsList>
