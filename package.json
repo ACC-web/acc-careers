@@ -1,5 +1,5 @@
 {
-  "name": "ACC Careers",
+  "name": "ACC_Careers",
   "description": "A list of jobs available around the country.",
   "private": true,
   "version": "0.0.1",
@@ -55,6 +55,7 @@
     "postinstall": "node ./bin/hello.js",
     "setup": "node ./bin/setup.js",
     "netlify:login": "netlify login",
-    "netlify:deploy": "netlify deploy -d public -p"
+    "netlify:deploy": "netlify deploy -d public -p",
+    "clean": "gatsby clean"
   }
 }
