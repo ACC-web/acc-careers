@@ -19,7 +19,6 @@
     "gatsby-source-contentful": "^2.3.17",
     "gatsby-source-rss-feed": "^1.2.2",
     "gatsby-source-twitter": "^3.2.2",
-    "gatsby-source-vimeo-all": "0.0.18",
     "gatsby-transformer-remark": "^2.8.18",
     "gatsby-transformer-sharp": "^2.5.21",
     "gh-pages": "^3.1.0",

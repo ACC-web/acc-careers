@@ -7,6 +7,7 @@ import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 import styled from "styled-components"
 import LocationList from "../components/locations-list"
+import VideoGallery from '../components/video-gallery'
 
 //Select Imports
 //https://react-select.com/home
@@ -284,6 +285,7 @@ class RootIndex extends React.Component  {
                     </ul>
                 </JobsList>
             </JobsContainer>
+              <VideoGallery />
           </Wrapper>
         </div>
       </Layout>

@@ -72,18 +72,5 @@ module.exports = {
         }
       }
     },
-    {
-      resolve: 'gatsby-source-vimeo-all',
-      options: {
-        clientId: '9aec5b2b8284aecd506c534e1fa959f2d33e39c0',
-        clientSecret: 'ZYUemUrhBOuVnL5zo4DnsMJokjqh+cVATkUgUIzjpjoj7LxIxqY3bWSL2oGY4xwCDHU97AfoUftJwI+qLVrrfYFRdVr4uPUar4aVpK5gO8uBmlwvg6og9ke+702UuLlr',
-        accessToken: '9b737e34e27ea827c368f6cfb51ee3c1',
-      },
-      categories: [
-          {
-            "link": "https://vimeo.com/365660254",
-        }
-      ]
-    }
   ],
 };
