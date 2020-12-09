@@ -174,7 +174,7 @@ class RootIndex extends React.Component  {
         { value: 'Marsden Park (NSW)', label: 'Marsden Park (NSW)',},
         { value: 'Hume (VIC)', label: 'Hume (VIC)',},
         { value: 'Darling Downs (WA)', label: 'Darling Downs (WA)',},
-        { value: 'Southlands (SOU)', label: 'Southlands (SOU)',},
+        { value: 'Southlands (WA)', label: 'Southlands (WA)',},
         { value: 'Burnie (TAS)', label: 'Burnie (TAS)',},
         { value: 'Hobart (TAS)', label: 'Hobart (TAS)',},
         { value: 'Launceston (TAS)', label: 'Launceston (TAS)'},
@@ -273,7 +273,7 @@ class RootIndex extends React.Component  {
                         <li><Link to="/marsden-park-nsw" id={"Marsden Park (NSW)"} onClick={setFilterItem}>Marsden Park ({Mp})</Link></li>
                         <li><Link to="/hume-vic" id={"Hume (VIC)"} onClick={setFilterItem}>Hume ({Hume})</Link></li>
                         <li><Link to="/darling-downs-wa" id={"Darling Downs (WA)"} onClick={setFilterItem}>Darling Downs ({Dar})</Link></li>
-                        <li><Link to="/southland-wa" id={"Southlands (SOU)"} onClick={setFilterItem}>Southlands ({Sou})</Link></li>
+                        <li><Link to="/southland-wa" id={"Southlands (WA)"} onClick={setFilterItem}>Southlands ({Sou})</Link></li>
                         <li><Link to="/burnie" id={"Burnie (TAS)"} onClick={setFilterItem}>Burnie ({Bur})</Link></li>
                         <li><Link to="/hobart-tas" id={"Hobart (TAS)"} onClick={setFilterItem}>Hobart ({Hob})</Link></li>
                         <li><Link to="/launceston-tas" id={"Launceston (TAS)"} onClick={setFilterItem}>Launceston ({Lau})</Link></li>
