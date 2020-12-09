@@ -245,7 +245,7 @@ class RootIndex extends React.Component  {
           <Wrapper>
             <section className="intro">
                 <h1>CAREERS</h1>
-              <p style={{fontSize: "1.3rem"}}>Discover your calling</p>
+              <h2>Discover your calling</h2>
               <p>Is God calling you to work in a vibrant and thriving organisation? Australian Christian Colleges are places with great culture, where genuine Christian faith is lived out in a high-performance environment.
                 The ACC Group offers career advancement across our schools network, a trainee principals programme and staff discounts on school fees and long day care (where available).
                 Please prayerfully consider the vacancies below.</p>

@@ -49,7 +49,7 @@ export default function Hero({ title }) {
         query {
             contentfulAsset(file: {fileName: {in: "Teacher_Primary_Classroom-11.jpg"}}) {
                 id
-                fluid(maxWidth: 2000, quality: 90, cropFocus: CENTER) {
+                fluid(maxWidth: 2000, quality: 75, cropFocus: CENTER) {
                     ...GatsbyContentfulFluid_withWebp
                 }
                 title
