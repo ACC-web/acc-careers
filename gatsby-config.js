@@ -61,15 +61,10 @@ module.exports = {
     {
       resolve: `gatsby-source-rss-feed`,
       options: {
-        url: `https://www.acc.edu.au/blog/rss.xml`,
-        name: `ACCBlog`,
+        url: `https://www.acc.edu.au/careers/rss.xml`,
+        name: `ACC-Careers`,
         // Optional
         // Read parser document: https://github.com/bobby-brennan/rss-parser#readme
-        parserOption: {
-          customFields: {
-            item: ['itunes:duration']
-          }
-        }
       }
     },
   ],

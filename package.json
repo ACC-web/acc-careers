@@ -1,11 +1,11 @@
 {
   "name": "ACC_Careers",
   "description": "A list of jobs available around the country.",
-  "private": true,
+  "private": false,
   "version": "0.0.1",
   "author": "Ricky H<rickyhobbs@acc.edu.au>",
   "bugs": {
-    "url": "https://github.com/contentful/starter-gatsby-blog/issues"
+    "url": "https://github.com/ACC-web/careers/issues"
   },
   "dependencies": {
     "@typeform/embed": "^0.25.6",
@@ -34,17 +34,16 @@
     "contentful-import": "^7.8.6",
     "netlify-cli": "^2.54.0"
   },
-  "homepage": "https://github.com/contentful/starter-gatsby-blog#readme",
+  "homepage": "https://www.acc.edu.au/careers/",
   "keywords": [
-    "gatsby",
-    "contentful",
-    "starter"
+    "acc",
+    "careers"
   ],
   "license": "MIT",
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/contentful/starter-gatsby-blog.git"
+    "url": "https://github.com/ACC-web/careers.git"
   },
   "scripts": {
     "dev": "gatsby develop",
