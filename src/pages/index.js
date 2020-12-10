@@ -152,7 +152,8 @@ class RootIndex extends React.Component  {
   };
 
   render( data ) {
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
+    const total = get(this, 'props.data.allContentfulJob.totalCount')
+      const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const Mor = get(this, 'props.data.moreton.totalCount')
     const Sing = get(this, 'props.data.singleton.totalCount')
     const Mp = get(this, 'props.data.marsdenpark.totalCount')
@@ -269,7 +270,7 @@ class RootIndex extends React.Component  {
                     <ul>
                         <li><Link to="/moreton-qld" id={"Moreton (QLD)"} onClick={setFilterItem}>Moreton ({Mor})</Link></li>
                         <li><Link to="/singleton-nsw" id={"Singleton (NSW)"} onClick={setFilterItem}>Singleton ({Sing})</Link></li>
-                        <li><Link to="/brightwaters-nsw" id={"Brightwaters (NSW)"} onClick={setFilterItem}>Brightwaters ({Bright})</Link></li>
+                        {/*<li><Link to="/brightwaters-nsw" id={"Brightwaters (NSW)"} onClick={setFilterItem}>Brightwaters ({Bright})</Link></li>*/}
                         <li><Link to="/marsden-park-nsw" id={"Marsden Park (NSW)"} onClick={setFilterItem}>Marsden Park ({Mp})</Link></li>
                         <li><Link to="/hume-vic" id={"Hume (VIC)"} onClick={setFilterItem}>Hume ({Hume})</Link></li>
                         <li><Link to="/darling-downs-wa" id={"Darling Downs (WA)"} onClick={setFilterItem}>Darling Downs ({Dar})</Link></li>
@@ -278,6 +279,8 @@ class RootIndex extends React.Component  {
                         <li><Link to="/hobart-tas" id={"Hobart (TAS)"} onClick={setFilterItem}>Hobart ({Hob})</Link></li>
                         <li><Link to="/launceston-tas" id={"Launceston (TAS)"} onClick={setFilterItem}>Launceston ({Lau})</Link></li>
                     </ul>
+                    {/*<p style={{ marginLeft: '1.5rem', marginTop: '1rem', fontSize: '85%' }}>Total: {total}</p>*/}
+
                 </FilterColumn>
                 <JobsList>
                     <ul className="article-list">
@@ -318,6 +321,7 @@ export const pageQuery = graphql`
                     slug
                 }
             }
+            totalCount
         }
         moreton: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Moreton (QLD)"}}}) {
             totalCount

@@ -75,9 +75,8 @@ const JobTemplate = ({ data, location }) => {
                         <Hero title={title} className="hero" />
                     </Top>
                     <Wrapper>
-                        <p style={{display: 'block',}} className="smaller">
-                            Job posted at: {job.createdAt}
-                        </p>
+                        {/*todo: once we have a good batch of fresh jobs I will enable the posted on content, because its currently got the same date. v2*/}
+                        {/*<p style={{display: 'block',}} className="smaller">Job posted at: {job.createdAt}</p>*/}
                         <div
                             dangerouslySetInnerHTML={{
                                 __html: job.jobDescription.childMarkdownRemark.html,
