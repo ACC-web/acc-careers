@@ -326,24 +326,7 @@ class SiteNav extends React.Component {
                     </ul>
                   </li>
                   <li role="menuitem">
-                    <a href="https://www.acc.edu.au/careers">Careers</a>
-                    <ul className="megaMenu " id="careers">
-                      <h3>Select a State</h3>
-                      <li><a rel="noreferrer"
-                             target="_blank"
-                             href="https://www.acc.edu.au/careers.html#qld">Queensland</a></li>
-                      <li><a target="_blank" href="https://www.acc.edu.au/careers.html#nsw">New
-                        South Wales</a></li>
-                      <li><a rel="noreferrer"
-                             target="_blank"
-                             href="https://www.acc.edu.au/careers.html#vic">Victoria</a></li>
-                      <li><a rel="noreferrer"
-                             target="_blank" href="https://www.acc.edu.au/careers.html#wa">Western
-                        Australia</a></li>
-                      <li><a rel="noreferrer"
-                             target="_blank"
-                             href="https://www.acc.edu.au/careers.html#tas">Tasmania</a></li>
-                    </ul>
+                    <a href="https://www.acc.edu.au/careers/">Careers</a>
                   </li>
                   <li css={ParentItem} role="menuitem">
                     <Link to="/"
