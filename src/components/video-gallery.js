@@ -52,33 +52,33 @@ export default () => (
                 <Video
                     className="video"
                     videoSrcURL="https://player.vimeo.com/video/365660254?title=0&byline=0&portrait=0"
-                    videoTitle="Cara Henley is a Year 2 teacher at ACC Moreton"
+                    videoTitle="Cara is a primary teacher at ACC Moreton"
                 />
-                <p>Cara Henley is a Year 2 teacher at ACC Moreton</p>
+                <p>Cara is a primary teacher at ACC Moreton</p>
             </VideoItem>
             <VideoItem>
                 <Video
                     className="video"
                     videoSrcURL="https://player.vimeo.com/video/362189902?title=0&byline=0&portrait=0"
-                    videoTitle="Allan Perry has been teaching at ACC Singleton for over 15 years"
+                    videoTitle="Allan has taught at ACC Singleton for 15+ yrs"
                 />
-                <p>Allan Perry has been teaching at ACC Singleton for over 15 years</p>
+                <p>Allan has taught at ACC Singleton for 15+ yrs</p>
             </VideoItem>
             <VideoItem>
                 <Video
                     className="video"
                     videoSrcURL="https://player.vimeo.com/video/362190120?title=0&byline=0&portrait=0"
-                    videoTitle="Jessica Charles is the K-2 Team Leader at ACC Marsden Park"
+                    videoTitle="Jess is K-2 Team Leader at ACC Marsden Park"
                 />
-                <p>Jessica Charles is the K-2 Team Leader at ACC Marsden Park</p>
+                <p>Jess is K-2 Team Leader at ACC Marsden Park</p>
             </VideoItem>
             <VideoItem>
                 <Video
                     className="video"
                     videoSrcURL="https://player.vimeo.com/video/362189991?title=0&byline=0&portrait=0"
-                    videoTitle="Emma Russel is the Year 9 Team Leader at ACC Marsden Park"
+                    videoTitle="Emma is Year 9 Team Leader at ACC Marsden Park"
                 />
-                <p>Emma Russel is the Year 9 Team Leader at ACC Marsden Park</p>
+                <p>Emma is Year 9 Team Leader at ACC Marsden Park</p>
             </VideoItem>
         </Wrapper>
     </div>
