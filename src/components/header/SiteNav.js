@@ -313,16 +313,24 @@ class SiteNav extends React.Component {
                     <ul class="megaMenu" id="schools">
                       <h3>Select a School</h3>
 
-                      <li role="menuitem"><a href="https://www.acc.edu.au/moreton/index.html">Moreton</a></li>
-                      <li role="menuitem"><a href="https://www.acc.edu.au/singleton/index.html">Singleton</a></li>
-                      <li role="menuitem"><a href="https://brightwaterschristiancollege.com.au/">Brightwaters</a></li>
-                      <li role="menuitem"><a href="https://www.acc.edu.au/marsdenpark/index.html">Marsden Park</a></li>
-                      <li role="menuitem"><a href="https://www.acc.edu.au/hume/index.html">Hume</a></li>
-                      <li role="menuitem"><a href="https://www.acc.edu.au/darlingdowns/index.html">Darling Downs</a></li>
-                      <li role="menuitem"><a href="https://www.acc.edu.au/southlands/index.html">Southlands</a></li>
-                      <li role="menuitem"><a href="https://www.acc.edu.au/burnie/index.html">Burnie</a></li>
-                      <li role="menuitem"><a href="https://www.acc.edu.au/launceston/index.html">Launceston</a></li>
-                      <li role="menuitem"><a href="https://www.acc.edu.au/hobart/index.html">Hobart</a></li>
+                      <li role="menuitem"><a href="https://www.acc.edu.au/moreton/index.html">Moreton, QLD</a></li>
+                      <li role="menuitem"><a href="https://www.acc.edu.au/singleton/index.html">Singleton, NSW</a></li>
+                      <li role="menuitem"><a href="https://brightwaterschristiancollege.com.au/">Brightwaters, NSW</a></li>
+                      <li role="menuitem"><a href="https://www.acc.edu.au/marsdenpark/index.html">Marsden Park, NSW</a></li>
+                      <li role="menuitem"><a href="https://www.acc.edu.au/hume/index.html">Hume, VIC</a></li>
+                      <li role="menuitem"><a href="https://www.acc.edu.au/darlingdowns/index.html">Darling Downs, WA</a></li>
+                      <li role="menuitem"><a href="https://www.acc.edu.au/southlands/index.html">Southlands, WA</a></li>
+                      <li role="menuitem"><a href="https://www.acc.edu.au/burnie/index.html">Burnie, TAS</a></li>
+                      <li role="menuitem"><a href="https://www.acc.edu.au/launceston/index.html">Launceston, TAS</a></li>
+                      <li role="menuitem"><a href="https://www.acc.edu.au/hobart/index.html">Hobart, TAS</a></li>
+                    </ul>
+                  </li>
+                  <li role="menuitem">
+                    <Link to="/" onClick={(PreventDefault) => document.body.classList.toggle('journals-list-open')}>Journals&nbsp;&nbsp;<span className="reveal"></span></Link>
+                    <ul className="megaMenu " id="careers">
+                      <h3 style={{ color: '#fff' }}>Select a Journal</h3>
+                      <li><a href="https://www.acc.edu.au/journals/academica/index.html">Academica</a></li>
+                      <li><a href="https://www.acc.edu.au/journals/excelencia/index.html">Excelencia</a></li>
                     </ul>
                   </li>
                   <li role="menuitem">

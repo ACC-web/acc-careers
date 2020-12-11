@@ -1039,6 +1039,7 @@ body.school-list-open #MainNav .reveal{
   #main-menu li {
     border-bottom: 0;
     padding: 1rem 0 1rem 0;
+    position: relative;
   }
 
   #main-menu li:first-of-type {
@@ -1581,18 +1582,19 @@ body.school-list-open #MainNav .reveal{
     display: none;
     visibility: hidden;
 
-    position: fixed;
-    top: 96px;
+    position: absolute;
+    top: 83px;
     right: 0;
     bottom: 0;
 
     left: unset;
     height: calc(100vh - 6rem);
     width: auto;
-    min-width: 650px;
+    min-width: unset;
     background-color: #2a333c;
 
     padding: 0 4vw 0 4vw;
+    margin-top: 0;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-end;
@@ -1609,6 +1611,7 @@ body.school-list-open #MainNav .reveal{
     color: #fff;
     font-size: 1.2rem;
     margin-bottom: .5rem;
+    white-space: nowrap;
   }
   #main-menu li .megaMenu{
     flex-direction: column;

@@ -157,6 +157,7 @@ class RootIndex extends React.Component  {
     const Mor = get(this, 'props.data.moreton.totalCount')
     const Sing = get(this, 'props.data.singleton.totalCount')
     const Mp = get(this, 'props.data.marsdenpark.totalCount')
+    const Erina = get(this, 'props.data.erina.totalCount')
     const Hume = get(this, 'props.data.hume.totalCount')
     const Dar = get(this, 'props.data.darlingdowns.totalCount')
     const Sou = get(this, 'props.data.southlands.totalCount')
@@ -173,6 +174,7 @@ class RootIndex extends React.Component  {
         { value: 'Brightwaters (NSW)', label: 'Brightwaters (NSW)',},
         { value: 'Singleton (NSW)', label: 'Singleton (NSW)',},
         { value: 'Marsden Park (NSW)', label: 'Marsden Park (NSW)',},
+        { value: 'Erina (NSW)', label: 'Erina (NSW)',},
         { value: 'Hume (VIC)', label: 'Hume (VIC)',},
         { value: 'Darling Downs (WA)', label: 'Darling Downs (WA)',},
         { value: 'Southlands (WA)', label: 'Southlands (WA)',},
@@ -275,6 +277,7 @@ class RootIndex extends React.Component  {
                         <li><Link to="/singleton-nsw" id={"Singleton (NSW)"} onClick={setFilterItem}>Singleton ({Sing})</Link></li>
                         {/*<li><Link to="/brightwaters-nsw" id={"Brightwaters (NSW)"} onClick={setFilterItem}>Brightwaters ({Bright})</Link></li>*/}
                         <li><Link to="/marsden-park-nsw" id={"Marsden Park (NSW)"} onClick={setFilterItem}>Marsden Park ({Mp})</Link></li>
+                        <li><Link to="/erina-nsw" id={"Erina (NSW)"} onClick={setFilterItem}>Erina ({Erina})</Link></li>
                         <li><Link to="/hume-vic" id={"Hume (VIC)"} onClick={setFilterItem}>Hume ({Hume})</Link></li>
                         <li><Link to="/darling-downs-wa" id={"Darling Downs (WA)"} onClick={setFilterItem}>Darling Downs ({Dar})</Link></li>
                         <li><Link to="/southland-wa" id={"Southlands (WA)"} onClick={setFilterItem}>Southlands ({Sou})</Link></li>
@@ -333,6 +336,9 @@ export const pageQuery = graphql`
             totalCount
         }
         marsdenpark: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Marsden Park (NSW)"}}}) {
+            totalCount
+        }
+        erina: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Erina (NSW)"}}}) {
             totalCount
         }
         brightwaters: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Brightwaters (NSW)"}}}) {
