@@ -306,7 +306,7 @@ export default RootIndex
 
 export const pageQuery = graphql`
     query HomeQuery {
-        allContentfulJob(sort: {order: ASC, fields: createdAt}) {
+        allContentfulJob(sort: {order: DESC, fields: createdAt}) {
             edges {
                 node {
                     jobTitle
