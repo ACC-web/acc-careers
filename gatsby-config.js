@@ -25,6 +25,9 @@ if (!spaceId || !accessToken) {
 module.exports = {
   siteMetadata: {
     title: "ACC Careers",
+    siteUrl: `https://www.acc.edu.au`,
+    author: 'ACC',
+    description: 'Career opportunities at the nation-wide Australian Christian College (ACC) network of schools?',
   },
   pathPrefix: "/careers",
   plugins: [
@@ -114,5 +117,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
+    'gatsby-plugin-sitemap',
   ],
 };
