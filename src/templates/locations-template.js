@@ -88,7 +88,7 @@ const locationsTemplate = ({ pageContext, data, location }) => {
                                     return (
                                         <li key={id}>
                                             <Link to={slug}>{title}</Link>
-                                            <p className="smaller">Job posted on: {date}</p>
+                                            {/*<p className="smaller">Job posted on: {date}</p>*/}
                                         </li>
                                     )
                                 })}
@@ -111,7 +111,7 @@ export default locationsTemplate
 
 export const pageQuery = graphql`
     query LocationTemplateQuery($jobsLocation: String) {
-        allContentfulJob(filter: {jobLocation: {jobLocation: {eq: $jobsLocation}}}, sort: {order: ASC, fields: createdAt}) {
+        allContentfulJob(filter: {jobLocation: {jobLocation: {eq: $jobsLocation}}}, sort: {order: DESC, fields: createdAt}) {
             edges {
                 node {
                     id
