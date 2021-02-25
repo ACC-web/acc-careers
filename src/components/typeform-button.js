@@ -1,4 +1,3 @@
-import { graphql, Link } from 'gatsby'
 import React, { Component } from 'react'
 import * as typeformEmbed from '@typeform/embed'
 

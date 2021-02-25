@@ -1,10 +1,7 @@
 //https://www.gatsbyjs.org/packages/gatsby-source-rss-feed/
-import {graphql, Link, useStaticQuery} from 'gatsby'
+import {graphql, useStaticQuery} from 'gatsby'
 import * as React from 'react'
 import styled from 'styled-components'
-
-import get from 'lodash/get'
-
 
 const Wrapper = styled.div`
   p.small{
@@ -53,8 +50,6 @@ const LatestBlogPosts = () => {
             }
         }
     `)
-
-    const blogpost = get(this, 'props.data.blogitems.edges')
 
     // const { author, social } = data.site.siteMetadata
     return (

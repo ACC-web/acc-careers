@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {graphql, Link, useStaticQuery} from "gatsby";
-import get from 'lodash/get'
 import styled from "styled-components";
 
 const List = styled.ul`

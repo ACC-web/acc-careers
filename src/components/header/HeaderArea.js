@@ -20,18 +20,6 @@ const HeaderOuter = styled.div`
   padding: 0;
   display: flex;
   justify-content: space-between;
- 
-    
-  .logo{
-   
-  }
-  
-`;
-
-const inner = styled.div`
-  margin: 0 auto;
-  max-width: 1040px;
-  width: 100%;
 `;
 
 const LogoWrapper = styled.div`

@@ -1593,7 +1593,7 @@ body.school-list-open #MainNav .reveal{
     min-width: unset;
     background-color: #2a333c;
 
-    padding: 0 4vw 0 4vw;
+    padding: 0 2rem 0 2rem;
     margin-top: 0;
     flex-direction: column;
     justify-content: flex-start;
@@ -1633,6 +1633,7 @@ body.school-list-open #MainNav .reveal{
     height: 1.3rem;
     padding: 0;
     display: inline;
+    white-space: nowrap;
   }
 
   #main-menu li .megaMenu li a:hover{

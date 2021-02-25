@@ -6,7 +6,6 @@ import Hero from '../components/hero'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 import styled from "styled-components"
-import LocationList from "../components/locations-list"
 import VideoGallery from '../components/video-gallery'
 
 //Select Imports
@@ -152,7 +151,6 @@ class RootIndex extends React.Component  {
   };
 
   render( data ) {
-    const total = get(this, 'props.data.allContentfulJob.totalCount')
       const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const Mor = get(this, 'props.data.moreton.totalCount')
     const Sing = get(this, 'props.data.singleton.totalCount')
@@ -164,14 +162,13 @@ class RootIndex extends React.Component  {
     const Hob = get(this, 'props.data.hobart.totalCount')
     const Bur = get(this, 'props.data.burnie.totalCount')
     const Lau = get(this, 'props.data.launceston.totalCount')
-    const Bright = get(this, 'props.data.brightwaters.totalCount')
 
     const job = get(this, 'props.data.allContentfulJob.edges')
     // Select options
     // const locationOptions = get(this, 'props.data.allContentfulJob.edges.node')
     const locationOptions = [
         { value: 'Moreton (QLD)', label: 'Moreton (QLD)',},
-        { value: 'Brightwaters (NSW)', label: 'Brightwaters (NSW)',},
+        // { value: 'Brightwaters (NSW)', label: 'Brightwaters (NSW)',},
         { value: 'Singleton (NSW)', label: 'Singleton (NSW)',},
         { value: 'Marsden Park (NSW)', label: 'Marsden Park (NSW)',},
         { value: 'Erina (NSW)', label: 'Erina (NSW)',},

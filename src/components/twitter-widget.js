@@ -1,7 +1,6 @@
 import React from 'react'
-import { graphql, StaticQuery, Link } from 'gatsby'
+import { graphql, StaticQuery } from 'gatsby'
 import styled from 'styled-components'
-import Img from 'gatsby-image'
 
 const TwitterContainer = styled.div`
     .header{
@@ -55,37 +54,6 @@ const TweetItem = styled.div`
         color: #fff;
       }
     }                   
-`
-
-const UserInfo = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 1rem;
-`
-
-const ProfileImage = styled.img`
-  border-radius: 100%;
-  width: 40px;
-  height: 40px;
-`
-
-const NameHandle = styled.div`
-  display: flex;
-  flex-direction: column;
-  line-height: 0.5rem;
-  margin-left: 1rem;
-  
-    p{
-      line-height: 1rem;
-      font-size: 0.7rem;
-      margin: 0;
-      color: #fff;
-      
-      a{
-        color: #fff;
-      }
-    }
 `
 
 const TweetText = styled.div`

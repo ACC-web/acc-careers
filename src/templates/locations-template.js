@@ -84,7 +84,6 @@ const locationsTemplate = ({ pageContext, data, location }) => {
                                     const slug = node.slug
                                     const title = node.jobTitle
                                     const id = node.id
-                                    const date = node.createdAt
                                     return (
                                         <li key={id}>
                                             <Link to={slug}>{title}</Link>
