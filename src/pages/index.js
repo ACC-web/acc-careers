@@ -151,7 +151,7 @@ class RootIndex extends React.Component  {
   };
 
   render( data ) {
-      const siteTitle = get(this, 'props.data.site.siteMetadata.title')
+    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const Mor = get(this, 'props.data.moreton.totalCount')
     const Sing = get(this, 'props.data.singleton.totalCount')
     const Mp = get(this, 'props.data.marsdenpark.totalCount')
@@ -199,7 +199,7 @@ class RootIndex extends React.Component  {
                 </li>
             )
           }
-          // not sure if this is supose to be here, but I thinkit hides an error. see here: https://stackoverflow.com/questions/45014094/how-do-i-fix-expected-to-return-a-value-at-the-end-of-arrow-function-warning
+          // not sure if this is suppose to be here, but I think it hides an error. see here: https://stackoverflow.com/questions/45014094/how-do-i-fix-expected-to-return-a-value-at-the-end-of-arrow-function-warning
           // return null
         }
     );

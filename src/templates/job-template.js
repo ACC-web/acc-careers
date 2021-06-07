@@ -20,9 +20,7 @@ const Top = styled.div`
   justify-content: unset;
   overflow: hidden;
   z-index: 200;
-    height: auto;
-
-  
+  height: auto;
   
   &>.hero{
     justify-self: center;
@@ -33,12 +31,10 @@ const Top = styled.div`
   @media(min-width: 768px){
     height: 11rem;
         
-        img{
-          filter: brightness(50%); //this darkens the image for desktop vide (on job pages only)
-
-        }
-
-
+    img{
+      filter: brightness(50%); //this darkens the image for desktop vide (on job pages only)
+    }
+    
   }
   @media(min-width: 1100px){
     height: 11rem
@@ -53,14 +49,27 @@ const Wrapper = styled.section`
   @media(min-width: 768px){
     padding: 4rem;
   }
+  
+  ul {
+    margin-bottom: 1rem;
+  }
+  
+  h3 {
+    line-height: 1.55;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: montserrat,sans-serif;
+    color: #646e78;
+    margin: 1rem 0 0 0;
+  }
 `
 
 const JobTemplate = ({ data, location }) => {
 
     const job = data.contentfulJob
-    const typeform = data.contentfulJob.jobForm.formUrl
     const siteTitle = data.site.siteMetadata.title
     const title = data.contentfulJob.jobTitle
+    const typeform = data.contentfulJob.jobForm?.formUrl
 
     return (
         <>
@@ -88,7 +97,7 @@ const JobTemplate = ({ data, location }) => {
                         {/*   target="_blank"*/}
                         {/*   id="bt-popup"*/}
                         {/*>APPLY </a>*/}
-                        <Typeform link={typeform} />
+                        {typeform && <Typeform link={typeform} />}
                     </Wrapper>
 
                 </div>
