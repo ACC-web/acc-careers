@@ -26,7 +26,7 @@ class Typeform extends Component {
     render(){
 
         return (
-            <div style={{ marginTop: "2rem", textAlign: "center" }}>
+            <div style={{ marginTop: "2rem" }}>
                 <button id="bt-popup">APPLY HERE</button>
             </div>
         )

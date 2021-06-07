@@ -55,16 +55,16 @@ export default function LocationList() {
     `)
     return(
         <List>
-            <li><Link to="/moreton-qld">Moreton ({data.moreton.totalCount})</Link></li>
-            <li><Link to="/singleton-nsw">Singleton ({data.singleton.totalCount})</Link></li>
-            <li><Link to="/brightwaters-nsw">Brightwaters ({data.brightwaters.totalCount})</Link></li>
-            <li><Link to="/marsden-park-nsw">Marsden Park ({data.marsdenpark.totalCount})</Link></li>
-            <li><Link to="/hume-vic">Hume ({data.hume.totalCount})</Link></li>
-            <li><Link to="/darling-downs-wa">Darling Downs ({data.darlingdowns.totalCount})</Link></li>
-            <li><Link to="/southlandwa">Southlands ({data.southlands.totalCount})</Link></li>
-            <li><Link to="/burnie-tas">Burnie ({data.burnie.totalCount})</Link></li>
-            <li><Link to="/hobart-tas">Hobart ({data.hobart.totalCount})</Link></li>
-            <li><Link to="/launceston-tas">Launceston ({data.launceston.totalCount})</Link></li>
+            <li><Link to="/moreton-qld">Moreton - QLD ({data.moreton.totalCount})</Link></li>
+            <li><Link to="/singleton-nsw">Singleton - NSW ({data.singleton.totalCount})</Link></li>
+            <li><Link to="/brightwaters-nsw">Brightwaters - NSW ({data.brightwaters.totalCount})</Link></li>
+            <li><Link to="/marsden-park-nsw">Marsden Park - NSW({data.marsdenpark.totalCount})</Link></li>
+            <li><Link to="/hume-vic">Hume - VIC ({data.hume.totalCount})</Link></li>
+            <li><Link to="/darling-downs-wa">Darling Downs - WA ({data.darlingdowns.totalCount})</Link></li>
+            <li><Link to="/southlandwa">Southlands - WA({data.southlands.totalCount})</Link></li>
+            <li><Link to="/burnie-tas">Burnie - TAS ({data.burnie.totalCount})</Link></li>
+            <li><Link to="/hobart-tas">Hobart - TAS ({data.hobart.totalCount})</Link></li>
+            <li><Link to="/launceston-tas">Launceston - TAS ({data.launceston.totalCount})</Link></li>
         </List>
     )
 }

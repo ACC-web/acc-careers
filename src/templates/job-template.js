@@ -79,6 +79,7 @@ const JobTemplate = ({ data, location }) => {
                         <meta charSet="utf-8" />
                         <title>{`${job.jobTitle} | ${siteTitle}`} </title>
                         <link rel="canonical" href="https://acc.edu.au/careers" />
+                        <meta name="description" content="{{`${job.jobTitle} | ${siteTitle}`}}" />
                     </Helmet>
                     <Top>
                         <Hero title={title} className="hero" />

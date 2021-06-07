@@ -108,7 +108,7 @@ const FilterColumn = styled.div`
   flex-direction: column;
   padding-right: 0;
     @media(min-width: 768px){
-      width: 25%;
+      width: 33%;
       padding-right: 2rem;
       border-right: 1px solid #97A4B2;
   }
@@ -227,7 +227,6 @@ class RootIndex extends React.Component  {
               );
           }
       }
-    ///////////////////////////////////////////
 
 
     const animatedComponents = makeAnimated();
@@ -270,17 +269,17 @@ class RootIndex extends React.Component  {
                     <br />
                     {/*<LocationList />*/}
                     <ul>
-                        <li><Link to="/moreton-qld" id={"Moreton (QLD)"} onClick={setFilterItem}>Moreton ({Mor})</Link></li>
-                        <li><Link to="/singleton-nsw" id={"Singleton (NSW)"} onClick={setFilterItem}>Singleton ({Sing})</Link></li>
+                        <li><Link to="/moreton-qld" id={"Moreton (QLD)"} onClick={setFilterItem}>Moreton, QLD ({Mor})</Link></li>
+                        <li><Link to="/singleton-nsw" id={"Singleton (NSW)"} onClick={setFilterItem}>Singleton, NSW ({Sing})</Link></li>
                         {/*<li><Link to="/brightwaters-nsw" id={"Brightwaters (NSW)"} onClick={setFilterItem}>Brightwaters ({Bright})</Link></li>*/}
-                        <li><Link to="/marsden-park-nsw" id={"Marsden Park (NSW)"} onClick={setFilterItem}>Marsden Park ({Mp})</Link></li>
-                        <li><Link to="/erina-nsw" id={"Erina (NSW)"} onClick={setFilterItem}>Erina ({Erina})</Link></li>
-                        <li><Link to="/hume-vic" id={"Hume (VIC)"} onClick={setFilterItem}>Hume ({Hume})</Link></li>
-                        <li><Link to="/darling-downs-wa" id={"Darling Downs (WA)"} onClick={setFilterItem}>Darling Downs ({Dar})</Link></li>
-                        <li><Link to="/southland-wa" id={"Southlands (WA)"} onClick={setFilterItem}>Southlands ({Sou})</Link></li>
-                        <li><Link to="/burnie" id={"Burnie (TAS)"} onClick={setFilterItem}>Burnie ({Bur})</Link></li>
-                        <li><Link to="/hobart-tas" id={"Hobart (TAS)"} onClick={setFilterItem}>Hobart ({Hob})</Link></li>
-                        <li><Link to="/launceston-tas" id={"Launceston (TAS)"} onClick={setFilterItem}>Launceston ({Lau})</Link></li>
+                        <li><Link to="/marsden-park-nsw" id={"Marsden Park (NSW)"} onClick={setFilterItem}>Marsden Park, NSW ({Mp})</Link></li>
+                        <li><Link to="/erina-nsw" id={"Erina (NSW)"} onClick={setFilterItem}>Erina, NSW ({Erina})</Link></li>
+                        <li><Link to="/hume-vic" id={"Hume (VIC)"} onClick={setFilterItem}>Hume, VIC ({Hume})</Link></li>
+                        <li><Link to="/darling-downs-wa" id={"Darling Downs (WA)"} onClick={setFilterItem}>Darling Downs, WA ({Dar})</Link></li>
+                        <li><Link to="/southland-wa" id={"Southlands (WA)"} onClick={setFilterItem}>Southlands, WA ({Sou})</Link></li>
+                        <li><Link to="/burnie" id={"Burnie (TAS)"} onClick={setFilterItem}>Burnie, TAS ({Bur})</Link></li>
+                        <li><Link to="/hobart-tas" id={"Hobart (TAS)"} onClick={setFilterItem}>Hobart, TAS ({Hob})</Link></li>
+                        <li><Link to="/launceston-tas" id={"Launceston (TAS)"} onClick={setFilterItem}>Launceston, TAS ({Lau})</Link></li>
                     </ul>
                     {/*<p style={{ marginLeft: '1.5rem', marginTop: '1rem', fontSize: '85%' }}>Total: {total}</p>*/}
 
