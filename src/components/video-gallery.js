@@ -51,6 +51,22 @@ export default () => (
             <VideoItem>
                 <Video
                     className="video"
+                    videoSrcURL="https://player.vimeo.com/video/563033363?title=0&byline=0&portrait=0"
+                    videoTitle="Sammie is a secondary teacher at ACC Moreton"
+                />
+                <p>Sammie is a secondary teacher at ACC Moreton</p>
+            </VideoItem>
+            <VideoItem>
+                <Video
+                    className="video"
+                    videoSrcURL="https://player.vimeo.com/video/563033755?title=0&byline=0&portrait=0"
+                    videoTitle="Saloom is a secondary teacher at ACC Marsden Park"
+                />
+                <p>Saloom is a secondary teacher at ACC Marsden Park</p>
+            </VideoItem>
+            <VideoItem>
+                <Video
+                    className="video"
                     videoSrcURL="https://player.vimeo.com/video/365660254?title=0&byline=0&portrait=0"
                     videoTitle="Cara is a primary teacher at ACC Moreton"
                 />
