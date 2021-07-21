@@ -259,7 +259,7 @@ class RootIndex extends React.Component  {
                 <h1>CAREERS</h1>
               <h2>Discover your calling</h2>
                 <Linkedin href="https://www.linkedin.com/company/australianchristiancollege" target="_blank">
-                    <p>For the latest company updates and job listings, please follow ACC on LinkedIn.</p>
+                    <p>For the latest company updates and job listings, follow us on LinkedIn.</p>
                     <StaticImage
                         src="../LinkedIn-logo.png"
                         alt="LinkedIn Logo"
