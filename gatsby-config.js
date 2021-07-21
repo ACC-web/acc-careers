@@ -35,7 +35,8 @@ module.exports = {
     "gatsby-transformer-remark",
     "gatsby-transformer-sharp",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sharp",
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
     {
       resolve: "gatsby-source-contentful",
       options: contentfulConfig,
@@ -49,12 +50,12 @@ module.exports = {
           bearer_token: "AAAAAAAAAAAAAAAAAAAAAE5AHwEAAAAAaZD4%2BM%2B5wo%2BSGTUMsIRdBbtT%2B7U%3DLMjtfZPVfgF6fpMY7vHWWwoifz0dGlC48SdwVfHlbNoCfjXv4x",
         },
         queries: {
-          getPosts: {
+          ACCTweets: {
             endpoint: "statuses/user_timeline",
             params: {
               screen_name: "ACCGroup2",
               include_rts: false,
-              exclude_replies: false,
+              exclude_replies: true,
               tweet_mode: "extended",
             },
           },

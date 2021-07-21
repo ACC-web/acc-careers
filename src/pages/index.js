@@ -7,6 +7,7 @@ import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 import styled from "styled-components"
 import VideoGallery from '../components/video-gallery'
+import { StaticImage } from "gatsby-plugin-image"
 
 //Select Imports
 //https://react-select.com/home
@@ -80,18 +81,30 @@ const Wrapper = styled.section`
       }
     }
 `
+const Linkedin = styled.a`
+  width: 100%;
+  max-width: 200px;
+  float: right;
+  border-left: 1px solid #97A4B2;
+  padding: 10px 0 10px 30px;
+  margin-top: -30px;
+  margin-left: 30px;
+  
+  img{
+    width: 100%;
+  }
+  p{
+    text-align: left;
+    font-size: 70%;
+  }
+  
+  &:hover {
 
-// const LocationsCount = styled.ul`
-//   padding: 0;
-//   margin: 1rem 0;
-//   li{
-//     list-style-type: none;
-//
-//     a{
-//       color: #646E78;
-//     }
-//   }
-// `
+      text-decoration: none;
+    
+  }
+`
+
 
 const JobsContainer = styled.div`
   width: 100%;
@@ -245,6 +258,15 @@ class RootIndex extends React.Component  {
             <section className="intro">
                 <h1>CAREERS</h1>
               <h2>Discover your calling</h2>
+                <Linkedin href="https://www.linkedin.com/company/australianchristiancollege" target="_blank">
+                    <p>For the latest company updates and job listings, please follow ACC on LinkedIn.</p>
+                    <StaticImage
+                        src="../LinkedIn-logo.png"
+                        alt="LinkedIn Logo"
+                        placeholder="blurred"
+                        layout="fullWidth"
+                    />
+                </Linkedin>
                 <p>
                     Is God calling you to work at the nation-wide Australian Christian College (ACC) network of schools? ACC is committed to transforming young people spiritually, academically, socially and physically for lives of significance and service by encouraging students to think biblically and act graciously. Does that sound like a place where you could do your best gospel-centred work?
                 </p>

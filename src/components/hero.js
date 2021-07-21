@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image";
 import styled from "styled-components"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const Wrapper = styled.div`
   width: 100%;
@@ -27,18 +27,18 @@ const Wrapper = styled.div`
 
   }
 `
-const Background = styled(Img)`
+const Background = styled(GatsbyImage)`
     position:absolute;
     display: block;
     top: -5rem;
     width: 100%;
     height: auto;
-    
+
     @media(min-width: 768px){
         top: -9rem;
     }
     @media(min-width:1100px){
-        position: absolute; //This isnt activating 
+        position: absolute; //This isnt activating
         top: -14rem;
     }
 `
@@ -48,19 +48,19 @@ export default function Hero({ title }) {
     const imagedata = useStaticQuery(graphql`
         query {
             contentfulAsset(file: {fileName: {in: "Teacher_Primary_Classroom-11.jpg"}}) {
-                id
-                fluid(maxWidth: 2000, quality: 75, cropFocus: CENTER) {
-                    ...GatsbyContentfulFluid_withWebp
-                }
+                gatsbyImageData(
+                cropFocus: CENTER, 
+                resizingBehavior: NO_CHANGE, 
+                quality: 80)
                 title
-            }
+          }
         }
     `)
     return(
         <Wrapper>
-            <Background
+            <GatsbyImage
                 className="background-image"
-                fluid={imagedata.contentfulAsset.fluid}
+                image={imagedata.contentfulAsset.gatsbyImageData}
                 alt={imagedata.contentfulAsset.title}
                 objectFit="cover"
                 objectPosition="50% 50%"

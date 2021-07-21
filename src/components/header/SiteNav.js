@@ -565,7 +565,7 @@ class SiteNav extends React.Component {
                   <li css={ParentItem} role="menuitem">
                     <Link to="/" onClick={(PreventDefault) => document.body.classList.toggle('school-list-open')}>Schools&nbsp;&nbsp;<span className="reveal"></span></Link>
 
-                    <ul class="megaMenu" id="schools">
+                    <ul className="megaMenu" id="schools">
                       <h3>Select a School</h3>
 
                       <li role="menuitem"><a href="https://www.acc.edu.au/moreton/index.html">Moreton, QLD</a></li>
@@ -581,7 +581,7 @@ class SiteNav extends React.Component {
                     </ul>
                   </li>
                   <li role="menuitem">
-                    <Link to="/" onClick={(PreventDefault) => document.body.classList.toggle('journals-list-open')}>Journals&nbsp;&nbsp;<span className="reveal"></span></Link>
+                    <a href="https://www.acc.edu.au/journals/index.html" onClick={(PreventDefault) => document.body.classList.toggle('journals-list-open')}>Journals&nbsp;&nbsp;<span className="reveal"></span></a>
                     <ul className="megaMenu " id="careers">
                       <h3 style={{ color: '#fff' }}>Select a Journal</h3>
                       <li><a href="https://www.acc.edu.au/journals/academica/index.html">Academica</a></li>

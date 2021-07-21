@@ -85,30 +85,35 @@ const TwitterWidget = () => (
     <>
         <StaticQuery
             query={graphql`
-              query TwitterPosts {
-                allTwitterStatusesUserTimelineGetPosts(limit: 1) {
-                    edges {
-                      node {
-                        full_text
-                        entities {
-                          urls {
-                            expanded_url
+                query TwitterPosts {
+                      allTwitterStatusesUserTimelineAccTweets(limit: 1) {
+                        edges {
+                          node {
+                            created_at
+                            full_text
+                            user {
+                              name
+                              profile_image_url
+                              screen_name
+                            }
+                            entities {
+                              urls {
+                                url
+                              }
+                            }
                           }
                         }
                       }
-                    }
-                  }
                 }
             `}
             render={(data) => (
-
                 <>
                     <TwitterContainer>
                         <div className="header">
                             <Heading2>Tweets by <a href="/">@ACC</a></Heading2>
                         </div>
                         {
-                            data.allTwitterStatusesUserTimelineGetPosts.edges.map((item, i) => (
+                            data.allTwitterStatusesUserTimelineAccTweets.edges.map((item, i) => (
                                 <TweetItem key={i}>
                                     {/*<UserInfo>*/}
                                     {/*    <ProfileImage src={item.node.user.profile_image_url} />*/}
