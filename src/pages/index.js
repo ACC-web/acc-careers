@@ -175,6 +175,7 @@ class RootIndex extends React.Component  {
     const Hob = get(this, 'props.data.hobart.totalCount')
     const Bur = get(this, 'props.data.burnie.totalCount')
     const Lau = get(this, 'props.data.launceston.totalCount')
+      const linkedin = '../images/linkedInlogo.png'
 
     const job = get(this, 'props.data.allContentfulJob.edges')
     // Select options
@@ -261,7 +262,7 @@ class RootIndex extends React.Component  {
                 <Linkedin href="https://www.linkedin.com/company/australianchristiancollege" target="_blank">
                     <p>For the latest company updates and job listings, follow us on LinkedIn.</p>
                     <StaticImage
-                        src="../LinkedIn-logo.png"
+                        src={linkedin}
                         alt="LinkedIn Logo"
                         placeholder="blurred"
                         layout="fullWidth"
