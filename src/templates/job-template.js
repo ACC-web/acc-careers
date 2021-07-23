@@ -7,7 +7,7 @@ import Hero from '../components/hero'
 import styled from "styled-components";
 
 //Typeform
-import TypeFormModal from "../components/typeForm-modal";
+import { PopupButton } from '@typeform/embed-react'
 
 const Top = styled.div`
   position:relative;
@@ -65,7 +65,6 @@ const Wrapper = styled.section`
 `
 
 const JobTemplate = ({ data, location }) => {
-
     const job = data.contentfulJob
     const siteTitle = data.site.siteMetadata.title
     const title = data.contentfulJob.jobTitle
@@ -82,7 +81,7 @@ const JobTemplate = ({ data, location }) => {
                         <meta name="description" content="{{`${job.jobTitle} | ${siteTitle}`}}" />
                     </Helmet>
                     <Top>
-                        <Hero title={title} className="hero" />
+                        <Hero headingTitle={job.jobTitle} className="hero" />
                     </Top>
                     <Wrapper>
                         {/*todo: once we have a good batch of fresh jobs I will enable the posted on content, because its currently got the same date. v2*/}
@@ -92,7 +91,10 @@ const JobTemplate = ({ data, location }) => {
                                 __html: job.jobDescription.childMarkdownRemark.html,
                             }}
                         />
-                        {typeformUrl && <TypeFormModal link={typeformUrl} />}
+                        {/*{typeformUrl && <TypeFormModal link={typeformUrl} />}*/}
+                        <PopupButton id={typeformUrl} style={{ marginTop: '1rem' }} className="my-button">
+                           APPLY NOW
+                        </PopupButton>
                     </Wrapper>
 
                 </div>

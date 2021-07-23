@@ -44,7 +44,7 @@ const BackgroundImage = styled(GatsbyImage)`
 `
 
 
-export default function Hero({ title }) {
+export default function Hero({ headingTitle }) {
     const imagedata = useStaticQuery(graphql`
         query {
             contentfulAsset(file: {fileName: {in: "Teacher_Primary_Classroom-11.jpg"}}) {
@@ -58,14 +58,14 @@ export default function Hero({ title }) {
     `)
     return(
         <Wrapper>
-            <h1>{title}</h1>
+            <h1>{headingTitle}</h1>
             <BackgroundImage
                 className="background-image"
                 image={imagedata.contentfulAsset.gatsbyImageData}
                 alt={imagedata.contentfulAsset.title}
                 objectFit="cover"
                 objectPosition="50% 50%"
-                style={{position: ""}}
+                style={{position: "absolute", top: "0", left: "0"}}
 
             />
         </Wrapper>
