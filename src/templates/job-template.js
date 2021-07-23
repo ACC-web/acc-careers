@@ -7,7 +7,7 @@ import Hero from '../components/hero'
 import styled from "styled-components";
 
 //Typeform
-import Typeform from '../components/typeform-button'
+import TypeFormModal from "../components/typeForm-modal";
 
 const Top = styled.div`
   position:relative;
@@ -69,7 +69,7 @@ const JobTemplate = ({ data, location }) => {
     const job = data.contentfulJob
     const siteTitle = data.site.siteMetadata.title
     const title = data.contentfulJob.jobTitle
-    const typeform = data.contentfulJob.jobForm?.formUrl
+    const typeformUrl = data.contentfulJob.jobForm?.formUrl
 
     return (
         <>
@@ -92,13 +92,7 @@ const JobTemplate = ({ data, location }) => {
                                 __html: job.jobDescription.childMarkdownRemark.html,
                             }}
                         />
-                        {/*<a className="typeform-share button MORETON_FORM"*/}
-                        {/*   href={`${job.jobForm.formUrl}`}*/}
-                        {/*   dataMode="popup"*/}
-                        {/*   target="_blank"*/}
-                        {/*   id="bt-popup"*/}
-                        {/*>APPLY </a>*/}
-                        {typeform && <Typeform link={typeform} />}
+                        {typeformUrl && <TypeFormModal link={typeformUrl} />}
                     </Wrapper>
 
                 </div>

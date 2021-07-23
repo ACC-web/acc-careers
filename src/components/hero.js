@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   height: auto;
   
   h1{
-  position:relative;
+    position:relative;
     padding: 2rem 0;
     margin: 0 auto;
     z-index: 900;
@@ -27,10 +27,10 @@ const Wrapper = styled.div`
 
   }
 `
-const Background = styled(GatsbyImage)`
-    position:absolute;
+const BackgroundImage = styled(GatsbyImage)`
+  position: absolute;
     display: block;
-    top: -5rem;
+    top: 0;
     width: 100%;
     height: auto;
 
@@ -58,7 +58,8 @@ export default function Hero({ title }) {
     `)
     return(
         <Wrapper>
-            <GatsbyImage
+            <h1>{title}</h1>
+            <BackgroundImage
                 className="background-image"
                 image={imagedata.contentfulAsset.gatsbyImageData}
                 alt={imagedata.contentfulAsset.title}
@@ -67,7 +68,6 @@ export default function Hero({ title }) {
                 style={{position: ""}}
 
             />
-            <h1>{title}</h1>
         </Wrapper>
         )
 }

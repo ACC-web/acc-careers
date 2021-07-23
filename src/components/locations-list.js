@@ -6,6 +6,7 @@ const List = styled.ul`
     list-style-type: none;
     padding: 0;
     font-size: 0.8rem;
+    margin-bottom: 2rem;
     li{
       margin: 5px 0;
     }

@@ -81,27 +81,70 @@ const Wrapper = styled.section`
       }
     }
 `
+
+const FlexWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  
+  .text{
+    display: flex;
+    flex-direction: column;
+    order: 1;
+  }
+
+  @media(min-width: 768px){
+    display: block;
+  }
+`
+
 const Linkedin = styled.a`
   width: 100%;
-  max-width: 200px;
-  float: right;
-  border-left: 1px solid #97A4B2;
-  padding: 10px 0 10px 30px;
-  margin-top: -30px;
-  margin-left: 30px;
+  float: none;
+  border-left: 0;
+  padding: 0;
+  margin-top: 0;
+  margin-left: 0;
+  margin-bottom: 1rem;
+  display: flex;
+
+  order: 2;
   
-  img{
-    width: 100%;
+  .logo{
+    width: 75%;
+    flex: 1;
+    margin: auto;
   }
   p{
+    flex: 2;
     text-align: left;
-    font-size: 70%;
   }
   
   &:hover {
 
       text-decoration: none;
     
+  }
+
+  @media(min-width: 768px){
+    display: block;
+    width: 200px;
+
+    float: right;
+    border-top: 0;
+    border-left: 1px solid #97A4B2;
+    padding: 10px 0 10px 30px;
+    margin-top: -30px;
+    margin-left: 30px;
+
+    .logo{
+      width: 100%;
+      margin: auto;
+    }
+
+    p{
+      text-align: left;
+      font-size: 100%;
+    }
   }
 `
 
@@ -258,23 +301,27 @@ class RootIndex extends React.Component  {
           <Wrapper>
             <section className="intro">
                 <h1>CAREERS</h1>
-              <h2>Discover your calling</h2>
-                <Linkedin href="https://www.linkedin.com/company/australianchristiancollege" target="_blank">
-                    <p>For the latest company updates and job listings, follow us on LinkedIn.</p>
-                    <StaticImage
-                        src={linkedin}
-                        alt="LinkedIn Logo"
-                        placeholder="blurred"
-                        layout="fullWidth"
-                    />
-                </Linkedin>
-                <p>
-                    Is God calling you to work at the nation-wide Australian Christian College (ACC) network of schools? ACC is committed to transforming young people spiritually, academically, socially and physically for lives of significance and service by encouraging students to think biblically and act graciously. Does that sound like a place where you could do your best gospel-centred work?
-                </p>
-                <p>
-                    The ACC Group offers advancement opportunities across our schools network, a trainee principals programme and staff discounts on school fees and long day care (where available). Please prayerfully consider the vacancies below.
-                </p>
-                <br />
+                <h2>Discover your calling</h2>
+                <FlexWrapper>
+                    <Linkedin href="https://www.linkedin.com/company/australianchristiancollege" target="_blank">
+                        <p>For the latest company updates and job listings, follow us on LinkedIn.</p>
+                        <StaticImage
+                            src={linkedin}
+                            alt="LinkedIn Logo"
+                            placeholder="blurred"
+                            layout="fullWidth"
+                            className="logo"
+                        />
+                    </Linkedin>
+                    <span className="text">
+                        <p>
+                            Is God calling you to work at the nation-wide Australian Christian College (ACC) network of schools? ACC is committed to transforming young people spiritually, academically, socially and physically for lives of significance and service by encouraging students to think biblically and act graciously. Does that sound like a place where you could do your best gospel-centred work?
+                        </p>
+                        <p>
+                            The ACC Group offers advancement opportunities across our schools network, a trainee principals programme and staff discounts on school fees and long day care (where available). Please prayerfully consider the vacancies below.
+                        </p>
+                    </span>
+                </FlexWrapper>
             </section>
               <h2 className="section-headline">Positions Vacant</h2>
 
