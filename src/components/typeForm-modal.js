@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactTypeformEmbed from './ReactTypeformEmbed/ReactTypeformEmbed';
+import ReactTypeformEmbedScript from './ReactTypeformEmbed/ReactTypeformEmbedScript.js';
 
 class TypeFormModal extends React.Component {
     constructor(props) {
@@ -16,13 +16,14 @@ class TypeFormModal extends React.Component {
 
         return (
             <div className="ExamplePopup">
-                <ReactTypeformEmbed
+                <ReactTypeformEmbedScript
                     popup
                     autoOpen={false}
-                    url={this.props.link}
+                    // url={this.props.link}
+                    url="https://australianchristiancollege.typeform.com/to/O7DT14"
                     hideHeaders
                     hideFooter
-                    buttonText="Go!"
+                    buttonText="Submit Application"
                     style={{ top: 100 }}
                     ref={tf => {
                         this.typeformEmbed = tf;

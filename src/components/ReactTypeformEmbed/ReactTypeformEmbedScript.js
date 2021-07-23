@@ -11,7 +11,7 @@ const styleDefault = {
   overflow: 'hidden'
 };
 
-class ReactTypeformEmbed extends Component {
+class ReactTypeformEmbedScript extends Component {
   componentDidMount() {
     const {
       url,
@@ -53,20 +53,21 @@ class ReactTypeformEmbed extends Component {
 
   render() {
     const style = Object.assign({}, styleDefault, this.props.style);
+    console.log( `line 56` )
 
     return (
-      <div
-        className="ReactTypeformEmbed"
-        ref={tf => {
-          this.typeformElm = tf;
-        }}
-        style={style}
-      />
+        <div
+            className="ReactTypeformEmbed"
+            ref={tf => {
+              this.typeformElm = tf;
+            }}
+            style={style}
+        />
     );
   }
 }
 
-ReactTypeformEmbed.propTypes = {
+ReactTypeformEmbedScript.propTypes = {
   style: PropTypes.object,
   url: PropTypes.string.isRequired,
   popup: PropTypes.bool,
@@ -86,7 +87,7 @@ ReactTypeformEmbed.propTypes = {
 
 // Default values taken from official Typeform docs
 // https://developer.typeform.com/embed/modes/
-ReactTypeformEmbed.defaultProps = {
+ReactTypeformEmbedScript.defaultProps = {
   style: {},
   popup: false,
   hideHeaders: false,
@@ -103,4 +104,4 @@ ReactTypeformEmbed.defaultProps = {
   autoClose: 5
 };
 
-export default ReactTypeformEmbed;
+export default ReactTypeformEmbedScript;
