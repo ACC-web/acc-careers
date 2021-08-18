@@ -50,7 +50,8 @@ const Wrapper = styled.section`
     padding: 4rem;
   }
   
-  ul {
+  ul, 
+  ol {
     margin-bottom: 1rem;
   }
   
@@ -61,6 +62,20 @@ const Wrapper = styled.section`
     font-family: montserrat,sans-serif;
     color: #646e78;
     margin: 1rem 0 0 0;
+  }
+
+  .typeform-iframe-wrapper a.typeform-popup,
+  .typeform-iframe-wrapper a.typeform-close{
+      z-index: 999;
+      background-color: #fff;
+      border: 10px solid #fff;
+      font-size: 27px !important;
+      padding: 1px !important;
+      justify-content: center;
+      display: flex;
+      line-height: 4px !important;
+      border-radius: 50%;
+      text-align: center !important;
   }
 `
 
@@ -92,7 +107,9 @@ const JobTemplate = ({ data, location }) => {
                             }}
                         />
                         {/*{typeformUrl && <TypeFormModal link={typeformUrl} />}*/}
-                        <PopupButton id={typeformUrl} style={{ marginTop: '1rem' }} className="my-button">
+                        <PopupButton
+                            id={typeformUrl}
+                            className="my-button">
                            APPLY NOW
                         </PopupButton>
                     </Wrapper>

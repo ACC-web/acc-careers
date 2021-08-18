@@ -261,9 +261,6 @@ class RootIndex extends React.Component  {
         }
     );
 
-
-    //////////////////////////////////////////
-
       let setFilterItem = (event) => {
           event.preventDefault();
           if(event.target.id && typeof event.target.id === typeof "") {
@@ -285,11 +282,8 @@ class RootIndex extends React.Component  {
           }
       }
 
-
     const animatedComponents = makeAnimated();
     // const title = `CAREERS`
-
-
 
     return (
       <Layout location={this.props.location}>
