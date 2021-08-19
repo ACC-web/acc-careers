@@ -94,6 +94,18 @@ const JobTemplate = ({ data, location }) => {
                         <title>{`${job.jobTitle} | ${siteTitle}`} </title>
                         <link rel="canonical" href="https://acc.edu.au/careers" />
                         <meta name="description" content="{{`${job.jobTitle} | ${siteTitle}`}}" />
+
+                        {/*These tags are required for Linkedin*/}
+                        <meta property='og:title' content='Title of the article'/>
+                        <meta property='og:image' content='//media.example.com/ 1234567.jpg'/>
+                        <meta property='og:description' content='Description that will show in the preview'/>
+                        <meta property='og:url' content='//www.example.com/URL of the article'/>
+
+                        {/*These Tags are required for Twitter - might as well do these too (does hurt to have more)*/}
+                        <meta name="twitter:title" content="European Travel Destinations"/>
+                        <meta name="twitter:description" content=" Offering tour packages for individuals or groups."/>
+                        <meta name="twitter:image" content=" http://euro-travel-example.com/thumbnail.jpg"/>
+                        <meta name="twitter:card" content="summary_large_image" />
                     </Helmet>
                     <Top>
                         <Hero headingTitle={job.jobTitle} className="hero" />
