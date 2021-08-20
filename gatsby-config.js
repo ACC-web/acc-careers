@@ -28,6 +28,7 @@ module.exports = {
     siteUrl: `https://www.acc.edu.au`,
     author: 'ACC',
     description: 'Career opportunities at the nation-wide Australian Christian College (ACC) network of schools',
+    image: '/acc-careers-meta-image.jpg'
   },
   pathPrefix: "/careers",
   plugins: [

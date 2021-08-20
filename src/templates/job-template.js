@@ -1,10 +1,11 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
+import { useLocation } from '@reach/router'
 import Layout from '../components/layout'
 import Hero from '../components/hero'
 
-import styled from "styled-components";
+import styled from 'styled-components'
 
 //Typeform
 import { PopupButton } from '@typeform/embed-react'
@@ -82,8 +83,13 @@ const Wrapper = styled.section`
 const JobTemplate = ({ data, location }) => {
     const job = data.contentfulJob
     const siteTitle = data.site.siteMetadata.title
+    const siteUrl = data.site.siteMetadata.siteUrl
     const title = data.contentfulJob.jobTitle
+    const pageTitle = `${title} | ${siteTitle}`
     const typeformUrl = data.contentfulJob.jobForm?.formUrl
+    const jobMetaDescription = 'The ACC Group is offering a range of career opportunities around the country. Join our nation-wide network of schools as we aim to transform young people spiritually, academically, socially and physically.';
+    const jobMetaImage = siteUrl + '/careers/acc-careers-meta-image.jpg';
+    const jobUrl = siteUrl + location.pathname;
 
     return (
         <>
@@ -91,9 +97,21 @@ const JobTemplate = ({ data, location }) => {
                 <div style={{ background: '#fff' }}>
                     <Helmet>
                         <meta charSet="utf-8" />
-                        <title>{`${job.jobTitle} | ${siteTitle}`} </title>
+                        <title>{pageTitle}</title>
                         <link rel="canonical" href="https://acc.edu.au/careers" />
-                        <meta name="description" content="{{`${job.jobTitle} | ${siteTitle}`}}" />
+                        <meta name="description" content={jobMetaDescription} />
+
+                        {/*These tags are required for Linkedin*/}
+                        <meta property='og:title' content={pageTitle} />
+                        <meta property='og:description' content={jobMetaDescription} />
+                        <meta property='og:image' content={jobMetaImage} />
+                        <meta property='og:url' content={jobUrl}/>
+
+                        {/*These Tags are required for Twitter - might as well do these too (does hurt to have more)*/}
+                        <meta name="twitter:title" content={pageTitle} />
+                        <meta name="twitter:description" content={jobMetaDescription}/>
+                        <meta name="twitter:image" content={jobMetaImage} />
+                        <meta name="twitter:card" content={jobMetaImage} />
                     </Helmet>
                     <Top>
                         <Hero headingTitle={job.jobTitle} className="hero" />
@@ -144,7 +162,8 @@ export const pageQuery = graphql`
         }
         site {
             siteMetadata {
-                title
+                title,
+                siteUrl
             }
         }
     }
