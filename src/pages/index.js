@@ -208,6 +208,10 @@ class RootIndex extends React.Component  {
 
   render( data ) {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
+      const siteUrl = get(this, 'props.data.site.siteMetadata.siteUrl')
+      const jobMetaDescription = 'The ACC Group is offering a range of career opportunities around the country. Join our nation-wide network of schools as we aim to transform young people spiritually, academically, socially and physically.';
+      const jobMetaImage = 'https://www.acc.edu.au/careers/acc-careers-meta-image.jpg';
+
     const Mor = get(this, 'props.data.moreton.totalCount')
     const Sing = get(this, 'props.data.singleton.totalCount')
     const Mp = get(this, 'props.data.marsdenpark.totalCount')
@@ -285,10 +289,29 @@ class RootIndex extends React.Component  {
     const animatedComponents = makeAnimated();
     // const title = `CAREERS`
 
+
+
     return (
       <Layout location={this.props.location}>
         <div style={{ background: '#fff' }}>
-          <Helmet title={siteTitle} />
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>{siteTitle}</title>
+                <link rel="canonical" href="https://acc.edu.au/careers" />
+                <meta name="description" content={jobMetaDescription} />
+
+                {/*These tags are required for Linkedin*/}
+                <meta property='og:title' content={siteTitle} />
+                <meta property='og:description' content={jobMetaDescription} />
+                <meta property='og:image' content={jobMetaImage} />
+                <meta property='og:url' content={siteUrl}/>
+
+                {/*These Tags are required for Twitter - might as well do these too (does hurt to have more)*/}
+                <meta name="twitter:title" content={siteTitle} />
+                <meta name="twitter:description" content={jobMetaDescription}/>
+                <meta name="twitter:image" content={jobMetaImage} />
+                <meta name="twitter:card" content={jobMetaImage} />
+            </Helmet>
           <Top>
               <Hero  className="hero" />
           </Top>
@@ -424,7 +447,8 @@ export const pageQuery = graphql`
         }
         site {
             siteMetadata {
-                title
+                title,
+                siteUrl
             }
         }
 
