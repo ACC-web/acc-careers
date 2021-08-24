@@ -25,9 +25,7 @@ const Top = styled.div`
   justify-content: unset;
   overflow: hidden;
   z-index: 200;
-    height: 11rem;
-
-  
+  height: 11rem;
   
   &>.hero{
     justify-self: center;
@@ -35,9 +33,9 @@ const Top = styled.div`
     top: -500px
   }
   
-    @media(min-width: 768px){
+  @media(min-width: 768px){
     height: 20rem;
-}
+  }
   
   @media(min-width: 1100px){
     min-height: 200px;
@@ -54,32 +52,27 @@ const Wrapper = styled.section`
   
   background-color: #fff;
   
-    @media(min-width: 768px){
-    //at this width the header image still sits above the content
-      padding: 1rem;
-    }
-    @media(min-width: 1100px){
-    //this is when the layout changes to the centre white thing
-      margin: -13rem auto auto auto;
-            padding: 4rem;
-
-    }
+  @media(min-width: 768px){
+  //at this width the header image still sits above the content
+    padding: 1rem;
+  }
+  @media(min-width: 1100px){
+  //this is when the layout changes to the centre white thing
+    margin: -13rem auto auto auto;
+    padding: 4rem;
+  }
+  
+  h1{
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin: 0;
+    color: #646E78;
     
-    h1{
-      font-size: 0.85rem;
-      font-weight: 500;
-      margin: 0;
-      color: #646E78;
-      
-      @media(min-width: 768px){
-        font-weight: 700;
-          //font-size: 1rem;
-
-      }
-      h2{
-        
-      }
+    @media(min-width: 768px){
+      font-weight: 700;
+      //font-size: 1rem;
     }
+  }
 `
 
 const FlexWrapper = styled.div`
@@ -120,9 +113,7 @@ const Linkedin = styled.a`
   }
   
   &:hover {
-
-      text-decoration: none;
-    
+    text-decoration: none;
   }
 
   @media(min-width: 768px){
@@ -136,12 +127,12 @@ const Linkedin = styled.a`
     margin-top: -30px;
     margin-left: 30px;
 
-    .logo{
+    .logo {
       width: 100%;
       margin: auto;
     }
 
-    p{
+    p {
       text-align: left;
       font-size: 100%;
     }
@@ -163,10 +154,10 @@ const FilterColumn = styled.div`
   display: flex;
   flex-direction: column;
   padding-right: 0;
-    @media(min-width: 768px){
-      width: 33%;
-      padding-right: 2rem;
-      border-right: 1px solid #97A4B2;
+  @media(min-width: 768px){
+    width: 33%;
+    padding-right: 2rem;
+    border-right: 1px solid #97A4B2;
   }
 `
 const JobsList = styled.div`
@@ -175,22 +166,22 @@ const JobsList = styled.div`
   flex-direction: column;
   padding-left: 0;
   
-    @media(min-width: 768px){
-      width: 75%;
-      padding-left: 2rem;
-    }
+  @media(min-width: 768px){
+    width: 75%;
+    padding-left: 2rem;
+  }
   
-      .article-list{
-        padding: 0;
-        list-style-type: none;
-      }
-      li{
-        border-top: 1px solid #646E78;
-        
-        :last-child{
-          border-bottom: 1px solid #646E78;
-        }
-      }
+  .article-list{
+    padding: 0;
+    list-style-type: none;
+  }
+  li{
+    border-top: 1px solid #646E78;
+    
+    :last-child{
+      border-bottom: 1px solid #646E78;
+    }
+  }
 `
 
 class RootIndex extends React.Component  {
@@ -208,9 +199,9 @@ class RootIndex extends React.Component  {
 
   render( data ) {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-      const siteUrl = get(this, 'props.data.site.siteMetadata.siteUrl')
-      const jobMetaDescription = 'The ACC Group is offering a range of career opportunities around the country. Join our nation-wide network of schools as we aim to transform young people spiritually, academically, socially and physically.';
-      const jobMetaImage = 'https://www.acc.edu.au/careers/acc-careers-meta-image.jpg';
+    const siteUrl = get(this, 'props.data.site.siteMetadata.siteUrl')
+    const jobMetaDescription = 'The ACC Group is offering a range of career opportunities around the country. Join our nation-wide network of schools as we aim to transform young people spiritually, academically, socially and physically.';
+    const jobMetaImage = 'https://www.acc.edu.au/careers/acc-careers-meta-image.jpg';
 
     const Mor = get(this, 'props.data.moreton.totalCount')
     const Sing = get(this, 'props.data.singleton.totalCount')
@@ -222,7 +213,7 @@ class RootIndex extends React.Component  {
     const Hob = get(this, 'props.data.hobart.totalCount')
     const Bur = get(this, 'props.data.burnie.totalCount')
     const Lau = get(this, 'props.data.launceston.totalCount')
-      const linkedin = '../images/linkedInlogo.png'
+    const linkedin = '../images/linkedInlogo.png'
 
     const job = get(this, 'props.data.allContentfulJob.edges')
     // Select options
