@@ -125,9 +125,7 @@ const JobTemplate = ({ data, location }) => {
                             }}
                         />
                         {/*{typeformUrl && <TypeFormModal link={typeformUrl} />}*/}
-                        <PopupButton
-                            id={typeformUrl}
-                            className="my-button">
+                        <PopupButton id={typeformUrl} className="my-button">
                            APPLY NOW
                         </PopupButton>
                     </Wrapper>

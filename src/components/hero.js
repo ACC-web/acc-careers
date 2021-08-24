@@ -19,11 +19,11 @@ const Wrapper = styled.div`
     font-weight: 700;
     justify-self: start;
     
-        @media(min-width: 768px){
-          padding: 5rem 0;
-          color: #fff;
-          font-size: 1.38em;
-        }
+    @media(min-width: 768px){
+      padding: 5rem 0;
+      color: #fff;
+      font-size: 1.38em;
+    }
 
   }
 `
@@ -35,11 +35,11 @@ const BackgroundImage = styled(GatsbyImage)`
     height: auto;
 
     @media(min-width: 768px){
-        top: -9rem;
+      top: -9rem;
     }
     @media(min-width:1100px){
-        position: absolute; //This isnt activating
-        top: -14rem;
+      position: absolute; //This isnt activating
+      top: -14rem;
     }
 `
 
@@ -57,17 +57,16 @@ export default function Hero({ headingTitle }) {
         }
     `)
     return(
-        <Wrapper>
-            <h1>{headingTitle}</h1>
-            <BackgroundImage
-                className="background-image"
-                image={imagedata.contentfulAsset.gatsbyImageData}
-                alt={imagedata.contentfulAsset.title}
-                objectFit="cover"
-                objectPosition="50% 50%"
-                style={{position: "absolute", top: "0", left: "0"}}
-
-            />
-        </Wrapper>
-        )
+      <Wrapper>
+        {headingTitle && <h1>{headingTitle}</h1>}
+        <BackgroundImage
+            className="background-image"
+            image={imagedata.contentfulAsset.gatsbyImageData}
+            alt={imagedata.contentfulAsset.title}
+            objectFit="cover"
+            objectPosition="50% 50%"
+            style={{position: "absolute", top: "0", left: "0"}}
+        />
+      </Wrapper>
+    )
 }

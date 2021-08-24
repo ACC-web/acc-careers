@@ -312,7 +312,7 @@ class RootIndex extends React.Component  {
                             Is God calling you to work at the nation-wide Australian Christian College (ACC) network of schools? ACC is committed to transforming young people spiritually, academically, socially and physically for lives of significance and service by encouraging students to think biblically and act graciously. Does that sound like a place where you could do your best gospel-centred work?
                         </p>
                         <p>
-                            The ACC Group offers advancement opportunities across our schools network, a trainee principals programme and staff discounts on school fees and long day care (where available). Please prayerfully consider the vacancies below.
+                            The ACC Group offers advancement opportunities across our schools network, a trainee principals programme, <a href="https://www.cem.org.au/training-school.html">teacher traineeships</a> and staff discounts on school fees and long day care (where available). Please prayerfully consider the vacancies below.
                         </p>
                     </span>
                 </FlexWrapper>
