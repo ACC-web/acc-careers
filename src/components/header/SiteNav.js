@@ -582,14 +582,18 @@ class SiteNav extends React.Component {
                   </li>
                   <li role="menuitem">
                     <a href="https://www.acc.edu.au/journals/index.html" onClick={(PreventDefault) => document.body.classList.toggle('journals-list-open')}>Journals&nbsp;&nbsp;<span className="reveal"></span></a>
-                    <ul className="megaMenu " id="careers">
+                    <ul className="megaMenu " id="journals">
                       <h3 style={{ color: '#fff' }}>Select a Journal</h3>
                       <li><a href="https://www.acc.edu.au/journals/academica/index.html">Academica</a></li>
                       <li><a href="https://www.acc.edu.au/journals/excelencia/index.html">Excelencia</a></li>
                     </ul>
                   </li>
                   <li role="menuitem">
-                    <a href="https://www.acc.edu.au/careers/">Careers</a>
+                    <Link to="/" onClick={(PreventDefault) => document.body.classList.toggle('careers-list-open')}>Careers&nbsp;&nbsp;<span className="reveal"></span></Link>
+                    <ul className="megaMenu " id="careers">
+                      <li><a href="https://www.acc.edu.au/careers/">Positions Vacant</a></li>
+                      <li><a href="https://www.cem.org.au/training-school.html">Teacher Traineeships</a></li>
+                    </ul>
                   </li>
                   <li css={ParentItem} role="menuitem">
                     <Link to="/"
@@ -601,7 +605,7 @@ class SiteNav extends React.Component {
 
                       <li role="menuitem">
                         <li><a href="https://www.acc.edu.au/blog">Blog</a></li>
-                        <li><a href="https://www.acc.edu.au/podcast">Podcast</a></li>
+                        <li><a href="https://www.acc.edu.au/podcast">The Inspiration Project Podcast</a></li>
                         <li><a href="https://www.acc.edu.au/eguides">Guides</a></li>
                       </li>
 
