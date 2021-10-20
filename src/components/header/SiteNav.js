@@ -586,6 +586,7 @@ class SiteNav extends React.Component {
                       <h3 style={{ color: '#fff' }}>Select a Journal</h3>
                       <li><a href="https://www.acc.edu.au/journals/academica/index.html">Academica</a></li>
                       <li><a href="https://www.acc.edu.au/journals/excelencia/index.html">Excelencia</a></li>
+                      <li><a href="https://www.acc.edu.au/excelencia-live">Excelencia Live</a></li>
                     </ul>
                   </li>
                   <li role="menuitem">
