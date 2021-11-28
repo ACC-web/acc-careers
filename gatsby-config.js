@@ -110,12 +110,13 @@ module.exports = {
       options: {
         name: 'ACC Careers',
         short_name: 'ACC Careers',
+        start_url: `/?utm_source=PWA`,
         background_color: '#2a333c',
         theme_color: '#2a333c',
         // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
         // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
         display: 'standalone',
-        icon: 'src/favicon.png', // This path is relative to the root of the site.
+        icon: `src/images/ACC-Shield.png`, // This path is relative to the root of the site.
       },
     },
     'gatsby-plugin-offline',
