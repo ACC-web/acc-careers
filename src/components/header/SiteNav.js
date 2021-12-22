@@ -1,9 +1,8 @@
-import { Link } from 'gatsby';
 import * as React from 'react';
-import styled from "styled-components"
-import { css } from "styled-components"
-
+import { Link } from 'gatsby';
+import styled, { css } from "styled-components";
 import '../base.css';
+
 
 const HomeNavRaise = css`
   position: inherit;
@@ -31,7 +30,7 @@ const SiteNavStyles = css`
 const ParentItem = css`
   border-bottom:0;
   position: relative;
-  `;
+`;
 
 const SiteNavRight = styled.div`
   flex-shrink: 0;
@@ -73,7 +72,6 @@ const SiteNavRight = styled.div`
   }
 
   @media(min-width: 950px) {
-
 
     #main-menu li .megaMenu{
       display: none;
@@ -162,8 +160,7 @@ const SiteNavRight = styled.div`
     top: 0;
     height: 100%;
     overflow: scroll;
-    transition: right 0.5s ease,
-    box-shadow 0.5s ease;
+    transition: right 0.5s ease, box-shadow 0.5s ease;
     z-index: 401;
     background-color: #2A333C;
   }
@@ -205,13 +202,6 @@ const SiteNavRight = styled.div`
   #main-menu li:hover,
   #main-menu li:focus {
     background: #414B56;
-    /* Firefox */
-    -moz-transition: all 0.3s ease-in;
-    /* WebKit */
-    -webkit-transition: all 0.3s ease-in;
-    /* Opera */
-    -o-transition: all 0.3s ease-in;
-    /* Standard */
     transition: all 0.3s ease-in;
     text-decoration: none;
   }
@@ -316,20 +306,12 @@ const SiteNavRight = styled.div`
     vertical-align: top;
     width: 9px;
     transform: rotate(-45deg);
-    -webkit-transition: all 300ms ease;
-    -moz-transition: all 300ms ease;
-    -ms-transition: all 300ms ease;
-    -o-transition: all 300ms ease;
     transition: all 300ms ease;
   }
 
   body.school-list-open #MainNav .reveal {
     transform: rotate(135deg);
     top: 5px;
-    -webkit-transition: all 300ms ease;
-    -moz-transition: all 300ms ease;
-    -ms-transition: all 300ms ease;
-    -o-transition: all 300ms ease;
     transition: all 300ms ease;
   }
 
@@ -406,9 +388,7 @@ const SiteNavRight = styled.div`
       transform: perspective(1px) translateZ(0);
       box-shadow: 0 0 1px rgba(0, 0, 0, 0);
       position: relative;
-      -webkit-transition-property: color;
       transition-property: color;
-      -webkit-transition-duration: 0.3s;
       transition-duration: 0.3s;
       color: #fff;
       border-bottom: 1px solid #fff;
@@ -425,9 +405,7 @@ const SiteNavRight = styled.div`
 
     #main-menu li a:hover svg {
       transform: rotate(361deg);
-      -webkit-offset-rotate: 361deg;
       offset-rotate: 361deg;
-      -webkit-transition: all 0.3s ease-in-out 0s;
       transition: all 0.3s ease-in-out 0s;
     }
 
@@ -487,9 +465,6 @@ const SiteNavRight = styled.div`
   }
   
 `;
-
-
-
 
 
 
@@ -578,6 +553,7 @@ class SiteNav extends React.Component {
                       <li role="menuitem"><a href="https://www.acc.edu.au/burnie/index.html">Burnie, TAS</a></li>
                       <li role="menuitem"><a href="https://www.acc.edu.au/launceston/index.html">Launceston, TAS</a></li>
                       <li role="menuitem"><a href="https://www.acc.edu.au/hobart/index.html">Hobart, TAS</a></li>
+                      <a href="https://www.acc.edu.au/online-schools/index.html"><h3 style="color:#fff">Online Schools</h3></a>
                     </ul>
                   </li>
                   <li role="menuitem">
