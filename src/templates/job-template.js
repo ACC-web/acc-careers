@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
-import { useLocation } from '@reach/router'
+// import { useLocation } from '@reach/router'
 import Layout from '../components/layout'
 import Hero from '../components/hero'
 
@@ -92,47 +92,45 @@ const JobTemplate = ({ data, location }) => {
     const jobUrl = siteUrl + location.pathname;
 
     return (
-        <>
-            <Layout location={location} title={siteTitle}>
-                <div style={{ background: '#fff' }}>
-                    <Helmet>
-                        <meta charSet="utf-8" />
-                        <title>{pageTitle}</title>
-                        <link rel="canonical" href="https://acc.edu.au/careers" />
-                        <meta name="description" content={jobMetaDescription} />
+          <Layout location={location} title={siteTitle}>
+              <div>
+                  <Helmet>
+                      <meta charSet="utf-8" />
+                      <title>{pageTitle}</title>
+                      <link rel="canonical" href="https://acc.edu.au/careers" />
+                      <meta name="description" content={jobMetaDescription} />
 
-                        {/*These tags are required for Linkedin*/}
-                        <meta property='og:title' content={pageTitle} />
-                        <meta property='og:description' content={jobMetaDescription} />
-                        <meta property='og:image' content={jobMetaImage} />
-                        <meta property='og:url' content={jobUrl}/>
+                      {/*These tags are required for Linkedin*/}
+                      <meta property='og:title' content={pageTitle} />
+                      <meta property='og:description' content={jobMetaDescription} />
+                      <meta property='og:image' content={jobMetaImage} />
+                      <meta property='og:url' content={jobUrl}/>
 
-                        {/*These Tags are required for Twitter - might as well do these too (does hurt to have more)*/}
-                        <meta name="twitter:title" content={pageTitle} />
-                        <meta name="twitter:description" content={jobMetaDescription}/>
-                        <meta name="twitter:image" content={jobMetaImage} />
-                        <meta name="twitter:card" content={jobMetaImage} />
-                    </Helmet>
-                    <Top>
-                        <Hero headingTitle={job.jobTitle} className="hero" />
-                    </Top>
-                    <Wrapper>
-                        {/*todo: once we have a good batch of fresh jobs I will enable the posted on content, because its currently got the same date. v2*/}
-                        {/*<p style={{display: 'block',}} className="smaller">Job posted at: {job.createdAt}</p>*/}
-                        <div
-                            dangerouslySetInnerHTML={{
-                                __html: job.jobDescription.childMarkdownRemark.html,
-                            }}
-                        />
-                        {/*{typeformUrl && <TypeFormModal link={typeformUrl} />}*/}
-                        <PopupButton id={typeformUrl} className="my-button">
-                           APPLY NOW
-                        </PopupButton>
-                    </Wrapper>
+                      {/*These Tags are required for Twitter - might as well do these too (does hurt to have more)*/}
+                      <meta name="twitter:title" content={pageTitle} />
+                      <meta name="twitter:description" content={jobMetaDescription}/>
+                      <meta name="twitter:image" content={jobMetaImage} />
+                      <meta name="twitter:card" content={jobMetaImage} />
+                  </Helmet>
+                  <Top>
+                      <Hero headingTitle={job.jobTitle} className="hero" />
+                  </Top>
+                  <Wrapper>
+                      {/*todo: once we have a good batch of fresh jobs I will enable the posted on content, because its currently got the same date. v2*/}
+                      {/*<p style={{display: 'block',}} className="smaller">Job posted at: {job.createdAt}</p>*/}
+                      <div
+                          dangerouslySetInnerHTML={{
+                              __html: job.jobDescription.childMarkdownRemark.html,
+                          }}
+                      />
+                      {/*{typeformUrl && <TypeFormModal link={typeformUrl} />}*/}
+                      <PopupButton id={typeformUrl} className="my-button">
+                         APPLY NOW
+                      </PopupButton>
+                  </Wrapper>
 
-                </div>
-            </Layout>
-        </>
+              </div>
+          </Layout>
     )
 
 }

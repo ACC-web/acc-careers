@@ -6,7 +6,7 @@ import styled from "styled-components"
 
 const SiteHeader = styled.div`
   position: relative;
-    padding: 12px 4vw;
+  padding: 12px 4vw;
   color: #fff;
   /* background: color(var(--darkblue) l(-5%)) no-repeat center center; */
   background: #2a333c;
@@ -23,14 +23,14 @@ const HeaderOuter = styled.div`
 `;
 
 const LogoWrapper = styled.div`
-    height: 73px;
-    width: 70%;
-    max-width: 255px;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    align-items: center;
-    text-align: center;
+  height: 73px;
+  width: 70%;
+  max-width: 255px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
 `;
 
 
