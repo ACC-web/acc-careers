@@ -543,16 +543,17 @@ class SiteNav extends React.Component {
                     <ul className="megaMenu" id="schools">
                       <h3>Select a School</h3>
 
-                      <li role="menuitem"><a href="https://www.acc.edu.au/moreton/index.html">Moreton, QLD</a></li>
-                      <li role="menuitem"><a href="https://www.acc.edu.au/singleton/index.html">Singleton, NSW</a></li>
+                      <li role="menuitem"><a href="https://www.acc.edu.au/moreton/">Moreton, QLD</a></li>
+                      <li role="menuitem"><a href="https://www.acc.edu.au/singleton/">Singleton, NSW</a></li>
+                      <li role="menuitem"><a href="https://www.medowiecs.nsw.edu.au/">Medowie, NSW</a></li>
                       <li role="menuitem"><a href="https://brightwaterschristiancollege.com.au/">Brightwaters, NSW</a></li>
-                      <li role="menuitem"><a href="https://www.acc.edu.au/marsdenpark/index.html">Marsden Park, NSW</a></li>
-                      <li role="menuitem"><a href="https://www.acc.edu.au/hume/index.html">Hume, VIC</a></li>
-                      <li role="menuitem"><a href="https://www.acc.edu.au/darlingdowns/index.html">Darling Downs, WA</a></li>
-                      <li role="menuitem"><a href="https://www.acc.edu.au/southlands/index.html">Southlands, WA</a></li>
-                      <li role="menuitem"><a href="https://www.acc.edu.au/burnie/index.html">Burnie, TAS</a></li>
-                      <li role="menuitem"><a href="https://www.acc.edu.au/launceston/index.html">Launceston, TAS</a></li>
-                      <li role="menuitem"><a href="https://www.acc.edu.au/hobart/index.html">Hobart, TAS</a></li>
+                      <li role="menuitem"><a href="https://www.acc.edu.au/marsdenpark/">Marsden Park, NSW</a></li>
+                      <li role="menuitem"><a href="https://www.acc.edu.au/hume/">Hume, VIC</a></li>
+                      <li role="menuitem"><a href="https://www.acc.edu.au/darlingdowns/">Darling Downs, WA</a></li>
+                      <li role="menuitem"><a href="https://www.acc.edu.au/southlands/">Southlands, WA</a></li>
+                      <li role="menuitem"><a href="https://www.acc.edu.au/burnie/">Burnie, TAS</a></li>
+                      <li role="menuitem"><a href="https://www.acc.edu.au/launceston/">Launceston, TAS</a></li>
+                      <li role="menuitem"><a href="https://www.acc.edu.au/hobart/">Hobart, TAS</a></li>
                       <a href="https://www.acc.edu.au/online-schools/index.html"><h3 style={{color:"#fff"}}>Online Schools</h3></a>
                     </ul>
                   </li>
