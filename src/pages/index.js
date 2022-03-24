@@ -380,29 +380,32 @@ export default RootIndex
 
 export const pageQuery = graphql`
     query HomeQuery {
-        allContentfulJob(sort: {order: DESC, fields: createdAt}) {
+        allContentfulJob(
+            filter: {jobLocation: {jobLocation: {ne: "Medowie (NSW)"}}}
+            sort: {order: DESC, fields: createdAt}
+          ) {
             edges {
-                node {
-                    jobTitle
-                    jobForm {
-                        formUrl
-                    }
-                    jobDescription {
-                        childMarkdownRemark {
-                            html
-                            excerpt(pruneLength: 150)
-                        }
-                    }
-                    id
-                    createdAt(formatString: "dddd DD, MMMM, YYYY")
-                    jobLocation {
-                        jobLocation
-                    }
-                    slug
+              node {
+                jobTitle
+                jobForm {
+                  formUrl
                 }
+                jobDescription {
+                  childMarkdownRemark {
+                    html
+                    excerpt(pruneLength: 150)
+                  }
+                }
+                id
+                createdAt(formatString: "dddd DD, MMMM, YYYY")
+                jobLocation {
+                  jobLocation
+                }
+                slug
+              }
             }
             totalCount
-        }
+          }
         moreton: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Moreton (QLD)"}}}) {
             totalCount
         }
