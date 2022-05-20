@@ -354,8 +354,8 @@ class RootIndex extends React.Component  {
                         <li><Link to="/erina-nsw" id={"Erina (NSW)"} onClick={setFilterItem}>Erina, NSW ({Erina})</Link></li>
                         <li><Link to="/hume-vic" id={"Hume (VIC)"} onClick={setFilterItem}>Hume, VIC ({Hume})</Link></li>
                         <li><Link to="/darling-downs-wa" id={"Darling Downs (WA)"} onClick={setFilterItem}>Darling Downs, WA ({Dar})</Link></li>
-                        <li><Link to="/southland-wa" id={"Southlands (WA)"} onClick={setFilterItem}>Southlands, WA ({Sou})</Link></li>
-                        <li><Link to="/burnie" id={"Burnie (TAS)"} onClick={setFilterItem}>Burnie, TAS ({Bur})</Link></li>
+                        <li><Link to="/southlands-wa" id={"Southlands (WA)"} onClick={setFilterItem}>Southlands, WA ({Sou})</Link></li>
+                        <li><Link to="/burnie-tas" id={"Burnie (TAS)"} onClick={setFilterItem}>Burnie, TAS ({Bur})</Link></li>
                         <li><Link to="/hobart-tas" id={"Hobart (TAS)"} onClick={setFilterItem}>Hobart, TAS ({Hob})</Link></li>
                         <li><Link to="/launceston-tas" id={"Launceston (TAS)"} onClick={setFilterItem}>Launceston, TAS ({Lau})</Link></li>
                     </ul>

@@ -97,7 +97,7 @@ const JobTemplate = ({ data, location }) => {
                   <Helmet>
                       <meta charSet="utf-8" />
                       <title>{pageTitle}</title>
-                      <link rel="canonical" href="https://acc.edu.au/careers" />
+                      <link rel="canonical" href="https://www.acc.edu.au/careers/" />
                       <meta name="description" content={jobMetaDescription} />
 
                       {/*These tags are required for Linkedin*/}
