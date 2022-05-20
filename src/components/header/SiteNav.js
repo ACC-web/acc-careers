@@ -554,7 +554,7 @@ class SiteNav extends React.Component {
                       <li role="menuitem"><a href="https://www.acc.edu.au/burnie/">Burnie, TAS</a></li>
                       <li role="menuitem"><a href="https://www.acc.edu.au/launceston/">Launceston, TAS</a></li>
                       <li role="menuitem"><a href="https://www.acc.edu.au/hobart/">Hobart, TAS</a></li>
-                      <a href="https://www.acc.edu.au/distance-education/"><h3 style={{color:"#fff"}}>Distance Education</h3></a><
+                      <a href="https://www.acc.edu.au/distance-education/"><h3 style={{color:"#fff"}}>Distance Education</h3></a>
                     </ul>
                   </li>
                   <li role="menuitem">
