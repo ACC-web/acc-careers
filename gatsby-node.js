@@ -10,7 +10,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const queryResults = await graphql(`
     {
-      allContentfulJob(filter: {jobLocation: {jobLocation: {ne: "Medowie (NSW)"}}}) {
+      allContentfulAccJob(filter: {jobLocation: {jobLocation: {ne: "Medowie (NSW)"}}}) {
         nodes {
           jobForm {
             formUrl
@@ -34,10 +34,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         nodes {
           jobLocation
           id
-          job {
+          acc_job {
             jobTitle
             slug
-
           }
         }
       }
@@ -46,7 +45,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
 
 
-  queryResults.data.allContentfulJob.nodes.forEach(node => {
+  queryResults.data.allContentfulAccJob.nodes.forEach(node => {
     createPage({
       path: `${_.kebabCase(node.jobLocation.jobLocation)}/${node.slug}/`,
       component: jobTemplate,

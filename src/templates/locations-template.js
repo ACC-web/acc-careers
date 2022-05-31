@@ -60,9 +60,9 @@ const locationsTemplate = ({ pageContext, data, location }) => {
         const siteTitle = data.site.siteMetadata.title
         const { jobsLocation } = pageContext
         // const location = get(this, 'props.data.allContentfulJobLocation')
-        // const jobs = get(this, 'props.data.allContentfulJob.edges')
-        const jobs =  data.allContentfulJob
-        // const jobtitle =  data.allContentfulJob.edges.node.jobTitle
+        // const jobs = get(this, 'props.data.allContentfulAccJob.edges')
+        const jobs =  data.allContentfulAccJob
+        // const jobtitle =  data.allContentfulAccJob.edges.node.jobTitle
 
         const locationHeader = `${jobs.totalCount} position${jobs.totalCount === 1 ? "" : "s"}  available at ${jobsLocation}`
 
@@ -110,7 +110,7 @@ export default locationsTemplate
 
 export const pageQuery = graphql`
     query LocationTemplateQuery($jobsLocation: String) {
-        allContentfulJob(filter: {jobLocation: {jobLocation: {eq: $jobsLocation}}}, sort: {order: DESC, fields: createdAt}) {
+        allContentfulAccJob(filter: {jobLocation: {jobLocation: {eq: $jobsLocation}}}, sort: {order: DESC, fields: createdAt}) {
             edges {
                 node {
                     id

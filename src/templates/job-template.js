@@ -81,12 +81,12 @@ const Wrapper = styled.section`
 `
 
 const JobTemplate = ({ data, location }) => {
-    const job = data.contentfulJob
+    const job = data.contentfulAccJob
     const siteTitle = data.site.siteMetadata.title
     const siteUrl = data.site.siteMetadata.siteUrl
-    const title = data.contentfulJob.jobTitle
+    const title = data.contentfulAccJob.jobTitle
     const pageTitle = `${title} | ${siteTitle}`
-    const typeformUrl = data.contentfulJob.jobForm?.formUrl
+    const typeformUrl = data.contentfulAccJob.jobForm?.formUrl
     const jobMetaDescription = 'The ACC Group is offering a range of career opportunities around the country. Join our nation-wide network of schools as we aim to transform young people spiritually, academically, socially and physically.';
     const jobMetaImage = siteUrl + '/careers/acc-careers-meta-image.jpg';
     const jobUrl = siteUrl + location.pathname;
@@ -139,7 +139,7 @@ export default JobTemplate
 
 export const pageQuery = graphql`
     query BlogPostBySlug($id: String!) {
-        contentfulJob(id: { eq: $id }) {
+        contentfulAccJob(id: { eq: $id }) {
             slug
             id
             createdAt(formatString: "dddd DD, MMMM, YYYY")

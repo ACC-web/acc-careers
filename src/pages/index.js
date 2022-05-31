@@ -215,9 +215,9 @@ class RootIndex extends React.Component  {
     const Lau = get(this, 'props.data.launceston.totalCount')
     const linkedin = '../images/linkedInlogo.png'
 
-    const job = get(this, 'props.data.allContentfulJob.edges')
+    const job = get(this, 'props.data.allContentfulAccJob.edges')
     // Select options
-    // const locationOptions = get(this, 'props.data.allContentfulJob.edges.node')
+    // const locationOptions = get(this, 'props.data.allContentfulAccJob.edges.node')
     const locationOptions = [
         { value: 'Moreton (QLD)', label: 'Moreton (QLD)',},
         // { value: 'Brightwaters (NSW)', label: 'Brightwaters (NSW)',},
@@ -380,7 +380,7 @@ export default RootIndex
 
 export const pageQuery = graphql`
     query HomeQuery {
-        allContentfulJob(
+        allContentfulAccJob(
             filter: {jobLocation: {jobLocation: {ne: "Medowie (NSW)"}}}
             sort: {order: DESC, fields: createdAt}
           ) {
@@ -406,37 +406,37 @@ export const pageQuery = graphql`
             }
             totalCount
           }
-        moreton: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Moreton (QLD)"}}}) {
+        moreton: allContentfulAccJob(filter: {jobLocation: {jobLocation: {in: "Moreton (QLD)"}}}) {
             totalCount
         }
-        singleton: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Singleton (NSW)"}}}) {
+        singleton: allContentfulAccJob(filter: {jobLocation: {jobLocation: {in: "Singleton (NSW)"}}}) {
             totalCount
         }
-        marsdenpark: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Marsden Park (NSW)"}}}) {
+        marsdenpark: allContentfulAccJob(filter: {jobLocation: {jobLocation: {in: "Marsden Park (NSW)"}}}) {
             totalCount
         }
-        erina: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Erina (NSW)"}}}) {
+        erina: allContentfulAccJob(filter: {jobLocation: {jobLocation: {in: "Erina (NSW)"}}}) {
             totalCount
         }
-        brightwaters: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Brightwaters (NSW)"}}}) {
+        brightwaters: allContentfulAccJob(filter: {jobLocation: {jobLocation: {in: "Brightwaters (NSW)"}}}) {
             totalCount
         }
-        hume: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Hume (VIC)"}}}) {
+        hume: allContentfulAccJob(filter: {jobLocation: {jobLocation: {in: "Hume (VIC)"}}}) {
             totalCount
         }
-        darlingdowns: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Darling Downs (WA)"}}}) {
+        darlingdowns: allContentfulAccJob(filter: {jobLocation: {jobLocation: {in: "Darling Downs (WA)"}}}) {
             totalCount
         }
-        southlands: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Southlands (WA)"}}}) {
+        southlands: allContentfulAccJob(filter: {jobLocation: {jobLocation: {in: "Southlands (WA)"}}}) {
             totalCount
         }
-        burnie: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Burnie (TAS)"}}}) {
+        burnie: allContentfulAccJob(filter: {jobLocation: {jobLocation: {in: "Burnie (TAS)"}}}) {
             totalCount
         }
-        hobart: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Hobart (TAS)"}}}) {
+        hobart: allContentfulAccJob(filter: {jobLocation: {jobLocation: {in: "Hobart (TAS)"}}}) {
             totalCount
         }
-        launceston: allContentfulJob(filter: {jobLocation: {jobLocation: {in: "Launceston (TAS)"}}}) {
+        launceston: allContentfulAccJob(filter: {jobLocation: {jobLocation: {in: "Launceston (TAS)"}}}) {
             totalCount
         }
         site {
