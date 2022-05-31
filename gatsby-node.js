@@ -12,15 +12,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     {
       allContentfulAccJob(filter: {jobLocation: {jobLocation: {ne: "Medowie (NSW)"}}}) {
         nodes {
-          jobForm {
-            formUrl
-          }
           id
+          slug
+          jobTitle
           jobLocation {
             jobLocation
           }
-          slug
-          jobTitle
+          jobForm {
+            formUrl
+          }
           jobDescription {
             childMarkdownRemark {
               html

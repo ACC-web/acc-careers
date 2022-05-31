@@ -80,13 +80,14 @@ const Wrapper = styled.section`
   }
 `
 
-const JobTemplate = ({ data, location }) => {
-    const job = data.contentfulAccJob
+const JobTemplate = ({ data, location, pageContext }) => {
+    const { job } = pageContext
+    // const job = data.contentfulAccJob || pageContext.job
     const siteTitle = data.site.siteMetadata.title
     const siteUrl = data.site.siteMetadata.siteUrl
-    const title = data.contentfulAccJob.jobTitle
+    const title = job.jobTitle //data.contentfulAccJob.jobTitle
     const pageTitle = `${title} | ${siteTitle}`
-    const typeformUrl = data.contentfulAccJob.jobForm?.formUrl
+    const typeformUrl = job.jobForm?.formUrl //data.contentfulAccJob.jobForm?.formUrl
     const jobMetaDescription = 'The ACC Group is offering a range of career opportunities around the country. Join our nation-wide network of schools as we aim to transform young people spiritually, academically, socially and physically.';
     const jobMetaImage = siteUrl + '/careers/acc-careers-meta-image.jpg';
     const jobUrl = siteUrl + location.pathname;
@@ -113,7 +114,7 @@ const JobTemplate = ({ data, location }) => {
                       <meta name="twitter:card" content={jobMetaImage} />
                   </Helmet>
                   <Top>
-                      <Hero headingTitle={job.jobTitle} className="hero" />
+                      <Hero headingTitle={title} className="hero" />
                   </Top>
                   <Wrapper>
                       {/*todo: once we have a good batch of fresh jobs I will enable the posted on content, because its currently got the same date. v2*/}
@@ -138,27 +139,27 @@ const JobTemplate = ({ data, location }) => {
 export default JobTemplate
 
 export const pageQuery = graphql`
-    query BlogPostBySlug($id: String!) {
-        contentfulAccJob(id: { eq: $id }) {
-            slug
-            id
-            createdAt(formatString: "dddd DD, MMMM, YYYY")
-            jobTitle
-            jobLocation {
-                jobLocation
-            }
-            jobForm {
-                formUrl
-            }
-            jobDescription {
-                childMarkdownRemark {
-                    html
-                }
-            }
-        }
+    query {
+#        contentfulAccJob(id: { eq: $id }) {
+#            id
+#            slug
+#            createdAt(formatString: "dddd DD, MMMM, YYYY")
+#            jobTitle
+#            jobLocation {
+#                jobLocation
+#            }
+#            jobForm {
+#                formUrl
+#            }
+#            jobDescription {
+#                childMarkdownRemark {
+#                    html
+#                }
+#            }
+#        }
         site {
             siteMetadata {
-                title,
+                title
                 siteUrl
             }
         }
