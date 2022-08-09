@@ -2,25 +2,23 @@ import React from "react";
 // import styled from "@emotion/styled";
 
 const List = styled.ul`
-    list-style-type: none;
+  list-style-type: none;
+  padding: 0;
+
+  li {
     padding: 0;
-    li{    
-      padding: 0;
-      a{
-          font-size: inherit;
-          margin: 0;
-          color: inherit;
-          
-          :hover{
-          }
-      }
+
+    a {
+      font-size: inherit;
+      margin: 0;
+      color: inherit;
     }
-   
+  }
+
 `
 
 class EGuides extends React.Component {
-
-  render () {
+  render() {
     return (
       <div>
         <h2>eGuides</h2>

@@ -7,38 +7,37 @@ const Wrapper = styled.div`
   padding: 1.5rem 0;
   position:relative;
   display: block;
- `
+`
 
 
 const Linky = styled(Link)`
   position:relative;
   display: block;
     
+  > .chevron{
+    position: absolute;
+    right: 1rem;
+    top:30%;
+    width: auto;
+    height: 1rem;
+    
+    transition-property: right;
+    transition-duration: 500ms;
+    transition-timing-function: ease;
+  }
+  :hover{
+    text-decoration: none;
     > .chevron{
-        position: absolute;
-        right: 1rem;
-        top:30%;
-        width: auto;
-        height: 1rem;
-        
-        transition-property: right;
-        transition-duration: 500ms;
-        transition-timing-function: ease;
+      right: calc(1rem - 5px);
+      transition-property: right;
+      transition-duration: 100ms;
+      transition-timing-function: ease;
     }
-    :hover{
-        text-decoration: none;
-        > .chevron{
-            right: calc(1rem - 5px);
-            transition-property: right;
-            transition-duration: 100ms;
-            transition-timing-function: ease;
-        }
-        
-        > h2, > p{
-             color: #0069AF;
-             text-decoration: none;
-        }
+    > h2, > p{
+      color: #0069AF;
+      text-decoration: none;
     }
+  }
  
 `
 
@@ -57,7 +56,7 @@ const Location = styled.p`
   margin: 0;
 `
 
-export default ({ article }) => (
+export const ArticlePreview = ({ article }) => (
   <Wrapper>
       <Linky to={`/${_.kebabCase(article.jobLocation.jobLocation)}/${article.slug}`}>
         <Title>{article.jobTitle}</Title>
@@ -75,3 +74,5 @@ export default ({ article }) => (
   </Wrapper>
 )
 // path: `/tags/${_.kebabCase(tag)}/`, //RH changes this to hopefully contain all the blog pages inside the /blog directory
+
+export default ArticlePreview;

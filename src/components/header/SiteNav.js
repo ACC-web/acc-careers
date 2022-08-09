@@ -494,11 +494,9 @@ class SiteNav extends React.Component {
                          enableBackground="new 0 0 27.4 24"
                          xmlSpace="preserve"
                     >
-                      <g>
-                        <rect x="0" y="20" className="white-fill" width="27.4" height="4"/>
-                        <rect x="0" y="10" className="white-fill" width="27.4" height="4"/>
-                        <rect x="0" className="white-fill" width="27.4" height="4"/>
-                      </g>
+                      <rect x="0" y="20" className="white-fill" width="27.4" height="4"/>
+                      <rect x="0" y="10" className="white-fill" width="27.4" height="4"/>
+                      <rect x="0" className="white-fill" width="27.4" height="4"/>
                     </svg>
                   </span>
               </a>
@@ -527,72 +525,68 @@ class SiteNav extends React.Component {
                           enableBackground="new 0 0 14.8 14.8"
                           xmlSpace="preserve"
                       >
-                        <polygon className="white-fill"
-                                 points="14.8,2.8 12,0 7.4,4.6 2.8,0 0,2.8 4.6,7.4 0,12 2.8,14.8 7.4,10.3 12,14.8 14.8,12 10.3,7.4 "/>
+                        <polygon className="white-fill" points="14.8,2.8 12,0 7.4,4.6 2.8,0 0,2.8 4.6,7.4 0,12 2.8,14.8 7.4,10.3 12,14.8 14.8,12 10.3,7.4 "/>
                       </svg>
                     </span>
                 </a>
                 <ul className="NavStyles" id="MainNav" role="menu">
                   {/* TODO: mark current nav item - add class nav-current */}
-                  <li role="menuitem">
-                    <a href="https://www.acc.edu.au/about.html">About</a>
+                  <li>
+                    <a role="menuitem" href="https://www.acc.edu.au/about">About</a>
                   </li>
-                  <li css={ParentItem} role="menuitem">
-                    <Link to="/" onClick={(PreventDefault) => document.body.classList.toggle('school-list-open')}>Schools&nbsp;&nbsp;<span className="reveal"></span></Link>
+                  <li css={ParentItem}>
+                    <Link role="menuitem" to="/" onClick={(PreventDefault) => document.body.classList.toggle('school-list-open')}>Schools&nbsp;&nbsp;<span className="reveal"></span></Link>
 
                     <ul className="megaMenu" id="schools">
                       <h3>Select a School</h3>
 
-                      <li role="menuitem"><a href="https://www.acc.edu.au/moreton/">Moreton, QLD</a></li>
-                      <li role="menuitem"><a href="https://www.acc.edu.au/singleton/">Singleton, NSW</a></li>
-                      <li role="menuitem"><a href="https://www.medowiecs.nsw.edu.au/">Medowie, NSW</a></li>
-                      <li role="menuitem"><a href="https://brightwaterschristiancollege.com.au/">Brightwaters, NSW</a></li>
-                      <li role="menuitem"><a href="https://www.acc.edu.au/marsdenpark/">Marsden Park, NSW</a></li>
-                      <li role="menuitem"><a href="https://www.acc.edu.au/hume/">Hume, VIC</a></li>
-                      <li role="menuitem"><a href="https://www.acc.edu.au/darlingdowns/">Darling Downs, WA</a></li>
-                      <li role="menuitem"><a href="https://www.acc.edu.au/southlands/">Southlands, WA</a></li>
-                      <li role="menuitem"><a href="https://www.acc.edu.au/burnie/">Burnie, TAS</a></li>
-                      <li role="menuitem"><a href="https://www.acc.edu.au/launceston/">Launceston, TAS</a></li>
-                      <li role="menuitem"><a href="https://www.acc.edu.au/hobart/">Hobart, TAS</a></li>
+                      <li role="presentation"><a role="menuitem" href="https://www.acc.edu.au/moreton/">Moreton, QLD</a></li>
+                      <li role="presentation"><a role="menuitem" href="https://www.acc.edu.au/singleton/">Singleton, NSW</a></li>
+                      <li role="presentation"><a role="menuitem" href="https://www.mcs.nsw.edu.au/">Medowie, NSW</a></li>
+                      <li role="presentation"><a role="menuitem" href="https://brightwaters.nsw.edu.au/">Brightwaters, NSW</a></li>
+                      <li role="presentation"><a role="menuitem" href="https://www.acc.edu.au/marsdenpark/">Marsden Park, NSW</a></li>
+                      <li role="presentation"><a role="menuitem" href="https://www.acc.edu.au/hume/">Hume, VIC</a></li>
+                      <li role="presentation"><a role="menuitem" href="https://www.acc.edu.au/darlingdowns/">Darling Downs, WA</a></li>
+                      <li role="presentation"><a role="menuitem" href="https://www.acc.edu.au/southlands/">Southlands, WA</a></li>
+                      <li role="presentation"><a role="menuitem" href="https://www.acc.edu.au/burnie/">Burnie, TAS</a></li>
+                      <li role="presentation"><a role="menuitem" href="https://www.acc.edu.au/launceston/">Launceston, TAS</a></li>
+                      <li role="presentation"><a role="menuitem" href="https://www.acc.edu.au/hobart/">Hobart, TAS</a></li>
                       {/*<a href="https://www.acc.edu.au/distance-education/"><h3 style={{color:"#fff"}}>Distance Education</h3></a>*/}
                     </ul>
                   </li>
-                  <li role="menuitem">
-                    <a href="https://www.acc.edu.au/journals/index.html" onClick={(PreventDefault) => document.body.classList.toggle('journals-list-open')}>Journals&nbsp;&nbsp;<span className="reveal"></span></a>
-                    <ul className="megaMenu " id="journals">
+                  <li>
+                    <a role="menuitem" href="https://www.acc.edu.au/journals/" onClick={(PreventDefault) => document.body.classList.toggle('journals-list-open')}>Journals&nbsp;&nbsp;<span className="reveal"></span></a>
+                    <ul className="megaMenu" id="journals">
                       <h3 style={{ color: '#fff' }}>Select a Journal</h3>
-                      <li><a href="https://www.acc.edu.au/journals/academica/index.html">Academica</a></li>
-                      <li><a href="https://www.acc.edu.au/journals/excelencia/index.html">Excelencia</a></li>
-                      <li><a href="https://www.acc.edu.au/excelencia-live">Excelencia Live</a></li>
+                      <li><a role="menuitem" href="https://www.acc.edu.au/journals/academica/">Academica</a></li>
+                      <li><a role="menuitem" href="https://www.acc.edu.au/journals/excelencia/">Excelencia</a></li>
+                      <li><a role="menuitem" href="https://www.acc.edu.au/excelencia-live">Excelencia Live</a></li>
                     </ul>
                   </li>
-                  <li role="menuitem">
-                    <Link to="/" onClick={(PreventDefault) => document.body.classList.toggle('careers-list-open')}>Careers&nbsp;&nbsp;<span className="reveal"></span></Link>
+                  <li>
+                    <Link role="menuitem" to="/" onClick={(PreventDefault) => document.body.classList.toggle('careers-list-open')}>Careers&nbsp;&nbsp;<span className="reveal"></span></Link>
                     <ul className="megaMenu " id="careers">
-                      <li><a href="https://www.acc.edu.au/careers/">Positions Vacant</a></li>
-                      <li><a href="https://www.cem.org.au/training-school.html">Teacher Traineeships</a></li>
+                      <li><a role="menuitem" href="https://www.acc.edu.au/careers/">Positions Vacant</a></li>
+                      <li><a role="menuitem" href="https://www.cem.org.au/training-school.html">Teacher Traineeships</a></li>
                     </ul>
                   </li>
-                  <li css={ParentItem} role="menuitem">
-                    <Link to="/"
-                          onClick={(PreventDefault) => document.body.classList.toggle('resources-list-open')}>Resources&nbsp;&nbsp;
-                      <span className="reveal"></span></Link>
-
+                  <li css={ParentItem}>
+                    <Link role="menuitem" to="/" onClick={(PreventDefault) => document.body.classList.toggle('resources-list-open')}>Resources&nbsp;&nbsp;
+                      <span className="reveal"></span>
+                    </Link>
                     <ul className="megaMenu" id="resources">
                       <h3>Select a Resource</h3>
-
-                      <li role="menuitem">
-                        <ul className="megaMenu " id="resources">
-                          <li><a href="https://www.acc.edu.au/blog">Blog</a></li>
-                          <li><a href="https://www.acc.edu.au/podcast">The Inspiration Project Podcast</a></li>
-                          <li><a href="https://www.acc.edu.au/eguides">Helpful Parenting Guides</a></li>
+                      <li>
+                        <ul className="megaMenu" id="resources">
+                          <li><a role="menuitem" href="https://www.acc.edu.au/blog">Blog</a></li>
+                          <li><a role="menuitem" href="https://www.acc.edu.au/podcast">The Inspiration Project Podcast</a></li>
+                          <li><a role="menuitem" href="https://www.acc.edu.au/eguides">Helpful Parenting Guides</a></li>
                         </ul>
                       </li>
-
                     </ul>
                   </li>
-                  <li role="menuitem">
-                    <a href="https://www.acc.edu.au/newsroom/">Newsroom</a>
+                  <li>
+                    <a role="menuitem" href="https://www.acc.edu.au/newsroom/">Newsroom</a>
                   </li>
                 </ul>
               </div>

@@ -4,8 +4,6 @@ import Footer from "../components/footer/footer"
 import './base.css'
 
 const Layout = ({ children }) => {
-
-
   return (
       <div className="global-wrapper" >
         <HeaderArea />

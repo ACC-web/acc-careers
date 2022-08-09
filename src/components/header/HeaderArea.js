@@ -11,8 +11,10 @@ const SiteHeader = styled.div`
   /* background: color(var(--darkblue) l(-5%)) no-repeat center center; */
   background: #2a333c;
   background-size: cover;
-  
-  &>a{z-index:9999}
+
+  & > a {
+    z-index: 9999
+  }
 `;
 
 const HeaderOuter = styled.div`
@@ -35,18 +37,18 @@ const LogoWrapper = styled.div`
 
 
 class HeaderArea extends React.Component {
-    render() {
-        return (
-            <SiteHeader>
-                <HeaderOuter>
-                    <LogoWrapper>
-                        <AccLogo className="logo" />
-                    </LogoWrapper>
-                    <SiteNav/>
-                </HeaderOuter>
-            </SiteHeader>
-        )
-    }
+  render() {
+    return (
+      <SiteHeader>
+        <HeaderOuter>
+          <LogoWrapper>
+            <AccLogo className="logo"/>
+          </LogoWrapper>
+          <SiteNav/>
+        </HeaderOuter>
+      </SiteHeader>
+    )
+  }
 }
 
 export default HeaderArea;
