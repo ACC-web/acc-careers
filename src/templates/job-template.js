@@ -98,6 +98,7 @@ const JobTemplate = ({data, location, pageContext}) => {
     utm_medium:   params.get("utm_medium"),
     utm_campaign: params.get("utm_campaign"),
     utm_content:  params.get("utm_content"),
+    utm_term:     params.get("utm_term"),
     AdSet:        params.get("AdSet")
   };
 
