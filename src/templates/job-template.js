@@ -91,16 +91,18 @@ const JobTemplate = ({data, location, pageContext}) => {
   const jobMetaImage = siteUrl + '/careers/acc-careers-meta-image.jpg';
   const jobUrl = siteUrl + location.pathname;
 
-
-  const params = (new URL(document.location)).searchParams;
-  const utmParams = {
-    utm_source:   params.get("utm_source"),
-    utm_medium:   params.get("utm_medium"),
-    utm_campaign: params.get("utm_campaign"),
-    utm_content:  params.get("utm_content"),
-    utm_term:     params.get("utm_term"),
-    AdSet:        params.get("AdSet")
-  };
+  let utmParams = null;
+  if (typeof document !== `undefined`) {
+    const params = (new URL(document.location)).searchParams;
+    utmParams = {
+      utm_source:   params.get("utm_source"),
+      utm_medium:   params.get("utm_medium"),
+      utm_campaign: params.get("utm_campaign"),
+      utm_content:  params.get("utm_content"),
+      utm_term:     params.get("utm_term"),
+      AdSet:        params.get("AdSet")
+    };
+  }
 
   return (
     <Layout location={location} title={siteTitle}>
