@@ -288,7 +288,7 @@ class RootIndex extends React.Component {
           <Helmet>
             <meta charSet="utf-8"/>
             <title>{siteTitle}</title>
-            <link rel="canonical" href="https://acc.edu.au/careers"/>
+            <link rel="canonical" href="https://www.acc.edu.au/careers/" />
             <meta name="description" content={jobMetaDescription}/>
 
             {/*These tags are required for Linkedin*/}
