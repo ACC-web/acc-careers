@@ -58,7 +58,7 @@ const Location = styled.p`
 
 export const ArticlePreview = ({ article }) => (
   <Wrapper>
-      <Linky to={`/${_.kebabCase(article.jobLocation.jobLocation)}/${article.slug}`}>
+      <Linky to={`/${_.kebabCase(article.jobLocation.jobLocation)}/${article.slug}/`}>
         <Title>{article.jobTitle}</Title>
         <Location>ACC {article.jobLocation.jobLocation}</Location>
           {/*todo: once we have a good batch of fresh jobs I will enable the posted on content, because its currently got the same date. v1*/}

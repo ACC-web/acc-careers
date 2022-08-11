@@ -155,23 +155,6 @@ export default JobTemplate
 
 export const pageQuery = graphql`
   query {
-    #        contentfulAccJob(id: { eq: $id }) {
-    #            id
-    #            slug
-    #            createdAt(formatString: "dddd DD, MMMM, YYYY")
-    #            jobTitle
-    #            jobLocation {
-    #                jobLocation
-    #            }
-    #            jobForm {
-    #                formUrl
-    #            }
-    #            jobDescription {
-    #                childMarkdownRemark {
-    #                    html
-    #                }
-    #            }
-    #        }
     site {
       siteMetadata {
         title
