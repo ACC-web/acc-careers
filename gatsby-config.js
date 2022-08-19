@@ -10,6 +10,7 @@ try {
 contentfulConfig = {
   spaceId: process.env.CONTENTFUL_SPACE_ID || contentfulConfig.spaceId,
   accessToken: process.env.CONTENTFUL_DELIVERY_TOKEN || contentfulConfig.accessToken,
+  contentTypeFilter: (contentType) => ["job", "jobLocation", "typeformForms"].includes(contentType.sys.id)
 }
 
 const { spaceId, accessToken } = contentfulConfig

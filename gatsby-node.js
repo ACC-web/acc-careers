@@ -10,7 +10,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const queryResults = await graphql(`
     {
-      allContentfulAccJob(filter: {jobLocation: {jobLocation: {ne: "Medowie (NSW)"}}}) {
+      allContentfulAccJob {
         nodes {
           id
           slug
@@ -29,7 +29,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         }
         totalCount
       }
-      allContentfulJobLocation(filter: {jobLocation: {ne: "Medowie (NSW)"}}) {
+      allContentfulJobLocation {
         totalCount
         nodes {
           jobLocation

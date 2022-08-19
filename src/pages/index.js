@@ -253,8 +253,7 @@ class RootIndex extends React.Component {
             </li>
           )
         }
-        // not sure if this is suppose to be here, but I think it hides an error. see here: https://stackoverflow.com/questions/45014094/how-do-i-fix-expected-to-return-a-value-at-the-end-of-arrow-function-warning
-        // return null
+        return null
       }
     );
 
