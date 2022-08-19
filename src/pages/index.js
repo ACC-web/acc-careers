@@ -241,7 +241,7 @@ class RootIndex extends React.Component {
             if (selectedOption[i].label === node.jobLocation.jobLocation) {
               return (
                 <li key={node.slug}>
-                  <ArticlePreview article={node}/>
+                  <ArticlePreview article={node} />
                 </li>
               )
             }
@@ -249,7 +249,7 @@ class RootIndex extends React.Component {
         } else {
           return (
             <li key={node.slug}>
-              <ArticlePreview article={node}/>
+              <ArticlePreview article={node} />
             </li>
           )
         }
@@ -287,7 +287,7 @@ class RootIndex extends React.Component {
           <Helmet>
             <meta charSet="utf-8"/>
             <title>{siteTitle}</title>
-            <link rel="canonical" href="https://acc.edu.au/careers"/>
+            <link rel="canonical" href="https://www.acc.edu.au/careers/" />
             <meta name="description" content={jobMetaDescription}/>
 
             {/*These tags are required for Linkedin*/}
@@ -345,17 +345,17 @@ class RootIndex extends React.Component {
                 <br/>
                 {/*<LocationList />*/}
                 <ul>
-                  <li><Link to="/moreton-qld" id={"Moreton (QLD)"} onClick={setFilterItem}>Moreton, QLD ({Mor})</Link></li>
-                  <li><Link to="/singleton-nsw" id={"Singleton (NSW)"} onClick={setFilterItem}>Singleton, NSW ({Sing})</Link></li>
-                  {/*<li><Link to="/brightwaters-nsw" id={"Brightwaters (NSW)"} onClick={setFilterItem}>Brightwaters ({Bright})</Link></li>*/}
-                  <li><Link to="/marsden-park-nsw" id={"Marsden Park (NSW)"} onClick={setFilterItem}>Marsden Park, NSW ({Mp})</Link></li>
-                  <li><Link to="/erina-nsw" id={"Erina (NSW)"} onClick={setFilterItem}>Erina, NSW ({Erina})</Link></li>
-                  <li><Link to="/hume-vic" id={"Hume (VIC)"} onClick={setFilterItem}>Hume, VIC ({Hume})</Link></li>
-                  <li><Link to="/darling-downs-wa" id={"Darling Downs (WA)"} onClick={setFilterItem}>Darling Downs, WA ({Dar})</Link></li>
-                  <li><Link to="/southlands-wa" id={"Southlands (WA)"} onClick={setFilterItem}>Southlands, WA ({Sou})</Link></li>
-                  <li><Link to="/burnie-tas" id={"Burnie (TAS)"} onClick={setFilterItem}>Burnie, TAS ({Bur})</Link></li>
-                  <li><Link to="/hobart-tas" id={"Hobart (TAS)"} onClick={setFilterItem}>Hobart, TAS ({Hob})</Link></li>
-                  <li><Link to="/launceston-tas" id={"Launceston (TAS)"} onClick={setFilterItem}>Launceston, TAS ({Lau})</Link></li>
+                  <li><Link to="/moreton-qld/" id={"Moreton (QLD)"} onClick={setFilterItem}>Moreton, QLD ({Mor})</Link></li>
+                  <li><Link to="/singleton-nsw/" id={"Singleton (NSW)"} onClick={setFilterItem}>Singleton, NSW ({Sing})</Link></li>
+                  {/*<li><Link to="/brightwaters-nsw/" id={"Brightwaters (NSW)"} onClick={setFilterItem}>Brightwaters ({Bright})</Link></li>*/}
+                  <li><Link to="/marsden-park-nsw/" id={"Marsden Park (NSW)"} onClick={setFilterItem}>Marsden Park, NSW ({Mp})</Link></li>
+                  <li><Link to="/erina-nsw/" id={"Erina (NSW)"} onClick={setFilterItem}>Erina, NSW ({Erina})</Link></li>
+                  <li><Link to="/hume-vic/" id={"Hume (VIC)"} onClick={setFilterItem}>Hume, VIC ({Hume})</Link></li>
+                  <li><Link to="/darling-downs-wa/" id={"Darling Downs (WA)"} onClick={setFilterItem}>Darling Downs, WA ({Dar})</Link></li>
+                  <li><Link to="/southlands-wa/" id={"Southlands (WA)"} onClick={setFilterItem}>Southlands, WA ({Sou})</Link></li>
+                  <li><Link to="/burnie-tas/" id={"Burnie (TAS)"} onClick={setFilterItem}>Burnie, TAS ({Bur})</Link></li>
+                  <li><Link to="/hobart-tas/" id={"Hobart (TAS)"} onClick={setFilterItem}>Hobart, TAS ({Hob})</Link></li>
+                  <li><Link to="/launceston-tas/" id={"Launceston (TAS)"} onClick={setFilterItem}>Launceston, TAS ({Lau})</Link></li>
                 </ul>
                 {/*<p style={{ marginLeft: '1.5rem', marginTop: '1rem', fontSize: '85%' }}>Total: {total}</p>*/}
 

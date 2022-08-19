@@ -66,7 +66,6 @@ const locationsTemplate = ({pageContext, data, location}) => {
         <Helmet>
           <meta charSet="utf-8"/>
           <title>{`${jobsLocation} | ${siteTitle}`}</title>
-          <link rel="canonical" href="https://acc.edu.au/careers"/>
         </Helmet>
         <Top>
           <Hero title={locationHeader} className="hero"/>

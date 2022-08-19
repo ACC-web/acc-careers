@@ -6,11 +6,5 @@
 
 //This is a message from the PWA caching busting
 export const onServiceWorkerUpdateReady = () => {
-    const answer = window.confirm(
-        `This website has been updated. ` +
-        `Please reload the page to display the latest version?`
-    )
-    if (answer === true) {
-        window.location.reload()
-    }
+    window.location.reload()
 }

@@ -34,7 +34,13 @@ module.exports = {
   plugins: [
     "gatsby-plugin-styled-components",
     "gatsby-transformer-remark",
-    "gatsby-plugin-react-helmet",
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-react-helmet-canonical-urls`,
+      options: {
+        siteUrl: `https://www.acc.edu.au`,
+      },
+    },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-gatsby-cloud`,
