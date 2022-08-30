@@ -86,6 +86,20 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: `https://www.acc.edu.au/podcast/rss.xml`,
+        name: `ACCPodcast`,
+        // Optional
+        // Read parser document: https://github.com/bobby-brennan/rss-parser#readme
+        parserOption: {
+          customFields: {
+            item: ['itunes:duration']
+          }
+        }
+      }
+    },
+    {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
         id: "GTM-WMFPBV",

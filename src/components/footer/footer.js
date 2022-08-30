@@ -5,8 +5,8 @@ import {css} from 'styled-components';
 import SchoolList from "./school-list.js";
 import BottomBar from "./bottom-bar.js";
 import AccLogo from "../header/acclogo";
-import LatestBlogPosts from "./latestBlogPost"
-import TwitterWidget from "../twitter-widget";
+import LatestBlogPosts from "./LatestBlogPosts"
+import LatestPodcastEpisodes from "./LatestPodcastEpisodes";
 
 const Wrapper = styled.div`
   p.small {
@@ -19,35 +19,41 @@ const SiteFooter = styled.footer`
   padding-top: 3.5em;
   padding-bottom: 60px;
   margin: 0 auto;
-  font-size: 0.9em;
+  color: #fff;
+  font-size: 0.9rem;
+  line-height: 1;
   flex-direction: row;
   background-color: #414b56;
 
   h2 {
     margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: 600;
   }
 
-  p {
+  p, i, li, a {
     font-size: inherit;
+    line-height: inherit;
+    color: inherit;
   }
 
   ul {
     list-style-type: none;
     padding: 0;
-    font-size: inherit;
 
     li {
       padding: 0;
-      margin: 0.2em 0;
-      color: #fff;
-      line-height: 0.9rem;;
+      margin: 0 0 0.66em;
 
       a {
         font-size: 0.8rem;
         font-weight: 400;
         margin: 0;
-        color: #fff;
         text-decoration: none;
+
+        :hover {
+          color: #50aae6;
+        }
       }
     }
   }
@@ -69,8 +75,8 @@ const Column = styled.div`
   @media (min-width: 768px) {
     width: 25%;
 
-    :nth-of-type(3) {
-      width: 50%
+    :nth-of-type(4) {
+      width: 40%
     }
   }
 
@@ -189,7 +195,7 @@ const Footer = () => {
             <LogoWrapper>
               <AccLogo/>
             </LogoWrapper>
-            <p className="rightAlign"><i style={{color: '#fff'}}>Transforming young lives spiritually, academically, socially and physically.</i></p>
+            <p className="rightAlign"><i>Transforming young lives spiritually, academically, socially and physically.</i></p>
           </Column>
           <Column>
             <SiteFooterNav>
@@ -198,10 +204,10 @@ const Footer = () => {
           </Column>
           <Column>
             {/*<LatestMediaReleaseList />*/}
-            <LatestBlogPosts/>
+            <LatestPodcastEpisodes />
           </Column>
           <Column>
-            <TwitterWidget/>
+            <LatestBlogPosts />
           </Column>
         </div>
       </SiteFooter>

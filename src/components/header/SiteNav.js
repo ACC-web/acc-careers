@@ -543,7 +543,7 @@ class SiteNav extends React.Component {
                       <li role="presentation"><a role="menuitem" href="https://www.acc.edu.au/moreton/">Moreton, QLD</a></li>
                       <li role="presentation"><a role="menuitem" href="https://www.acc.edu.au/singleton/">Singleton, NSW</a></li>
                       <li role="presentation"><a role="menuitem" href="https://www.mcs.nsw.edu.au/">Medowie, NSW</a></li>
-                      <li role="presentation"><a role="menuitem" href="https://brightwaters.nsw.edu.au/">Brightwaters, NSW</a></li>
+                      <li role="presentation"><a role="menuitem" href="https://www.brightwaters.nsw.edu.au/">Brightwaters, NSW</a></li>
                       <li role="presentation"><a role="menuitem" href="https://www.acc.edu.au/marsdenpark/">Marsden Park, NSW</a></li>
                       <li role="presentation"><a role="menuitem" href="https://www.acc.edu.au/hume/">Hume, VIC</a></li>
                       <li role="presentation"><a role="menuitem" href="https://www.acc.edu.au/darlingdowns/">Darling Downs, WA</a></li>
@@ -567,7 +567,7 @@ class SiteNav extends React.Component {
                     <Link role="menuitem" to="/" onClick={(PreventDefault) => document.body.classList.toggle('careers-list-open')}>Careers&nbsp;&nbsp;<span className="reveal"></span></Link>
                     <ul className="megaMenu " id="careers">
                       <li><a role="menuitem" href="https://www.acc.edu.au/careers/">Positions Vacant</a></li>
-                      <li><a role="menuitem" href="https://www.cem.org.au/training-school.html">Teacher Traineeships</a></li>
+                      <li><a role="menuitem" href="https://www.cem.com.au/training-school">Teacher Traineeships</a></li>
                     </ul>
                   </li>
                   <li css={ParentItem}>
