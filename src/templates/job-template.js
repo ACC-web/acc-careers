@@ -110,6 +110,8 @@ const JobTemplate = ({data, location, pageContext}) => {
         <Helmet>
           <meta charSet="utf-8"/>
           <title>{pageTitle}</title>
+          <link rel="canonical" href="{jobUrl}" />
+
           <meta name="description" content={jobMetaDescription}/>
 
           {/*These tags are required for Linkedin*/}
