@@ -54,26 +54,26 @@ const SiteNavRight = styled.div`
     }
   }
   
-  #main-menu li .megaMenu {
+  #main-menu li .dropDown {
     display: none;
     visibility: hidden;
   }
 
-  #main-menu li:hover .megaMenu{
+  #main-menu li:hover .dropDown{
     display: flex;
     visibility: visible;
     flex-direction: column;
   }
 
 
-  #main-menu li .megaMenu a:hover{border-bottom: none; text-decoration: underline}
-  #main-menu li .megaMenu a:hover svg{
+  #main-menu li .dropDown a:hover{border-bottom: none; text-decoration: underline}
+  #main-menu li .dropDown a:hover svg{
     transform: rotate(90deg);
   }
 
   @media(min-width: 950px) {
 
-    #main-menu li .megaMenu{
+    #main-menu li .dropDown{
       display: none;
       visibility: hidden;
 
@@ -97,31 +97,31 @@ const SiteNavRight = styled.div`
       overflow: auto;
     }
 
-    #main-menu li:hover .megaMenu{
+    #main-menu li:hover .dropDown{
       display: flex;
       visibility: visible;
       flex-direction: column;
     }
-    #main-menu li .megaMenu h3{
+    #main-menu li .dropDown h3{
       color: #fff;
       font-size: 1.2rem;
       margin-bottom: .5rem;
       white-space: nowrap;
     }
-    #main-menu li .megaMenu{
+    #main-menu li .dropDown{
       flex-direction: column;
     }
 
-    #main-menu li .megaMenu li,
-    #main-menu li .megaMenu h4{
+    #main-menu li .dropDown li,
+    #main-menu li .dropDown h4{
       height: auto;
       padding: 0.5rem 0;
     }
 
-    #main-menu li .megaMenu li h4 a,
-    #main-menu li .megaMenu a,
-    #main-menu li .megaMenu li a,
-    #main-menu li .megaMenu h4 a{
+    #main-menu li .dropDown li h4 a,
+    #main-menu li .dropDown a,
+    #main-menu li .dropDown li a,
+    #main-menu li .dropDown h4 a{
       font-size: 1.2rem;
       font-weight: 400;
       line-height: 1rem;
@@ -131,16 +131,16 @@ const SiteNavRight = styled.div`
       white-space: nowrap;
     }
 
-    #main-menu li .megaMenu li a:hover{
+    #main-menu li .dropDown li a:hover{
       text-decoration: underline;
     }
 
-    .megaMenu li:hover .fa-close:active .megaMenu{
+    .dropDown li:hover .fa-close:active .dropDown{
       visibility: hidden;
       display: none;
     }
 
-    #main-menu li .megaMenu ul{
+    #main-menu li .dropDown ul{
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-end;
@@ -461,7 +461,6 @@ const SiteNavRight = styled.div`
       margin: 0;
       padding: 1.2rem 3rem 1.7rem 3rem;
     }
-
   }
   
 `;
@@ -536,36 +535,34 @@ class SiteNav extends React.Component {
                   </li>
                   <li css={ParentItem}>
                     <Link role="menuitem" to="/" onClick={(PreventDefault) => document.body.classList.toggle('school-list-open')}>Schools&nbsp;&nbsp;<span className="reveal"></span></Link>
-
-                    <ul className="megaMenu" id="schools">
+                    <ul className="dropDown" id="schools">
                       <h3>Select a School</h3>
-
-                      <li role="presentation"><a role="menuitem" href="https://www.acc.edu.au/moreton/">Moreton, QLD</a></li>
-                      <li role="presentation"><a role="menuitem" href="https://www.acc.edu.au/singleton/">Singleton, NSW</a></li>
-                      <li role="presentation"><a role="menuitem" href="https://www.mcs.nsw.edu.au/">Medowie, NSW</a></li>
-                      <li role="presentation"><a role="menuitem" href="https://www.brightwaters.nsw.edu.au/">Brightwaters, NSW</a></li>
-                      <li role="presentation"><a role="menuitem" href="https://www.acc.edu.au/marsdenpark/">Marsden Park, NSW</a></li>
-                      <li role="presentation"><a role="menuitem" href="https://www.acc.edu.au/hume/">Hume, VIC</a></li>
-                      <li role="presentation"><a role="menuitem" href="https://www.acc.edu.au/darlingdowns/">Darling Downs, WA</a></li>
-                      <li role="presentation"><a role="menuitem" href="https://www.acc.edu.au/southlands/">Southlands, WA</a></li>
-                      <li role="presentation"><a role="menuitem" href="https://www.acc.edu.au/burnie/">Burnie, TAS</a></li>
-                      <li role="presentation"><a role="menuitem" href="https://www.acc.edu.au/launceston/">Launceston, TAS</a></li>
-                      <li role="presentation"><a role="menuitem" href="https://www.acc.edu.au/hobart/">Hobart, TAS</a></li>
-                      {/*<a href="https://www.acc.edu.au/distance-education/"><h3 style={{color:"#fff"}}>Distance Education</h3></a>*/}
+                          <li role="presentation"><a role="menuitem" href="https://www.acc.edu.au/moreton/">Moreton, QLD</a></li>
+                          <li role="presentation"><a role="menuitem" href="https://www.acc.edu.au/singleton/">Singleton, NSW</a></li>
+                          <li role="presentation"><a role="menuitem" href="https://www.mcs.nsw.edu.au/">Medowie, NSW</a></li>
+                          <li role="presentation"><a role="menuitem" href="https://www.brightwaters.nsw.edu.au/">Brightwaters, NSW</a></li>
+                          <li role="presentation"><a role="menuitem" href="https://www.acc.edu.au/marsdenpark/">Marsden Park, NSW</a></li>
+                          <li role="presentation"><a role="menuitem" href="https://www.acc.edu.au/hume/">Hume, VIC</a></li>
+                          <li role="presentation"><a role="menuitem" href="https://www.acc.edu.au/darlingdowns/">Darling Downs, WA</a></li>
+                          <li role="presentation"><a role="menuitem" href="https://www.acc.edu.au/southlands/">Southlands, WA</a></li>
+                          <li role="presentation"><a role="menuitem" href="https://www.acc.edu.au/burnie/">Burnie, TAS</a></li>
+                          <li role="presentation"><a role="menuitem" href="https://www.acc.edu.au/launceston/">Launceston, TAS</a></li>
+                          <li role="presentation"><a role="menuitem" href="https://www.acc.edu.au/hobart/">Hobart, TAS</a></li>
+                          {/*<a href="https://www.acc.edu.au/distance-education/"><h3 style={{color:"#fff"}}>Distance Education</h3></a>*/}
                     </ul>
                   </li>
-                  <li>
+                  <li css={ParentItem}>
                     <a role="menuitem" href="https://www.acc.edu.au/journals/" onClick={(PreventDefault) => document.body.classList.toggle('journals-list-open')}>Journals&nbsp;&nbsp;<span className="reveal"></span></a>
-                    <ul className="megaMenu" id="journals">
+                    <ul className="dropDown" id="journals">
                       <h3 style={{ color: '#fff' }}>Select a Journal</h3>
                       <li><a role="menuitem" href="https://www.acc.edu.au/journals/academica/">Academica</a></li>
                       <li><a role="menuitem" href="https://www.acc.edu.au/journals/excelencia/">Excelencia</a></li>
                       <li><a role="menuitem" href="https://www.acc.edu.au/excelencia-live">Excelencia Live</a></li>
                     </ul>
                   </li>
-                  <li>
+                  <li css={ParentItem}>
                     <Link role="menuitem" to="/" onClick={(PreventDefault) => document.body.classList.toggle('careers-list-open')}>Careers&nbsp;&nbsp;<span className="reveal"></span></Link>
-                    <ul className="megaMenu " id="careers">
+                    <ul className="dropDown " id="careers">
                       <li><a role="menuitem" href="https://www.acc.edu.au/careers/">Positions Vacant</a></li>
                       <li><a role="menuitem" href="https://www.cem.com.au/training-school">Teacher Traineeships</a></li>
                     </ul>
@@ -574,15 +571,11 @@ class SiteNav extends React.Component {
                     <Link role="menuitem" to="/" onClick={(PreventDefault) => document.body.classList.toggle('resources-list-open')}>Resources&nbsp;&nbsp;
                       <span className="reveal"></span>
                     </Link>
-                    <ul className="megaMenu" id="resources">
-                      <h3>Select a Resource</h3>
-                      <li>
-                        <ul className="megaMenu" id="resources">
-                          <li><a role="menuitem" href="https://www.acc.edu.au/blog">Blog</a></li>
-                          <li><a role="menuitem" href="https://www.acc.edu.au/podcast">The Inspiration Project Podcast</a></li>
-                          <li><a role="menuitem" href="https://www.acc.edu.au/eguides">Helpful Parenting Guides</a></li>
-                        </ul>
-                      </li>
+                    <ul className="dropDown" id="resources">
+                        <h3>Select a Resource</h3>
+                        <li><a role="menuitem" href="https://www.acc.edu.au/blog">Blog</a></li>
+                        <li><a role="menuitem" href="https://www.acc.edu.au/podcast">The Inspiration Project Podcast</a></li>
+                        <li><a role="menuitem" href="https://www.acc.edu.au/eguides">Helpful Parenting Guides</a></li>
                     </ul>
                   </li>
                   <li>
