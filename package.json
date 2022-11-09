@@ -40,6 +40,9 @@
   "devDependencies": {
     "contentful-import": "^8.3.2"
   },
+  "engines": {
+    "node": ">=18.12.1"
+  },
   "homepage": "https://www.acc.edu.au/careers/",
   "keywords": [
     "acc",
