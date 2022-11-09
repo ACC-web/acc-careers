@@ -376,73 +376,92 @@ class RootIndex extends React.Component {
 
 export default RootIndex
 
-export const pageQuery = graphql`
-  query HomeQuery {
-    allContentfulAccJob(
-      filter: {jobLocation: {jobLocation: {ne: "Medowie (NSW)"}}}
-      sort: {order: DESC, fields: createdAt}
-    ) {
-      edges {
-        node {
-          jobTitle
-          jobForm {
-            formUrl
-          }
-          jobDescription {
-            childMarkdownRemark {
-              html
-              excerpt(pruneLength: 150)
-            }
-          }
-          id
-          createdAt(formatString: "dddd DD, MMMM, YYYY")
-          jobLocation {
-            jobLocation
-          }
-          slug
+export const pageQuery = graphql`query HomeQuery {
+  allContentfulAccJob(
+    filter: {jobLocation: {jobLocation: {ne: "Medowie (NSW)"}}}
+    sort: {createdAt: DESC}
+  ) {
+    edges {
+      node {
+        jobTitle
+        jobForm {
+          formUrl
         }
-      }
-      totalCount
-    }
-    moreton: allContentfulAccJob(filter: {jobLocation: {jobLocation: {in: "Moreton (QLD)"}}}) {
-      totalCount
-    }
-    singleton: allContentfulAccJob(filter: {jobLocation: {jobLocation: {in: "Singleton (NSW)"}}}) {
-      totalCount
-    }
-    marsdenpark: allContentfulAccJob(filter: {jobLocation: {jobLocation: {in: "Marsden Park (NSW)"}}}) {
-      totalCount
-    }
-    erina: allContentfulAccJob(filter: {jobLocation: {jobLocation: {in: "Erina (NSW)"}}}) {
-      totalCount
-    }
-    brightwaters: allContentfulAccJob(filter: {jobLocation: {jobLocation: {in: "Brightwaters (NSW)"}}}) {
-      totalCount
-    }
-    hume: allContentfulAccJob(filter: {jobLocation: {jobLocation: {in: "Hume (VIC)"}}}) {
-      totalCount
-    }
-    darlingdowns: allContentfulAccJob(filter: {jobLocation: {jobLocation: {in: "Darling Downs (WA)"}}}) {
-      totalCount
-    }
-    southlands: allContentfulAccJob(filter: {jobLocation: {jobLocation: {in: "Southlands (WA)"}}}) {
-      totalCount
-    }
-    burnie: allContentfulAccJob(filter: {jobLocation: {jobLocation: {in: "Burnie (TAS)"}}}) {
-      totalCount
-    }
-    hobart: allContentfulAccJob(filter: {jobLocation: {jobLocation: {in: "Hobart (TAS)"}}}) {
-      totalCount
-    }
-    launceston: allContentfulAccJob(filter: {jobLocation: {jobLocation: {in: "Launceston (TAS)"}}}) {
-      totalCount
-    }
-    site {
-      siteMetadata {
-        title,
-        siteUrl
+        jobDescription {
+          childMarkdownRemark {
+            html
+            excerpt(pruneLength: 150)
+          }
+        }
+        id
+        createdAt(formatString: "dddd DD, MMMM, YYYY")
+        jobLocation {
+          jobLocation
+        }
+        slug
       }
     }
-
+    totalCount
   }
-`
+  moreton: allContentfulAccJob(
+    filter: {jobLocation: {jobLocation: {in: "Moreton (QLD)"}}}
+  ) {
+    totalCount
+  }
+  singleton: allContentfulAccJob(
+    filter: {jobLocation: {jobLocation: {in: "Singleton (NSW)"}}}
+  ) {
+    totalCount
+  }
+  marsdenpark: allContentfulAccJob(
+    filter: {jobLocation: {jobLocation: {in: "Marsden Park (NSW)"}}}
+  ) {
+    totalCount
+  }
+  erina: allContentfulAccJob(
+    filter: {jobLocation: {jobLocation: {in: "Erina (NSW)"}}}
+  ) {
+    totalCount
+  }
+  brightwaters: allContentfulAccJob(
+    filter: {jobLocation: {jobLocation: {in: "Brightwaters (NSW)"}}}
+  ) {
+    totalCount
+  }
+  hume: allContentfulAccJob(
+    filter: {jobLocation: {jobLocation: {in: "Hume (VIC)"}}}
+  ) {
+    totalCount
+  }
+  darlingdowns: allContentfulAccJob(
+    filter: {jobLocation: {jobLocation: {in: "Darling Downs (WA)"}}}
+  ) {
+    totalCount
+  }
+  southlands: allContentfulAccJob(
+    filter: {jobLocation: {jobLocation: {in: "Southlands (WA)"}}}
+  ) {
+    totalCount
+  }
+  burnie: allContentfulAccJob(
+    filter: {jobLocation: {jobLocation: {in: "Burnie (TAS)"}}}
+  ) {
+    totalCount
+  }
+  hobart: allContentfulAccJob(
+    filter: {jobLocation: {jobLocation: {in: "Hobart (TAS)"}}}
+  ) {
+    totalCount
+  }
+  launceston: allContentfulAccJob(
+    filter: {jobLocation: {jobLocation: {in: "Launceston (TAS)"}}}
+  ) {
+    totalCount
+  }
+  site {
+    siteMetadata {
+      title
+      siteUrl
+    }
+  }
+}`

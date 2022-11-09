@@ -98,27 +98,27 @@ const locationsTemplate = ({pageContext, data, location}) => {
 
 export default locationsTemplate
 
-export const pageQuery = graphql`
-  query LocationTemplateQuery($jobsLocation: String) {
-    allContentfulAccJob(filter: {jobLocation: {jobLocation: {eq: $jobsLocation}}}, sort: {order: DESC, fields: createdAt}) {
-      edges {
-        node {
-          id
-          jobTitle
-          slug
-          jobLocation {
-            jobLocation
-          }
-          createdAt(formatString: "dddd DD, MMMM, YYYY")
+export const pageQuery = graphql`query LocationTemplateQuery($jobsLocation: String) {
+  allContentfulAccJob(
+    filter: {jobLocation: {jobLocation: {eq: $jobsLocation}}}
+    sort: {createdAt: DESC}
+  ) {
+    edges {
+      node {
+        id
+        jobTitle
+        slug
+        jobLocation {
+          jobLocation
         }
+        createdAt(formatString: "dddd DD, MMMM, YYYY")
       }
-      totalCount
     }
-
-    site {
-      siteMetadata {
-        title
-      }
+    totalCount
+  }
+  site {
+    siteMetadata {
+      title
     }
   }
-`
+}`
