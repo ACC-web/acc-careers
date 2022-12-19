@@ -29,7 +29,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         }
         totalCount
       }
-      allContentfulJobLocation {
+      allContentfulLocation {
         totalCount
         nodes {
           jobLocation
@@ -57,7 +57,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   });
 
   // const jobLocations = queryResults.data.allContentfulJobLocation.nodes
-  queryResults.data.allContentfulJobLocation.nodes.forEach(node => {
+  queryResults.data.allContentfulLocation.nodes.forEach(node => {
 
   // jobLocations.forEach(node => {
     const place = `${node.jobLocation}`
