@@ -40,6 +40,9 @@ export default function LocationList() {
       hume: allContentfulAccJob(filter: {jobLocation: {jobLocation: {in: "Hume (VIC)"}}}) {
         totalCount
       }
+      casey: allContentfulAccJob(filter: {jobLocation: {jobLocation: {in: "Casey (VIC)"}}}) {
+        totalCount
+      }
       darlingdowns: allContentfulAccJob(filter: {jobLocation: {jobLocation: {in: "Darling Downs (WA)"}}}) {
         totalCount
       }
@@ -64,6 +67,7 @@ export default function LocationList() {
       <li><Link to="/brightwaters-nsw">Brightwaters - NSW ({data.brightwaters.totalCount})</Link></li>
       <li><Link to="/marsden-park-nsw">Marsden Park - NSW({data.marsdenpark.totalCount})</Link></li>
       <li><Link to="/hume-vic">Hume - VIC ({data.hume.totalCount})</Link></li>
+      <li><Link to="/casey-vic">Casey - VIC ({data.casey.totalCount})</Link></li>
       <li><Link to="/darling-downs-wa">Darling Downs - WA ({data.darlingdowns.totalCount})</Link></li>
       <li><Link to="/southlandwa">Southlands - WA({data.southlands.totalCount})</Link></li>
       <li><Link to="/burnie-tas">Burnie - TAS ({data.burnie.totalCount})</Link></li>

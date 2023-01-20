@@ -210,6 +210,7 @@ class RootIndex extends React.Component {
     const Mp = get(this, 'props.data.marsdenpark.totalCount')
     const Erina = get(this, 'props.data.erina.totalCount')
     const Hume = get(this, 'props.data.hume.totalCount')
+    const Cas = get(this, 'props.data.casey.totalCount')
     const Dar = get(this, 'props.data.darlingdowns.totalCount')
     const Sou = get(this, 'props.data.southlands.totalCount')
     const Hob = get(this, 'props.data.hobart.totalCount')
@@ -227,6 +228,7 @@ class RootIndex extends React.Component {
       {value: 'Marsden Park (NSW)', label: 'Marsden Park (NSW)',},
       {value: 'Erina (NSW)', label: 'Erina (NSW)',},
       {value: 'Hume (VIC)', label: 'Hume (VIC)',},
+      {value: 'Casey (VIC)', label: 'Casey (VIC)',},
       {value: 'Darling Downs (WA)', label: 'Darling Downs (WA)',},
       {value: 'Southlands (WA)', label: 'Southlands (WA)',},
       {value: 'Burnie (TAS)', label: 'Burnie (TAS)',},
@@ -351,6 +353,7 @@ class RootIndex extends React.Component {
                   <li><Link to="/marsden-park-nsw/" id={"Marsden Park (NSW)"} onClick={setFilterItem}>Marsden Park, NSW ({Mp})</Link></li>
                   <li><Link to="/erina-nsw/" id={"Erina (NSW)"} onClick={setFilterItem}>Erina, NSW ({Erina})</Link></li>
                   <li><Link to="/hume-vic/" id={"Hume (VIC)"} onClick={setFilterItem}>Hume, VIC ({Hume})</Link></li>
+                  <li><Link to="/casey-vic/" id={"Casey (VIC)"} onClick={setFilterItem}>Casey, VIC ({Cas})</Link></li>
                   <li><Link to="/darling-downs-wa/" id={"Darling Downs (WA)"} onClick={setFilterItem}>Darling Downs, WA ({Dar})</Link></li>
                   <li><Link to="/southlands-wa/" id={"Southlands (WA)"} onClick={setFilterItem}>Southlands, WA ({Sou})</Link></li>
                   <li><Link to="/burnie-tas/" id={"Burnie (TAS)"} onClick={setFilterItem}>Burnie, TAS ({Bur})</Link></li>
@@ -430,6 +433,11 @@ export const pageQuery = graphql`query HomeQuery {
   }
   hume: allContentfulAccJob(
     filter: {jobLocation: {jobLocation: {in: "Hume (VIC)"}}}
+  ) {
+    totalCount
+  }
+  casey: allContentfulAccJob(
+    filter: {jobLocation: {jobLocation: {in: "Casey (VIC)"}}}
   ) {
     totalCount
   }

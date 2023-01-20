@@ -53,6 +53,7 @@ class SchoolList extends React.Component {
           <Item><a target="_blank" rel="noopener noreferrer" href="https://brightwaters.nsw.edu.au/">Brightwaters, NSW</a></Item>
           <Item><a target="_blank" rel="noopener noreferrer" href="https://www.acc.edu.au/marsdenpark/">Marsden Park, NSW</a></Item>
           <Item><a target="_blank" rel="noopener noreferrer" href="https://www.acc.edu.au/hume/">Hume, VIC</a></Item>
+          <Item><a target="_blank" rel="noopener noreferrer" href="https://www.acc.edu.au/casey/">Casey, VIC</a></Item>
           <Item><a target="_blank" rel="noopener noreferrer" href="https://www.acc.edu.au/darlingdowns/">Darling Downs, WA</a></Item>
           <Item><a target="_blank" rel="noopener noreferrer" href="https://www.acc.edu.au/southlands/">Southlands, WA</a></Item>
           <Item><a target="_blank" rel="noopener noreferrer" href="https://www.acc.edu.au/burnie/">Burnie, TAS</a></Item>
