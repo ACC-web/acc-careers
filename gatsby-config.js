@@ -23,6 +23,7 @@ if (!spaceId || !accessToken) {
 
 
 module.exports = {
+  pathPrefix: "/careers",
   siteMetadata: {
     title: "ACC Careers",
     siteUrl: `https://www.acc.edu.au`,
@@ -30,7 +31,6 @@ module.exports = {
     description: 'Career opportunities at the nation-wide Australian Christian College (ACC) network of schools',
     image: '/acc-careers-meta-image.jpg'
   },
-  pathPrefix: "/careers",
   plugins: [
     "gatsby-plugin-styled-components",
     "gatsby-transformer-remark",
