@@ -29,17 +29,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         }
         totalCount
       }
-      allContentfulLocation {
-        totalCount
-        nodes {
-          jobLocation
-          id
-          acc_job {
-            jobTitle
-            slug
-          }
-        }
-      }
+#      allContentfulLocation {
+#        totalCount
+#        nodes {
+#          jobLocation
+#          id
+#          acc_job {
+#            jobTitle
+#            slug
+#          }
+#        }
+#      }
     }
   `)
 
@@ -56,17 +56,32 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     });
   });
 
+  // Hardcode list instead of querying so that pages aren't created for non job locations (e.g. 'Medowie Blog")
+  const jobLocations = [
+    "Moreton (QLD)",
+    "Singleton (NSW)",
+    "Brightwaters (NSW)",
+    "Erina (NSW)",
+    "Marsden Park (NSW)",
+    "Hume (VIC)",
+    "Casey (VIC)",
+    "Darling Downs (WA)",
+    "Southlands (WA)",
+    "Burnie (TAS)",
+    "Hobart (TAS)",
+    "Launceston (TAS)"
+  ]
+
   // const jobLocations = queryResults.data.allContentfulJobLocation.nodes
-  queryResults.data.allContentfulLocation.nodes.forEach(node => {
+  // queryResults.data.allContentfulLocation.nodes.forEach(node => {
+  jobLocations.forEach(location => {
 
   // jobLocations.forEach(node => {
-    const place = `${node.jobLocation}`
     createPage({
-      path: `${_.kebabCase(node.jobLocation)}/`,
+      path: `${_.kebabCase(location)}/`,
       component: locationsTemplate,
       context: {
-        jobsLocation: place,
-        id: node.id,
+        jobsLocation: location
       },
     });
   });

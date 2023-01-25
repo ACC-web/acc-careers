@@ -531,7 +531,7 @@ class SiteNav extends React.Component {
                 <ul className="NavStyles" id="MainNav" role="menu">
                   {/* TODO: mark current nav item - add class nav-current */}
                   <li>
-                    <a role="menuitem" href="https://www.acc.edu.au/about">About</a>
+                    <a role="menuitem" href="https://www.acc.edu.au/about/">About</a>
                   </li>
                   <li css={ParentItem}>
                     <Link role="menuitem" to="/" onClick={(PreventDefault) => document.body.classList.toggle('school-list-open')}>Schools&nbsp;&nbsp;<span className="reveal"></span></Link>
@@ -558,14 +558,14 @@ class SiteNav extends React.Component {
                       <h3 style={{ color: '#fff' }}>Select a Journal</h3>
                       <li><a role="menuitem" href="https://www.acc.edu.au/journals/academica/">Academica</a></li>
                       <li><a role="menuitem" href="https://www.acc.edu.au/journals/excelencia/">Excelencia</a></li>
-                      <li><a role="menuitem" href="https://www.acc.edu.au/excelencia-live">Excelencia Live</a></li>
+                      <li><a role="menuitem" href="https://www.acc.edu.au/excelencia-live/">Excelencia Live</a></li>
                     </ul>
                   </li>
                   <li css={ParentItem}>
                     <Link role="menuitem" to="/" onClick={(PreventDefault) => document.body.classList.toggle('careers-list-open')}>Careers&nbsp;&nbsp;<span className="reveal"></span></Link>
                     <ul className="dropDown " id="careers">
                       <li><a role="menuitem" href="https://www.acc.edu.au/careers/">Positions Vacant</a></li>
-                      <li><a role="menuitem" href="https://www.cem.com.au/training-school">Teacher Traineeships</a></li>
+                      <li><a role="menuitem" href="https://www.cem.com.au/training-school/">Teacher Traineeships</a></li>
                     </ul>
                   </li>
                   <li css={ParentItem}>
@@ -574,9 +574,9 @@ class SiteNav extends React.Component {
                     </Link>
                     <ul className="dropDown" id="resources">
                         <h3>Select a Resource</h3>
-                        <li><a role="menuitem" href="https://www.acc.edu.au/blog">Blog</a></li>
-                        <li><a role="menuitem" href="https://www.acc.edu.au/podcast">The Inspiration Project Podcast</a></li>
-                        <li><a role="menuitem" href="https://www.acc.edu.au/eguides">Helpful Parenting Guides</a></li>
+                        <li><a role="menuitem" href="https://www.acc.edu.au/blog/">Blog</a></li>
+                        <li><a role="menuitem" href="https://www.acc.edu.au/podcast/">The Inspiration Project Podcast</a></li>
+                        <li><a role="menuitem" href="https://www.acc.edu.au/eguides/">Helpful Parenting Guides</a></li>
                     </ul>
                   </li>
                   <li>
